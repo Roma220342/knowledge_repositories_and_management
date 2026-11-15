@@ -1,0 +1,8 @@
+id,claim,source,status
+C01,"Технічні навички: 75,2% витрат (837469,57 €)",pandas/OLAP Q2,verified
+C02,"Сума годин 32066, вартість 1114344,57 €",verify_pandas.json,verified
+C03,"Вартість години 2025: технічні 36,72, м'які 30,78",verify_pandas.json,verified
+C04,"Кількість в headcount: 22/22/23/26 за кварталами, сума 93 хибна",Q12 CSV,verified
+C05,ROLLUP у SQLite відсутній — емуляція UNION ALL,документація SQLite,verified
+C06,DuckDB підтримує ROLLUP/CUBE/GROUPING SETS нативно,DuckDB docs (не запускалось),unverified
+C07,Тариф 3/15 USD за 1M токенів,припущення,unverified

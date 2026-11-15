@@ -1,0 +1,126 @@
+{
+ "version": "1.0.0",
+ "engine": "sqlite",
+ "loaded": "2026-11-15 20:04",
+ "counts": {
+  "dim_date": 1096,
+  "dim_position": 4,
+  "dim_employee": 36,
+  "dim_competence": 11,
+  "dim_course": 12,
+  "fact_training": 1861,
+  "fact_perf_quarter": 264
+ },
+ "dq": [
+  {
+   "id": "DQ1",
+   "check": "not null: ключі й міри факту навчання",
+   "violations": 0,
+   "ok": true
+  },
+  {
+   "id": "DQ2",
+   "check": "діапазон: 0 < hours <= 80 і cost_eur >= 0",
+   "violations": 0,
+   "ok": true
+  },
+  {
+   "id": "DQ3",
+   "check": "діапазон: оцінки 0..10, score_after >= score_before, satisfaction 1..5; для незавершених оцінок немає",
+   "violations": 0,
+   "ok": true
+  },
+  {
+   "id": "DQ4",
+   "check": "унікальність: training_key та (employee_sk, date_key, course_key) на рівні зерна",
+   "violations": 0,
+   "ok": true
+  },
+  {
+   "id": "DQ5",
+   "check": "узгодженість SCD2: інтервали версій співробітника не перетинаються; одна поточна версія",
+   "violations": 0,
+   "ok": true
+  },
+  {
+   "id": "DQ6",
+   "check": "подія потрапила у валідний інтервал версії співробітника (SCD2)",
+   "violations": 0,
+   "ok": true
+  },
+  {
+   "id": "DQ7",
+   "check": "узгодженість: competence_key факту = competence_key курсу",
+   "violations": 0,
+   "ok": true
+  },
+  {
+   "id": "DQ8",
+   "check": "діапазон: productivity_score 0..10, headcount = 1, bonus_eur >= 0",
+   "violations": 0,
+   "ok": true
+  }
+ ],
+ "orphans": [
+  {
+   "fk": "fact_training.date_key",
+   "orphans": 0,
+   "ok": true
+  },
+  {
+   "fk": "fact_training.employee_sk",
+   "orphans": 0,
+   "ok": true
+  },
+  {
+   "fk": "fact_training.course_key",
+   "orphans": 0,
+   "ok": true
+  },
+  {
+   "fk": "fact_training.competence_key",
+   "orphans": 0,
+   "ok": true
+  },
+  {
+   "fk": "fact_perf_quarter.date_key",
+   "orphans": 0,
+   "ok": true
+  },
+  {
+   "fk": "fact_perf_quarter.employee_sk",
+   "orphans": 0,
+   "ok": true
+  },
+  {
+   "fk": "dim_employee.position_key",
+   "orphans": 0,
+   "ok": true
+  },
+  {
+   "fk": "dim_course.competence_key",
+   "orphans": 0,
+   "ok": true
+  }
+ ],
+ "storage": "pyarrow недоступний: збережено лише CSV (data/*.csv)",
+ "sha256_12": {
+  "dim_date": "91d25415359c",
+  "dim_position": "5acffb9f1a02",
+  "dim_employee": "ac86de893030",
+  "dim_competence": "e625ac61a02b",
+  "dim_course": "d5a856737c8c",
+  "fact_training": "e79024d19351",
+  "fact_perf_quarter": "4156b915fa0a"
+ },
+ "generator": {
+  "seed": 42,
+  "employees": 30,
+  "scd2_changes": 6,
+  "fact_training": 1861,
+  "fact_perf_quarter": 264,
+  "dim_date": 1096,
+  "dim_course": 12,
+  "dim_competence": 11
+ }
+}

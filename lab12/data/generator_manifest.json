@@ -1,0 +1,10 @@
+{
+ "seed": 42,
+ "employees": 30,
+ "scd2_changes": 6,
+ "fact_training": 1861,
+ "fact_perf_quarter": 264,
+ "dim_date": 1096,
+ "dim_course": 12,
+ "dim_competence": 11
+}

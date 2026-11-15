@@ -1,0 +1,12 @@
+competence_key,competence_iri,competence_label,subclass_iri,subclass_label,class_iri,class_label,source
+1,http://example.org/hr#pythonProgramming,Python programming,http://example.org/hr#Programming,Програмування,http://example.org/hr#HardSkill,Технічні навички,ЛР 9
+2,http://example.org/hr#javaProgramming,Java programming,http://example.org/hr#Programming,Програмування,http://example.org/hr#HardSkill,Технічні навички,розширення
+3,http://example.org/hr#hrAnalytics,HR analytics,http://example.org/hr#Analytics,Аналітика,http://example.org/hr#HardSkill,Технічні навички,ЛР 9
+4,http://example.org/hr#sqlDataAnalysis,SQL data analysis,http://example.org/hr#Analytics,Аналітика,http://example.org/hr#HardSkill,Технічні навички,розширення
+5,http://example.org/hr#labourLaw,Labour law,http://example.org/hr#Compliance,Відповідність і право,http://example.org/hr#HardSkill,Технічні навички,розширення
+6,http://example.org/hr#dataProtection,Data protection,http://example.org/hr#Compliance,Відповідність і право,http://example.org/hr#HardSkill,Технічні навички,розширення
+7,http://example.org/hr#negotiation,Negotiation,http://example.org/hr#Communication,Комунікація,http://example.org/hr#SoftSkill,М'які навички,ЛР 9
+8,http://example.org/hr#teamCommunication,Team communication,http://example.org/hr#Communication,Комунікація,http://example.org/hr#SoftSkill,М'які навички,ЛР 9
+9,http://example.org/hr#conflictResolution,Conflict resolution,http://example.org/hr#Communication,Комунікація,http://example.org/hr#SoftSkill,М'які навички,розширення
+10,http://example.org/hr#coaching,Coaching,http://example.org/hr#Leadership,Лідерство,http://example.org/hr#SoftSkill,М'які навички,розширення
+11,http://example.org/hr#delegation,Delegation,http://example.org/hr#Leadership,Лідерство,http://example.org/hr#SoftSkill,М'які навички,розширення

@@ -1,0 +1,13 @@
+course_key,course_id,course_name,default_hours,provider_type,competence_key
+1,negotiationCourse,Ефективні перемовини,16,internal,7
+2,pythonAdvancedCourse,Python Advanced,40,external,1
+3,javaBasics,Java Basics,32,external,2
+4,hrAnalyticsPro,HR Analytics Pro,24,external,3
+5,sqlForAnalysts,SQL для аналітиків,20,internal,4
+6,labourLawUpdate,Трудове право: оновлення,8,internal,5
+7,gdprEssentials,Захист даних (GDPR),6,internal,6
+8,teamSync,Командна комунікація,12,internal,8
+9,conflictWorkshop,Вирішення конфліктів,10,external,9
+10,coachingSkills,Коучингові навички,20,external,10
+11,delegationLab,Практикум з делегування,8,internal,11
+12,pythonBasics,Python Basics,24,internal,1

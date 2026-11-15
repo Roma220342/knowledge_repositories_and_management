@@ -1,0 +1,3 @@
+-- Q11 [віконна: ковзне середнє]. Питання: як змінюється середній приріст оцінки після завершених курсів (3-місячне ковзне середнє) у 2025–2026 роках?
+WITH m AS (SELECT d.year_month, AVG(f.score_after - f.score_before) AS gain FROM fact_training f JOIN dim_date d ON d.date_key = f.date_key JOIN dim_competence c ON c.competence_key = f.competence_key JOIN dim_employee e ON e.employee_sk = f.employee_sk JOIN dim_position p ON p.position_key = e.position_key WHERE f.completed = 1 AND d.year >= 2025 GROUP BY d.year_month)
+SELECT year_month, ROUND(gain,3) AS avg_gain, ROUND(AVG(gain) OVER (ORDER BY year_month ROWS BETWEEN 2 PRECEDING AND CURRENT ROW),3) AS ma3 FROM m ORDER BY year_month;

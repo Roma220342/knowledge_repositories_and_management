@@ -1,0 +1,2 @@
+-- Q6 [slice]. Питання: скільки коштує година навчання за кожним класом компетенцій у 2025 році (зріз за часом)?
+SELECT c.class_label, ROUND(SUM(f.hours),1) AS hours, ROUND(SUM(f.cost_eur),2) AS cost_eur, ROUND(SUM(f.cost_eur) / SUM(f.hours), 2) AS cost_per_hour FROM fact_training f JOIN dim_date d ON d.date_key = f.date_key JOIN dim_competence c ON c.competence_key = f.competence_key JOIN dim_employee e ON e.employee_sk = f.employee_sk JOIN dim_position p ON p.position_key = e.position_key WHERE d.year = 2025 GROUP BY c.class_label ORDER BY cost_per_hour DESC;

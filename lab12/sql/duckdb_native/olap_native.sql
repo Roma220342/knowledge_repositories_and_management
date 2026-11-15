@@ -1,0 +1,6 @@
+-- Еквіваленти розгорнутих запитів у «рідному» синтаксисі DuckDB. У середовищі виконання роботи DuckDB був недоступний — ці варіанти НЕ запускалися.
+SELECT year, quarter, SUM(hours), SUM(cost_eur) FROM (SELECT d.year, d.quarter, f.hours, f.cost_eur FROM fact_training f JOIN dim_date d USING (date_key)) GROUP BY ROLLUP (year, quarter) ORDER BY ALL;
+SELECT class_label, subclass_label, competence_label, SUM(hours), SUM(cost_eur) FROM fact_training f JOIN dim_competence c USING (competence_key) GROUP BY ROLLUP (class_label, subclass_label, competence_label) ORDER BY ALL;
+SELECT position_name, class_label, SUM(hours) FROM fact_training f JOIN dim_competence c USING (competence_key) JOIN dim_employee e USING (employee_sk) JOIN dim_position p USING (position_key) GROUP BY CUBE (position_name, class_label) ORDER BY ALL;
+SELECT d.year, c.class_label, SUM(cost_eur) FROM fact_training f JOIN dim_date d USING (date_key) JOIN dim_competence c USING (competence_key) GROUP BY GROUPING SETS ((d.year, c.class_label), (c.class_label), ()) ORDER BY ALL;
+PIVOT (SELECT d.year_quarter, c.class_label, f.hours FROM fact_training f JOIN dim_date d USING (date_key) JOIN dim_competence c USING (competence_key)) ON class_label USING SUM(hours) GROUP BY year_quarter ORDER BY year_quarter;

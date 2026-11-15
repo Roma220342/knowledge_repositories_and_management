@@ -1,0 +1,4 @@
+pandas
+matplotlib
+pyyaml
+# опційно: duckdb, pyarrow (тоді ETL використає DuckDB та Parquet автоматично)

@@ -1,0 +1,96 @@
+{
+ "q01_rollup_time": [
+  {
+   "part": "-",
+   "rows": 16,
+   "ms": 4.26
+  }
+ ],
+ "q02_rollup_taxonomy": [
+  {
+   "part": "-",
+   "rows": 19,
+   "ms": 4.62
+  }
+ ],
+ "q03_drilldown": [
+  {
+   "part": "a",
+   "rows": 2,
+   "ms": 1.13
+  },
+  {
+   "part": "b",
+   "rows": 3,
+   "ms": 1.27
+  },
+  {
+   "part": "c",
+   "rows": 2,
+   "ms": 0.86
+  }
+ ],
+ "q04_cube": [
+  {
+   "part": "-",
+   "rows": 15,
+   "ms": 3.61
+  }
+ ],
+ "q05_grouping_sets": [
+  {
+   "part": "-",
+   "rows": 9,
+   "ms": 4.42
+  }
+ ],
+ "q06_slice": [
+  {
+   "part": "-",
+   "rows": 2,
+   "ms": 0.94
+  }
+ ],
+ "q07_dice": [
+  {
+   "part": "-",
+   "rows": 6,
+   "ms": 0.95
+  }
+ ],
+ "q08_pivot": [
+  {
+   "part": "-",
+   "rows": 12,
+   "ms": 1.59
+  }
+ ],
+ "q09_cumulative": [
+  {
+   "part": "-",
+   "rows": 12,
+   "ms": 1.3
+  }
+ ],
+ "q10_rank": [
+  {
+   "part": "-",
+   "rows": 12,
+   "ms": 2.02
+  }
+ ],
+ "q11_moving_avg": [
+  {
+   "part": "-",
+   "rows": 22,
+   "ms": 1.5
+  }
+ ],
+ "q12_semi_additive": [
+  {
+   "part": "-",
+   "rows": 4,
+   "ms": 0.63
+  }
+ ]
+}

@@ -1,0 +1,55 @@
+{
+ "metadata_errors": [],
+ "checks": [
+  {
+   "check": "cost_per_hour, Технічні навички, 2025: метрика vs Q6",
+   "path_a": 36.7249,
+   "path_b": 36.72,
+   "ok": true
+  },
+  {
+   "check": "cost_per_hour, М'які навички, 2025: метрика vs Q6",
+   "path_a": 30.7833,
+   "path_b": 30.78,
+   "ok": true
+  },
+  {
+   "check": "training_hours, Технічні навички: метрика vs Q2 (ROLLUP)",
+   "path_a": 22668.0,
+   "path_b": 22668.0,
+   "ok": true
+  },
+  {
+   "check": "training_hours, М'які навички: метрика vs Q2 (ROLLUP)",
+   "path_a": 9398.0,
+   "path_b": 9398.0,
+   "ok": true
+  },
+  {
+   "check": "training_cost, всього: метрика vs Q1",
+   "path_a": 1114344.57,
+   "path_b": 1114344.57,
+   "ok": true
+  },
+  {
+   "check": "training_cost, всього: метрика vs pandas",
+   "path_a": 1114344.57,
+   "path_b": 1114344.57,
+   "ok": true
+  },
+  {
+   "check": "hours_per_learner = training_hours / active_learners",
+   "path_a": 1068.8667,
+   "path_b": 1068.8667,
+   "ok": true
+  },
+  {
+   "check": "сума за підкласами = сума за класами",
+   "path_a": 1114344.57,
+   "path_b": 1114344.57,
+   "ok": true
+  }
+ ],
+ "all_ok": true,
+ "n_metrics": 7
+}

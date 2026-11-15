@@ -1,0 +1,9 @@
+1.0.0
+seed=42
+dim_date 91d25415359c
+dim_position 5acffb9f1a02
+dim_employee ac86de893030
+dim_competence e625ac61a02b
+dim_course d5a856737c8c
+fact_training e79024d19351
+fact_perf_quarter 4156b915fa0a

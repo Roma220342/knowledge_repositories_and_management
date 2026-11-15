@@ -1,0 +1,5 @@
+position_key,position_id,position_name,salary_grade
+1,hrManagerPost,HR-менеджер,7
+2,pythonDeveloperPost,Python-розробник,5
+3,recruiterPost,Рекрутер,4
+4,teamLeadPost,Керівник команди,7

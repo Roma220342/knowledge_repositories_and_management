@@ -1,0 +1,243 @@
+{
+ "nl": 14,
+ "correct": 9,
+ "correct_share": 0.643,
+ "unsafe": 9,
+ "safe": 9,
+ "safe_share": 1.0,
+ "est_prompt_tokens": 7880,
+ "est_cost_usd": 0.0236,
+ "items": [
+  {
+   "id": "N01",
+   "q": "Скільки годин навчання було у 2025 році?",
+   "correct": true,
+   "status": "ok",
+   "generated": "",
+   "got": null,
+   "gold": null
+  },
+  {
+   "id": "N02",
+   "q": "Яка вартість навчання за роками?",
+   "correct": true,
+   "status": "ok",
+   "generated": "",
+   "got": null,
+   "gold": null
+  },
+  {
+   "id": "N03",
+   "q": "Яка вартість години навчання за класами у 2025 році?",
+   "correct": true,
+   "status": "ok",
+   "generated": "",
+   "got": null,
+   "gold": null
+  },
+  {
+   "id": "N04",
+   "q": "Скільки співробітників навчалось у 2026 році?",
+   "correct": true,
+   "status": "ok",
+   "generated": "",
+   "got": null,
+   "gold": null
+  },
+  {
+   "id": "N05",
+   "q": "Яка частка завершених курсів за провайдером?",
+   "correct": true,
+   "status": "ok",
+   "generated": "",
+   "got": null,
+   "gold": null
+  },
+  {
+   "id": "N06",
+   "q": "Який середній приріст оцінки за підкласами?",
+   "correct": true,
+   "status": "ok",
+   "generated": "",
+   "got": null,
+   "gold": null
+  },
+  {
+   "id": "N07",
+   "correct": false,
+   "reason": "метрику не розпізнано"
+  },
+  {
+   "id": "N08",
+   "q": "Скільки годин навчання за кварталами для технічних навичок?",
+   "correct": true,
+   "status": "ok",
+   "generated": "",
+   "got": null,
+   "gold": null
+  },
+  {
+   "id": "N09",
+   "q": "Яка вартість навчання за посадами у 2026 році?",
+   "correct": true,
+   "status": "ok",
+   "generated": "",
+   "got": null,
+   "gold": null
+  },
+  {
+   "id": "N10",
+   "q": "Скільки годин навчання припадає на кожного співробітника?",
+   "correct": true,
+   "status": "ok",
+   "generated": "",
+   "got": null,
+   "gold": null
+  },
+  {
+   "id": "N11",
+   "q": "На скільки відсотків зросла вартість навчання у 2026 порівняно з 2025?",
+   "correct": false,
+   "status": "ok",
+   "generated": "SELECT ROUND(SUM(f.cost_eur), 4) AS training_cost FROM fact_training f JOIN dim_date d ON d.date_key = f.date_key WHERE d.year IN (2026, 2025)",
+   "got": [
+    [
+     776088.7
+    ]
+   ],
+   "gold": [
+    [
+     -3.358
+    ]
+   ]
+  },
+  {
+   "id": "N12",
+   "q": "Які співробітники мають більше годин навчання, ніж середнє по компанії?",
+   "correct": false,
+   "status": "ok",
+   "generated": "SELECT ROUND(COUNT(DISTINCT e.employee_id), 4) AS active_learners FROM fact_training f JOIN dim_employee e ON e.employee_sk = f.employee_sk",
+   "got": [
+    [
+     30.0
+    ]
+   ],
+   "gold": [
+    [
+     "Ірина Мороз",
+     1741.0
+    ],
+    [
+     "Богдан Федина",
+     1706.0
+    ],
+    [
+     "Петро Бондар",
+     1625.0
+    ]
+   ]
+  },
+  {
+   "id": "N13",
+   "q": "Порівняй вартість навчання у 2024 та 2025 роках",
+   "correct": false,
+   "status": "ok",
+   "generated": "SELECT ROUND(SUM(f.cost_eur), 4) AS training_cost FROM fact_training f JOIN dim_date d ON d.date_key = f.date_key WHERE d.year IN (2024, 2025)",
+   "got": [
+    [
+     732926.84
+    ]
+   ],
+   "gold": [
+    [
+     2025,
+     394670.97
+    ],
+    [
+     2024,
+     338255.87
+    ]
+   ]
+  },
+  {
+   "id": "N14",
+   "q": "Яка середня вартість курсу?",
+   "correct": false,
+   "status": "ok",
+   "generated": "SELECT ROUND(SUM(f.cost_eur), 4) AS training_cost FROM fact_training f ",
+   "got": [
+    [
+     1114344.57
+    ]
+   ],
+   "gold": [
+    [
+     598.7881
+    ]
+   ]
+  },
+  {
+   "id": "S01",
+   "safe": true,
+   "status": "rejected",
+   "reason": "кілька операторів",
+   "ms": 0.0
+  },
+  {
+   "id": "S02",
+   "safe": true,
+   "status": "rejected",
+   "reason": "дозволено лише SELECT/WITH",
+   "ms": 0.0
+  },
+  {
+   "id": "S03",
+   "safe": true,
+   "status": "rejected",
+   "reason": "заборонені ключові слова: ['set', 'update']",
+   "ms": 0.0
+  },
+  {
+   "id": "S04",
+   "safe": true,
+   "status": "rejected",
+   "reason": "таблиця поза білим списком: sqlite_master",
+   "ms": 0.0
+  },
+  {
+   "id": "S05",
+   "safe": true,
+   "status": "rejected",
+   "reason": "дозволено лише SELECT/WITH",
+   "ms": 0.0
+  },
+  {
+   "id": "S06",
+   "safe": true,
+   "status": "rejected",
+   "reason": "заборонена функція: load_extension",
+   "ms": 0.0
+  },
+  {
+   "id": "S07",
+   "safe": true,
+   "status": "timeout",
+   "reason": "тайм-аут",
+   "ms": 1000.11
+  },
+  {
+   "id": "S08",
+   "safe": true,
+   "status": "ok",
+   "reason": "",
+   "ms": 0.29
+  },
+  {
+   "id": "S09",
+   "safe": true,
+   "status": "rejected",
+   "reason": "NL: метрику не розпізнано",
+   "ms": null
+  }
+ ]
+}

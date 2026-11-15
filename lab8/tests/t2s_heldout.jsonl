@@ -1,0 +1,4 @@
+{"id": "H01", "difficulty": "easy", "question": "Скільки кандидатів у графі?", "gold_sparql": "SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE { ?c a/rdfs:subClassOf* hr:Candidate }", "gold_rows": 1}
+{"id": "H02", "difficulty": "medium", "question": "Хто має найвищу продуктивність і яка вона?", "gold_sparql": "SELECT ?name ?s WHERE { ?e hr:fullName ?name ; hr:productivityScore ?s } ORDER BY DESC(?s) LIMIT 1", "gold_rows": 1}
+{"id": "H03", "difficulty": "medium", "question": "Скільки співробітників обіймають посаду «Python-розробник»?", "gold_sparql": "SELECT (COUNT(DISTINCT ?e) AS ?n) WHERE { ?e hr:occupies ?p . ?p hr:positionTitle ?t . FILTER(STR(?t) = \"Python-розробник\") }", "gold_rows": 1}
+{"id": "H04", "difficulty": "easy", "question": "Хто підпорядкований безпосередньо Олені Коваль?", "gold_sparql": "SELECT ?name WHERE { ?e hr:directManager hr:olena ; hr:fullName ?name }", "gold_rows": 10}

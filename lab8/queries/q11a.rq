@@ -1,0 +1,10 @@
+# id: q11a
+# CQ: Скільки пар «співробітник з низькою оцінкою — співробітник з високою оцінкою» на одній посаді? (повільний варіант)
+# construct: SELECT + COUNT (FILTER наприкінці, декартів добуток)
+# interp: Спершу будуються всі пари співробітників, і лише потім FILTER відсіює зайве.
+PREFIX hr: <http://example.org/hr#>
+SELECT (COUNT(*) AS ?pairs) WHERE {
+  ?a hr:occupies ?pa ; hr:productivityScore ?sa .
+  ?b hr:occupies ?pb ; hr:productivityScore ?sb .
+  FILTER(?pa = ?pb && ?sa < 5 && ?sb >= 8)
+}

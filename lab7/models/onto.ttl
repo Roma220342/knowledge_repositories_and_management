@@ -1,0 +1,690 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix esco: <http://data.europa.eu/esco/model#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix hr: <http://example.org/hr#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/hr> a owl:Ontology ;
+    hr:trustStatus "draft-verified (V2 reasoner HermiT, V4 CQ-тести; V3 — перевірка автором)" ;
+    dcterms:created "2026-10-14"^^xsd:date ;
+    dcterms:creator "Дячук Роман, ФЕІ-42" ;
+    dcterms:source "лекція 7; ЛР 4 (таксономія); ЛР 6 (карта v2, triples_final.csv); Guarino & Welty (2002)" ;
+    dcterms:title "Онтологія предметної області «Управління персоналом»"@uk ;
+    rdfs:comment "Результат ЛР 7. Зовнішні словники підключено через skos:closeMatch/exactMatch (FOAF, W3C ORG, schema.org, ESCO)."@uk ;
+    owl:versionInfo "1.0.0" .
+
+hr:Attestation a owl:Class ;
+    rdfs:label "Атестація"@uk ;
+    rdfs:comment "Оцінювання, що завершується формальним висновком про відповідність співробітника посаді."@uk ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom hr:Competence ;
+            owl:onProperty hr:evaluates ],
+        hr:Appraisal .
+
+hr:HighPerformer a owl:Class ;
+    rdfs:label "Співробітник із високою продуктивністю"@uk ;
+    rdfs:comment "Співробітник, продуктивність якого не нижча за 8 балів."@uk ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( hr:Employee [ a owl:Restriction ;
+                        owl:onProperty hr:productivityScore ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 8.0 ] ) ] ] ) ] .
+
+hr:LowPerformer a owl:Class ;
+    rdfs:label "Співробітник із низькою продуктивністю"@uk ;
+    rdfs:comment "Співробітник, продуктивність якого нижча за 5 балів."@uk ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( hr:Employee [ a owl:Restriction ;
+                        owl:onProperty hr:productivityScore ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:maxExclusive 5.0 ] ) ] ] ) ] .
+
+hr:ManagedEmployee a owl:Class ;
+    rdfs:label "Підпорядкований співробітник"@uk ;
+    rdfs:comment "Співробітник, що має безпосереднього керівника."@uk ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( hr:Employee [ a owl:Restriction ;
+                        owl:onProperty hr:directManager ;
+                        owl:someValuesFrom hr:Manager ] ) ] .
+
+hr:TrainedEmployee a owl:Class ;
+    rdfs:label "Співробітник, що пройшов навчання"@uk ;
+    rdfs:comment "Співробітник, який завершив принаймні один курс навчання."@uk ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( hr:Employee [ a owl:Restriction ;
+                        owl:onProperty hr:completedCourse ;
+                        owl:someValuesFrom hr:Course ] ) ] .
+
+hr:appliesRule a owl:ObjectProperty ;
+    rdfs:label "застосовує"@uk ;
+    rdfs:domain hr:Manager ;
+    rdfs:range hr:DecisionRule .
+
+hr:concernsEmployee a owl:ObjectProperty ;
+    rdfs:label "стосується співробітника"@uk ;
+    rdfs:domain hr:Event ;
+    rdfs:range hr:Employee .
+
+hr:courseHours a owl:DatatypeProperty ;
+    rdfs:label "тривалість курсу, год"@uk ;
+    rdfs:domain hr:Course ;
+    rdfs:range xsd:integer .
+
+hr:courseTitle a owl:DatatypeProperty ;
+    rdfs:label "назва курсу"@uk ;
+    rdfs:domain hr:Course ;
+    rdfs:range xsd:string .
+
+hr:decisionAbout a owl:ObjectProperty ;
+    rdfs:label "стосується співробітника"@uk ;
+    rdfs:domain hr:HRDecision ;
+    rdfs:range hr:Employee .
+
+hr:employeeId a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "табельний номер"@uk ;
+    rdfs:domain hr:Employee ;
+    rdfs:range xsd:string .
+
+hr:evaluatesMetric a owl:ObjectProperty ;
+    rdfs:label "оцінює показник"@uk ;
+    rdfs:domain hr:Appraisal ;
+    rdfs:range hr:Metric .
+
+hr:fromState a owl:ObjectProperty ;
+    rdfs:label "початковий стан"@uk ;
+    rdfs:domain hr:SituationTemplate ;
+    rdfs:range hr:State .
+
+hr:fullName a owl:DatatypeProperty ;
+    rdfs:label "ПІБ"@uk ;
+    rdfs:domain hr:Person ;
+    rdfs:range xsd:string ;
+    skos:exactMatch foaf:name .
+
+hr:guard a owl:DatatypeProperty ;
+    rdfs:label "умова (guard)"@uk ;
+    rdfs:domain hr:SituationTemplate ;
+    rdfs:range xsd:string .
+
+hr:hasCompetence a owl:ObjectProperty ;
+    rdfs:label "має компетенцію"@uk ;
+    rdfs:domain hr:Employee ;
+    rdfs:range hr:Competence .
+
+hr:hireDate a owl:DatatypeProperty ;
+    rdfs:label "дата прийому"@uk ;
+    rdfs:domain hr:Employee ;
+    rdfs:range xsd:dateTime .
+
+hr:inState a owl:ObjectProperty ;
+    rdfs:label "перебуває у стані"@uk ;
+    rdfs:domain hr:Person ;
+    rdfs:range hr:State .
+
+hr:kpiTarget a owl:DatatypeProperty ;
+    rdfs:label "цільове значення KPI"@uk ;
+    rdfs:domain hr:KPI ;
+    rdfs:range xsd:decimal .
+
+hr:lowers a owl:ObjectProperty ;
+    rdfs:label "знижує"@uk ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( hr:Training hr:Motivation hr:Onboarding hr:HRDecision hr:Reward hr:Course ) ] ;
+    rdfs:range hr:Metric ;
+    rdfs:subPropertyOf hr:affects .
+
+hr:observedBy a owl:ObjectProperty ;
+    rdfs:label "спостерігається джерелом"@uk ;
+    rdfs:domain hr:SituationTemplate ;
+    rdfs:range hr:Sensor .
+
+hr:occurredOn a owl:DatatypeProperty ;
+    rdfs:label "дата події"@uk ;
+    rdfs:domain hr:Event ;
+    rdfs:range xsd:dateTime .
+
+hr:onEvent a owl:ObjectProperty ;
+    rdfs:label "подія"@uk ;
+    rdfs:domain hr:SituationTemplate ;
+    rdfs:range hr:Event .
+
+hr:performsAction a owl:ObjectProperty ;
+    rdfs:label "виконує дію"@uk ;
+    rdfs:domain hr:SituationTemplate ;
+    rdfs:range hr:Action .
+
+hr:planFor a owl:ObjectProperty ;
+    rdfs:label "план для"@uk ;
+    rdfs:domain hr:TrainingPlan ;
+    rdfs:range hr:Employee .
+
+hr:positionTitle a owl:DatatypeProperty ;
+    rdfs:label "назва посади"@uk ;
+    rdfs:domain hr:Position ;
+    rdfs:range xsd:string .
+
+hr:raises a owl:ObjectProperty ;
+    rdfs:label "підвищує"@uk ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( hr:Training hr:Motivation hr:Onboarding hr:HRDecision hr:Reward hr:Course ) ] ;
+    rdfs:range hr:Metric ;
+    rdfs:subPropertyOf hr:affects .
+
+hr:reportedBy a owl:ObjectProperty ;
+    rdfs:label "зафіксовано джерелом"@uk ;
+    rdfs:domain hr:Event ;
+    rdfs:range hr:Sensor .
+
+hr:ruleLeadsTo a owl:ObjectProperty ;
+    rdfs:label "призводить до рішення"@uk ;
+    rdfs:domain hr:DecisionRule ;
+    rdfs:range hr:HRDecision .
+
+hr:salaryAmount a owl:DatatypeProperty ;
+    rdfs:label "розмір зарплати"@uk ;
+    rdfs:domain hr:Salary ;
+    rdfs:range xsd:decimal .
+
+hr:salaryGrade a owl:DatatypeProperty ;
+    rdfs:label "тарифний розряд"@uk ;
+    rdfs:domain hr:Position ;
+    rdfs:range xsd:integer .
+
+hr:storesDocument a owl:ObjectProperty ;
+    rdfs:label "зберігає документ"@uk ;
+    rdfs:domain hr:InformationSystem ;
+    rdfs:range hr:Document .
+
+hr:subProcessOf a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "є підпроцесом"@uk ;
+    rdfs:domain hr:HRProcess ;
+    rdfs:range hr:HRProcess ;
+    owl:inverseOf hr:hasSubProcess .
+
+hr:submittedResume a owl:ObjectProperty ;
+    rdfs:label "подав резюме"@uk ;
+    rdfs:domain hr:Candidate ;
+    rdfs:range hr:Resume .
+
+hr:tenureMonths a owl:DatatypeProperty ;
+    rdfs:label "стаж, місяців"@uk ;
+    rdfs:domain hr:Employee ;
+    rdfs:range xsd:integer .
+
+hr:toState a owl:ObjectProperty ;
+    rdfs:label "новий стан"@uk ;
+    rdfs:domain hr:SituationTemplate ;
+    rdfs:range hr:State .
+
+hr:trustStatus a owl:AnnotationProperty .
+
+hr:turnoverRate a owl:DatatypeProperty ;
+    rdfs:label "рівень плинності, %"@uk ;
+    rdfs:domain hr:Turnover ;
+    rdfs:range xsd:decimal .
+
+hr:ActiveState a owl:Class ;
+    rdfs:label "Активний стан"@uk ;
+    rdfs:comment "Стан співробітника, що працює на постійній основі."@uk ;
+    rdfs:subClassOf hr:State .
+
+hr:AssignCourseAction a owl:Class ;
+    rdfs:label "Призначення курсу"@uk ;
+    rdfs:comment "Дія призначення співробітнику курсу навчання."@uk ;
+    rdfs:subClassOf hr:Action .
+
+hr:Bonus a owl:Class ;
+    rdfs:label "Премія"@uk ;
+    rdfs:comment "Винагорода, що виплачується додатково за досягнуті результати."@uk ;
+    rdfs:subClassOf hr:Reward .
+
+hr:CandidateState a owl:Class ;
+    rdfs:label "Стан кандидата"@uk ;
+    rdfs:comment "Стан особи, яка перебуває на етапі відбору."@uk ;
+    rdfs:subClassOf hr:State .
+
+hr:CloseRecordAction a owl:Class ;
+    rdfs:label "Закриття кадрового запису"@uk ;
+    rdfs:comment "Дія завершення ведення активного кадрового запису."@uk ;
+    rdfs:subClassOf hr:Action .
+
+hr:ConfirmEmploymentAction a owl:Class ;
+    rdfs:label "Підтвердження працевлаштування"@uk ;
+    rdfs:comment "Дія переведення співробітника на постійну роботу."@uk ;
+    rdfs:subClassOf hr:Action .
+
+hr:CourseCompletedEvent a owl:Class ;
+    rdfs:label "Завершення курсу"@uk ;
+    rdfs:comment "Подія, що фіксує завершення співробітником курсу навчання."@uk ;
+    rdfs:subClassOf hr:Event .
+
+hr:Dismissal a owl:Class ;
+    rdfs:label "Звільнення"@uk ;
+    rdfs:comment "Кадрове рішення про припинення трудових відносин."@uk ;
+    rdfs:subClassOf hr:HRDecision .
+
+hr:DismissedState a owl:Class ;
+    rdfs:label "Стан звільнення"@uk ;
+    rdfs:comment "Стан особи, трудові відносини з якою припинено."@uk ;
+    rdfs:subClassOf hr:State .
+
+hr:HRIS a owl:Class ;
+    rdfs:label "HRIS"@uk ;
+    rdfs:comment "Інформаційна система обліку кадрових даних і підтримки HR-процесів."@uk ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom hr:Employee ;
+            owl:onProperty hr:storesRecordOf ],
+        hr:InformationSystem .
+
+hr:HRISSensor a owl:Class ;
+    rdfs:label "Джерело HRIS"@uk ;
+    rdfs:comment "Джерело даних, що фіксує кадрові події в HRIS."@uk ;
+    rdfs:subClassOf hr:Sensor .
+
+hr:HardSkill a owl:Class ;
+    rdfs:label "Hard skills"@uk ;
+    rdfs:comment "Компетенція, яка є професійно-технічною та піддається вимірюванню."@uk ;
+    rdfs:subClassOf hr:Competence .
+
+hr:HireEvent a owl:Class ;
+    rdfs:label "Подія найму"@uk ;
+    rdfs:comment "Подія, що фіксує ухвалення рішення про прийом кандидата."@uk ;
+    rdfs:subClassOf hr:Event .
+
+hr:InitiateDismissalAction a owl:Class ;
+    rdfs:label "Ініціювання звільнення"@uk ;
+    rdfs:comment "Дія запуску процедури звільнення."@uk ;
+    rdfs:subClassOf hr:Action .
+
+hr:Interview a owl:Class ;
+    rdfs:label "Співбесіда"@uk ;
+    rdfs:comment "HR-процес розмови з кандидатом для оцінки його відповідності посаді."@uk ;
+    rdfs:subClassOf hr:HRProcess .
+
+hr:KPISensor a owl:Class ;
+    rdfs:label "Джерело KPI"@uk ;
+    rdfs:comment "Джерело даних, що фіксує значення KPI та продуктивності."@uk ;
+    rdfs:subClassOf hr:Sensor .
+
+hr:LMS a owl:Class ;
+    rdfs:label "LMS"@uk ;
+    rdfs:comment "Інформаційна система управління навчанням, що зберігає курси та результати їх проходження."@uk ;
+    rdfs:subClassOf hr:InformationSystem .
+
+hr:LMSSensor a owl:Class ;
+    rdfs:label "Джерело LMS"@uk ;
+    rdfs:comment "Джерело даних, що фіксує проходження навчальних курсів."@uk ;
+    rdfs:subClassOf hr:Sensor .
+
+hr:LowProductivityEvent a owl:Class ;
+    rdfs:label "Низька продуктивність"@uk ;
+    rdfs:comment "Подія, що фіксує нижчу за порогову продуктивність співробітника за квартал."@uk ;
+    rdfs:subClassOf hr:Event .
+
+hr:OnboardingState a owl:Class ;
+    rdfs:label "Стан адаптації"@uk ;
+    rdfs:comment "Стан нового співробітника в період адаптації."@uk ;
+    rdfs:subClassOf hr:State .
+
+hr:ProbationReviewEvent a owl:Class ;
+    rdfs:label "Підсумок випробувального терміну"@uk ;
+    rdfs:comment "Подія, що фіксує оцінку результатів випробувального терміну."@uk ;
+    rdfs:subClassOf hr:Event .
+
+hr:ProbationState a owl:Class ;
+    rdfs:label "Випробувальний термін"@uk ;
+    rdfs:comment "Стан співробітника в період випробування."@uk ;
+    rdfs:subClassOf hr:State .
+
+hr:Productivity a owl:Class ;
+    rdfs:label "Продуктивність"@uk ;
+    rdfs:comment "Показник відношення результатів роботи співробітника до витрат часу та ресурсів."@uk ;
+    rdfs:subClassOf hr:Metric .
+
+hr:Promotion a owl:Class ;
+    rdfs:label "Підвищення"@uk ;
+    rdfs:comment "Кадрове рішення про переведення співробітника на вищу посаду."@uk ;
+    rdfs:subClassOf hr:HRDecision .
+
+hr:Recruiter a owl:Class ;
+    rdfs:label "Рекрутер"@uk ;
+    rdfs:comment "Співробітник, що здійснює пошук і попередній відбір кандидатів."@uk ;
+    rdfs:subClassOf hr:Employee .
+
+hr:ResignationRequestEvent a owl:Class ;
+    rdfs:label "Заява про звільнення"@uk ;
+    rdfs:comment "Подія, що фіксує подання співробітником заяви про звільнення."@uk ;
+    rdfs:subClassOf hr:Event .
+
+hr:SoftSkill a owl:Class ;
+    rdfs:label "Soft skills"@uk ;
+    rdfs:comment "Компетенція, яка є поведінковою та комунікаційною."@uk ;
+    rdfs:subClassOf hr:Competence .
+
+hr:StartOnboardingAction a owl:Class ;
+    rdfs:label "Запуск онбордингу"@uk ;
+    rdfs:comment "Дія початку адаптації нового співробітника."@uk ;
+    rdfs:subClassOf hr:Action .
+
+hr:UnderReviewState a owl:Class ;
+    rdfs:label "Стан розгляду"@uk ;
+    rdfs:comment "Стан співробітника, щодо якого розглядається кадрове рішення."@uk ;
+    rdfs:subClassOf hr:State .
+
+hr:UpdateCompetenceAction a owl:Class ;
+    rdfs:label "Оновлення компетенції"@uk ;
+    rdfs:comment "Дія оновлення рівня компетенції співробітника в HRIS."@uk ;
+    rdfs:subClassOf hr:Action .
+
+hr:candidateFor a owl:ObjectProperty ;
+    rdfs:label "претендує на"@uk ;
+    rdfs:domain hr:Candidate ;
+    rdfs:range hr:Position .
+
+hr:completedCourse a owl:ObjectProperty ;
+    rdfs:label "завершив курс"@uk ;
+    rdfs:domain hr:Employee ;
+    rdfs:range hr:Course .
+
+hr:evaluates a owl:ObjectProperty ;
+    rdfs:label "оцінює компетенцію"@uk ;
+    rdfs:domain hr:Appraisal ;
+    rdfs:range hr:Competence .
+
+hr:hasSubProcess a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "має підпроцес"@uk ;
+    rdfs:domain hr:HRProcess ;
+    rdfs:range hr:HRProcess .
+
+hr:includesCourse a owl:ObjectProperty ;
+    rdfs:label "включає курс"@uk ;
+    rdfs:domain hr:TrainingPlan ;
+    rdfs:range hr:Course .
+
+hr:isOccupiedBy a owl:ObjectProperty ;
+    rdfs:label "обіймається"@uk ;
+    rdfs:domain hr:Position ;
+    rdfs:range hr:Employee .
+
+hr:makesDecision a owl:ObjectProperty ;
+    rdfs:label "ухвалює"@uk ;
+    rdfs:domain hr:Manager ;
+    rdfs:range hr:HRDecision .
+
+hr:manages a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "керує"@uk ;
+    rdfs:domain hr:Manager ;
+    rdfs:range hr:Employee .
+
+hr:reportsTo a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "підпорядковується"@uk ;
+    rdfs:domain hr:Employee ;
+    rdfs:range hr:Manager ;
+    owl:inverseOf hr:manages ;
+    skos:closeMatch org:reportsTo .
+
+hr:requiresDocument a owl:ObjectProperty ;
+    rdfs:label "вимагає документ"@uk ;
+    rdfs:domain hr:Recruitment ;
+    rdfs:range hr:PositionProfile .
+
+hr:storesRecordOf a owl:ObjectProperty ;
+    rdfs:label "зберігає дані про"@uk ;
+    rdfs:domain hr:InformationSystem ;
+    rdfs:range hr:Employee .
+
+hr:KPI a owl:Class ;
+    rdfs:label "KPI"@uk ;
+    rdfs:comment "Показник, що кількісно вимірює досягнення цілі за визначеною шкалою."@uk ;
+    rdfs:subClassOf hr:Metric .
+
+hr:Recruitment a owl:Class ;
+    rdfs:label "Найм"@uk ;
+    rdfs:comment "HR-процес пошуку, відбору та прийняття на роботу нових співробітників."@uk ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hr:requiresDocument ;
+            owl:someValuesFrom hr:PositionProfile ],
+        hr:HRProcess .
+
+hr:Resume a owl:Class ;
+    rdfs:label "Резюме"@uk ;
+    rdfs:comment "Документ із відомостями кандидата про освіту, досвід і навички."@uk ;
+    rdfs:subClassOf hr:Document .
+
+hr:Salary a owl:Class ;
+    rdfs:label "Заробітна плата"@uk ;
+    rdfs:comment "Винагорода, що виплачується регулярно за виконану роботу."@uk ;
+    rdfs:subClassOf hr:Reward .
+
+hr:Turnover a owl:Class ;
+    rdfs:label "Плинність кадрів"@uk ;
+    rdfs:comment "Показник частки співробітників, що залишили організацію протягом періоду."@uk ;
+    rdfs:subClassOf hr:Metric .
+
+hr:affects a owl:ObjectProperty ;
+    rdfs:label "впливає на"@uk ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( hr:Training hr:Motivation hr:Onboarding hr:HRDecision hr:Reward hr:Course ) ] ;
+    rdfs:range hr:Metric .
+
+hr:directManager a owl:ObjectProperty ;
+    rdfs:label "безпосередній керівник"@uk ;
+    rdfs:domain hr:Employee ;
+    rdfs:range hr:Manager ;
+    rdfs:subPropertyOf hr:reportsTo .
+
+hr:occupies a owl:ObjectProperty ;
+    rdfs:label "займає"@uk ;
+    rdfs:domain hr:Employee ;
+    rdfs:range hr:Position ;
+    owl:inverseOf hr:isOccupiedBy .
+
+hr:productivityScore a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "оцінка продуктивності"@uk ;
+    rdfs:domain hr:Employee ;
+    rdfs:range xsd:decimal .
+
+hr:requiresCompetence a owl:ObjectProperty ;
+    rdfs:label "вимагає компетенцію"@uk ;
+    rdfs:domain hr:Position ;
+    rdfs:range hr:Competence .
+
+hr:Candidate a owl:Class ;
+    rdfs:label "Кандидат"@uk ;
+    rdfs:comment "Особа, яка претендує на вакантну посаду, але ще не уклала трудовий договір."@uk ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hr:candidateFor ;
+            owl:someValuesFrom hr:Position ],
+        hr:Person .
+
+hr:DecisionRule a owl:Class ;
+    rdfs:label "Правило прийняття рішень"@uk ;
+    rdfs:comment "Формалізована умова «якщо — то», за якою ухвалюється кадрове рішення."@uk .
+
+hr:PositionProfile a owl:Class ;
+    rdfs:label "Профіль посади"@uk ;
+    rdfs:comment "Документ, що описує обов'язки, вимоги та компетенції посади."@uk ;
+    rdfs:subClassOf hr:Document .
+
+hr:TrainingPlan a owl:Class ;
+    rdfs:label "Навчальний план"@uk ;
+    rdfs:comment "Документ із переліком курсів і строків навчання співробітника."@uk ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hr:Course ;
+            owl:onProperty hr:includesCourse ],
+        hr:Document .
+
+hr:Appraisal a owl:Class ;
+    rdfs:label "Оцінювання"@uk ;
+    rdfs:comment "HR-процес визначення результатів і компетенцій співробітників."@uk ;
+    rdfs:subClassOf hr:HRProcess .
+
+hr:Motivation a owl:Class ;
+    rdfs:label "Мотивація"@uk ;
+    rdfs:comment "HR-процес формування стимулів до результативної праці."@uk ;
+    rdfs:subClassOf hr:HRProcess .
+
+hr:Onboarding a owl:Class ;
+    rdfs:label "Онбординг"@uk ;
+    rdfs:comment "HR-процес адаптації нового співробітника в організації."@uk ;
+    rdfs:subClassOf hr:HRProcess .
+
+hr:Training a owl:Class ;
+    rdfs:label "Навчання та розвиток"@uk ;
+    rdfs:comment "HR-процес підвищення компетенцій співробітників."@uk ;
+    rdfs:subClassOf hr:HRProcess .
+
+hr:Document a owl:Class ;
+    rdfs:label "Документ"@uk ;
+    rdfs:comment "Зафіксований носій відомостей, що використовується в кадровому процесі."@uk .
+
+hr:InformationSystem a owl:Class ;
+    rdfs:label "Інформаційна система"@uk ;
+    rdfs:comment "Програмна система обліку та обробки кадрових даних."@uk .
+
+hr:Person a owl:Class ;
+    rdfs:label "Особа"@uk ;
+    rdfs:comment "Людина, що взаємодіє з організацією у сфері праці."@uk ;
+    skos:exactMatch foaf:Person .
+
+hr:Reward a owl:Class ;
+    rdfs:label "Винагорода"@uk ;
+    rdfs:comment "Грошова виплата або інша компенсація за виконану працю."@uk .
+
+hr:Sensor a owl:Class ;
+    rdfs:label "Джерело даних"@uk ;
+    rdfs:comment "Система, що регулярно фіксує показники та генерує події."@uk .
+
+hr:SituationTemplate a owl:Class ;
+    rdfs:label "Шаблон ситуації"@uk ;
+    rdfs:comment "Формалізований опис переходу між станами за подією та умовою."@uk .
+
+hr:Action a owl:Class ;
+    rdfs:label "Дія"@uk ;
+    rdfs:comment "Операція, що виконується в HR-процесі у відповідь на подію."@uk .
+
+hr:Manager a owl:Class ;
+    rdfs:label "Керівник"@uk ;
+    rdfs:comment "Співробітник, який відповідає за підрозділ і ухвалює кадрові рішення щодо підлеглих."@uk ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom hr:HRDecision ;
+            owl:onProperty hr:makesDecision ],
+        hr:Employee .
+
+hr:Metric a owl:Class ;
+    rdfs:label "Показник"@uk ;
+    rdfs:comment "Кількісна характеристика стану чи результату HR-діяльності."@uk .
+
+hr:Competence a owl:Class ;
+    rdfs:label "Компетенція"@uk ;
+    rdfs:comment "Здатність виконувати завдання, що поєднує знання, навички та поведінкові ознаки."@uk ;
+    skos:closeMatch esco:Skill .
+
+hr:Course a owl:Class ;
+    rdfs:label "Курс навчання"@uk ;
+    rdfs:comment "Структурований навчальний модуль, що розвиває визначені компетенції."@uk ;
+    skos:exactMatch schema1:Course .
+
+hr:Event a owl:Class ;
+    rdfs:label "Подія"@uk ;
+    rdfs:comment "Факт, що фіксується в HR-системах і може змінити стан співробітника."@uk .
+
+hr:HRDecision a owl:Class ;
+    rdfs:label "Кадрове рішення"@uk ;
+    rdfs:comment "Управлінське рішення щодо прийому, переміщення, винагороди чи звільнення працівника."@uk .
+
+hr:Position a owl:Class ;
+    rdfs:label "Посада"@uk ;
+    rdfs:comment "Штатна одиниця організаційної структури з визначеними обов'язками та вимогами до виконавця."@uk ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hr:requiresCompetence ;
+            owl:someValuesFrom hr:Competence ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hr:Competence ;
+            owl:onProperty hr:requiresCompetence ] ;
+    skos:closeMatch org:Post .
+
+hr:State a owl:Class ;
+    rdfs:label "Стан"@uk ;
+    rdfs:comment "Сукупність умов, що характеризує перебування співробітника чи кандидата в HR-процесі."@uk .
+
+hr:HRProcess a owl:Class ;
+    rdfs:label "HR-процес"@uk ;
+    rdfs:comment "Повторювана послідовність дій у межах управління персоналом."@uk ;
+    skos:relatedMatch org:OrganizationalUnit .
+
+hr:Employee a owl:Class ;
+    rdfs:label "Співробітник"@uk ;
+    rdfs:comment "Особа, яка перебуває в трудових відносинах з організацією."@uk ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hr:occupies ;
+            owl:someValuesFrom hr:Position ],
+        [ a owl:Restriction ;
+            owl:onClass hr:Position ;
+            owl:onProperty hr:occupies ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hr:Manager ;
+            owl:onProperty hr:directManager ],
+        hr:Person ;
+    skos:broadMatch schema1:Person .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hr:Manager hr:Recruiter ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hr:Productivity hr:Turnover hr:KPI ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hr:SoftSkill hr:HardSkill ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hr:ConfirmEmploymentAction hr:InitiateDismissalAction hr:StartOnboardingAction hr:AssignCourseAction hr:UpdateCompetenceAction hr:CloseRecordAction ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hr:Resume hr:PositionProfile hr:TrainingPlan ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hr:Promotion hr:Dismissal ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hr:HRIS hr:LMS ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hr:Employee hr:Candidate ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hr:KPISensor hr:LMSSensor hr:HRISSensor ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hr:Recruitment hr:Appraisal hr:Training hr:Motivation hr:Interview hr:Onboarding ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hr:Person hr:Position hr:Competence hr:HRProcess hr:HRDecision hr:DecisionRule hr:Metric hr:Reward hr:Document hr:Course hr:InformationSystem hr:Event hr:State hr:Action hr:Sensor hr:SituationTemplate ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hr:CandidateState hr:OnboardingState hr:ProbationState hr:ActiveState hr:UnderReviewState hr:DismissedState ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hr:Salary hr:Bonus ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hr:HireEvent hr:ProbationReviewEvent hr:LowProductivityEvent hr:CourseCompletedEvent hr:ResignationRequestEvent ) .
+

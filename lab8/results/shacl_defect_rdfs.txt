@@ -1,0 +1,35 @@
+Validation Report
+Conforms: False
+Results (5):
+Constraint Violation in MaxInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MaxInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:decimal ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:maxInclusive Literal("10", datatype=xsd:integer) ; sh:message Literal("productivityScore: десяткове число в діапазоні 0..10") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:minInclusive Literal("0", datatype=xsd:integer) ; sh:path hr:productivityScore ]
+	Focus Node: ns1:petro
+	Value Node: Literal("12.5", datatype=xsd:decimal)
+	Result Path: hr:productivityScore
+	Message: productivityScore: десяткове число в діапазоні 0..10
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:integer ; sh:maxInclusive Literal("10", datatype=xsd:integer) ; sh:message Literal("salaryGrade: ціле число 1..10") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:minInclusive Literal("1", datatype=xsd:integer) ; sh:path hr:salaryGrade ]
+	Focus Node: ns1:pythonProgramming
+	Result Path: hr:salaryGrade
+	Message: salaryGrade: ціле число 1..10
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:string ; sh:message Literal("positionTitle обов'язкове") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path hr:positionTitle ]
+	Focus Node: ns1:pythonProgramming
+	Result Path: hr:positionTitle
+	Message: positionTitle обов'язкове
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("посада має вимагати хоча б одну компетенцію") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path hr:requiresCompetence ]
+	Focus Node: ns1:pythonProgramming
+	Result Path: hr:requiresCompetence
+	Message: посада має вимагати хоча б одну компетенцію
+Constraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:string ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("employeeId: рівно одне значення за шаблоном E-NNN") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path hr:employeeId ; sh:pattern Literal("^E-[0-9]{3,4}$") ]
+	Focus Node: ns1:andriy
+	Value Node: Literal("EMP-3", datatype=xsd:string)
+	Result Path: hr:employeeId
+	Message: employeeId: рівно одне значення за шаблоном E-NNN

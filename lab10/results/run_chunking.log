@@ -1,0 +1,4 @@
+fixed_60_15 {'recall5_all37': 0.928, 'ndcg10_all37': 0.86, 'n_chunks': 89, 'avg_chunk_words': 56.3, 'recall5': 0.95, 'mrr': 0.95, 'ctx_words': 58.2, 'build_s': 0.278}
+by_heading {'recall5_all37': 0.932, 'ndcg10_all37': 0.866, 'n_chunks': 105, 'avg_chunk_words': 39.8, 'recall5': 1.0, 'mrr': 1.0, 'ctx_words': 40.6, 'build_s': 0.318}
+hierarchical {'recall5_all37': 0.928, 'ndcg10_all37': 0.83, 'n_chunks': 210, 'avg_chunk_words': 19.0, 'recall5': 1.0, 'mrr': 0.85, 'ctx_words': 39.9, 'build_s': 0.444}
+semantic {'recall5_all37': 0.874, 'ndcg10_all37': 0.814, 'n_chunks': 167, 'avg_chunk_words': 23.9, 'recall5': 0.95, 'mrr': 0.9, 'ctx_words': 27.7, 'build_s': 0.43}

@@ -1,0 +1,45 @@
+@prefix hr: <http://example.org/hr#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode hr:andriy ;
+            sh:resultMessage "employeeId: рівно одне значення за шаблоном E-NNN" ;
+            sh:resultPath hr:employeeId ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:PatternConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:string ;
+                    sh:maxCount 1 ;
+                    sh:message "employeeId: рівно одне значення за шаблоном E-NNN" ;
+                    sh:minCount 1 ;
+                    sh:path hr:employeeId ;
+                    sh:pattern "^E-[0-9]{3,4}$" ] ;
+            sh:value "EMP-3"^^xsd:string ],
+        [ a sh:ValidationResult ;
+            sh:focusNode hr:petro ;
+            sh:resultMessage "productivityScore: десяткове число в діапазоні 0..10" ;
+            sh:resultPath hr:productivityScore ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MaxInclusiveConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:decimal ;
+                    sh:maxCount 1 ;
+                    sh:maxInclusive 10 ;
+                    sh:message "productivityScore: десяткове число в діапазоні 0..10" ;
+                    sh:minCount 1 ;
+                    sh:minInclusive 0 ;
+                    sh:path hr:productivityScore ] ;
+            sh:value 12.5 ],
+        [ a sh:ValidationResult ;
+            sh:focusNode hr:candidate1 ;
+            sh:resultMessage "candidateFor: посада класу Position" ;
+            sh:resultPath hr:candidateFor ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape [ sh:class hr:Position ;
+                    sh:message "candidateFor: посада класу Position" ;
+                    sh:minCount 1 ;
+                    sh:path hr:candidateFor ] ;
+            sh:value hr:pythonProgramming ] .
+

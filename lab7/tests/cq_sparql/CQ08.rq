@@ -1,0 +1,7 @@
+# CQ08: Які курси входять до навчального плану Петра?
+# Очікуваний результат: [('negotiationCourse',), ('pythonAdvancedCourse',)]
+PREFIX hr: <http://example.org/hr#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?c WHERE { hr:trainingPlanPetro hr:includesCourse ?c }

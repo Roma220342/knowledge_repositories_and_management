@@ -1,0 +1,24 @@
+Validation Report
+Conforms: False
+Results (3):
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:class hr:Position ; sh:message Literal("candidateFor: посада класу Position") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path hr:candidateFor ]
+	Focus Node: ns1:candidate1
+	Value Node: ns1:pythonProgramming
+	Result Path: hr:candidateFor
+	Message: candidateFor: посада класу Position
+Constraint Violation in MaxInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MaxInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:decimal ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:maxInclusive Literal("10", datatype=xsd:integer) ; sh:message Literal("productivityScore: десяткове число в діапазоні 0..10") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:minInclusive Literal("0", datatype=xsd:integer) ; sh:path hr:productivityScore ]
+	Focus Node: ns1:petro
+	Value Node: Literal("12.5", datatype=xsd:decimal)
+	Result Path: hr:productivityScore
+	Message: productivityScore: десяткове число в діапазоні 0..10
+Constraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:string ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("employeeId: рівно одне значення за шаблоном E-NNN") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path hr:employeeId ; sh:pattern Literal("^E-[0-9]{3,4}$") ]
+	Focus Node: ns1:andriy
+	Value Node: Literal("EMP-3", datatype=xsd:string)
+	Result Path: hr:employeeId
+	Message: employeeId: рівно одне значення за шаблоном E-NNN

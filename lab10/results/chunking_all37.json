@@ -1,0 +1,22 @@
+{
+ "fixed_60_15": {
+  "recall5": 0.928,
+  "mrr": 0.876,
+  "ndcg10": 1.059
+ },
+ "by_heading": {
+  "recall5": 0.932,
+  "mrr": 0.88,
+  "ndcg10": 0.866
+ },
+ "hierarchical": {
+  "recall5": 0.928,
+  "mrr": 0.834,
+  "ndcg10": 1.014
+ },
+ "semantic": {
+  "recall5": 0.874,
+  "mrr": 0.8,
+  "ndcg10": 0.814
+ }
+}

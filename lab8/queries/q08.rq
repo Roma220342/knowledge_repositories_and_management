@@ -1,0 +1,6 @@
+# id: q08
+# CQ: Який граф зв'язків «керівник керує підлеглим» можна отримати з directManager?
+# construct: CONSTRUCT
+# interp: Будує нові триплети hr:manages (обернена властивість), які можна завантажити окремим графом.
+PREFIX hr: <http://example.org/hr#>
+CONSTRUCT { ?m hr:manages ?e } WHERE { ?e hr:directManager ?m }

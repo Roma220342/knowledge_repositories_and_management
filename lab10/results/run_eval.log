@@ -1,0 +1,7 @@
+BM25 {'recall5': 0.842, 'recall10': 0.856, 'mrr': 0.853, 'ndcg10': 0.823, 'lat_ms': 0.13, 'lat_p95_ms': 0.18, 'recall5_ci95': [0.734, 0.932]}
+Dense (LSA-word) {'recall5': 0.842, 'recall10': 0.883, 'mrr': 0.792, 'ndcg10': 0.784, 'lat_ms': 1.03, 'lat_p95_ms': 1.08, 'recall5_ci95': [0.734, 0.932]}
+Hybrid (RRF k=60) {'recall5': 0.842, 'recall10': 0.869, 'mrr': 0.84, 'ndcg10': 0.817, 'lat_ms': 1.26, 'lat_p95_ms': 1.35, 'recall5_ci95': [0.734, 0.932]}
+Hybrid + rerank {'recall5': 0.838, 'recall10': 0.905, 'mrr': 0.825, 'ndcg10': 0.829, 'lat_ms': 5.05, 'lat_p95_ms': 5.19, 'recall5_ci95': [0.73, 0.928]}
+Dense (LSA-char) {'recall5': 0.851, 'recall10': 0.901, 'mrr': 0.757, 'ndcg10': 0.778, 'lat_ms': 2.16, 'lat_p95_ms': 2.24, 'recall5_ci95': [0.743, 0.946]}
+{'top1_answerable_mean': 0.459, 'top1_noanswer_mean': 0.167, 'threshold': 0.222, 'rejected_noans': 4, 'n_noans': 5, 'kept_answerable': 35, 'n_ans': 37}
+wins ['q24', 'q14', 'q01'] lose ['q16'] [(0.0, 0.67, 'q24'), (0.0, 0.67, 'q14'), (0.0, 0.5, 'q01'), (0.0, 0.08, 'q37'), (0.0, 0.02, 'q30'), (0.0, 0.0, 'q32')] [(-0.5, 'q16'), (-0.5, 'q25'), (-0.010964912280701754, 'q26')]

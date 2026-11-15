@@ -1,0 +1,416 @@
+[
+ {
+  "label": "health (без ключа)",
+  "method": "GET",
+  "url": "/health",
+  "status": 200,
+  "headers": {},
+  "body": {
+   "status": "ok",
+   "fragments": 210,
+   "model": "extractive-v1"
+  }
+ },
+ {
+  "label": "ask, роль viewer (confidential недоступний)",
+  "method": "POST",
+  "url": "/ask",
+  "status": 200,
+  "headers": {},
+  "body": {
+   "answer": "Зміни вносять з урахуванням нових технологій і результатів тестування компетенцій. [D01-p02]",
+   "sources": [
+    {
+     "id": "D01-p02",
+     "title": "Модель компетенцій розробника програмного забезпечення",
+     "sensitivity": "public",
+     "date": "2025-03-12"
+    },
+    {
+     "id": "D21-p05",
+     "title": "Онтологія HR-знань Domain Knowledge Hub",
+     "sensitivity": "public",
+     "date": "2026-02-11"
+    },
+    {
+     "id": "D01-p03",
+     "title": "Модель компетенцій розробника програмного забезпечення",
+     "sensitivity": "public",
+     "date": "2025-03-12"
+    }
+   ],
+   "citations_valid": true,
+   "blocked": null,
+   "usage": {
+    "prompt_tokens": 598,
+    "completion_tokens": 31
+   },
+   "latency_ms": 8.848,
+   "role": "viewer"
+  }
+ },
+ {
+  "label": "ask, роль hr",
+  "method": "POST",
+  "url": "/ask",
+  "status": 200,
+  "headers": {},
+  "body": {
+   "answer": "Додатково враховуються результати тестування компетенцій, оцінка 360 градусів і висновок керівника підрозділу про лідерський потенціал кандидата. [D03-p04] До групи ризику віднесено 41 працівника, чиї результати нижчі за прохідний бал і продуктивність менша за 6 балів. [D18-p07]",
+   "sources": [
+    {
+     "id": "D03-p04",
+     "title": "Політика кадрового резерву та просування",
+     "sensitivity": "internal",
+     "date": "2024-11-05"
+    },
+    {
+     "id": "D18-p07",
+     "title": "Звіт про результати тестування компетенцій, III квартал 2025",
+     "sensitivity": "confidential",
+     "date": "2025-10-20"
+    },
+    {
+     "id": "D18-p01",
+     "title": "Звіт про результати тестування компетенцій, III квартал 2025",
+     "sensitivity": "confidential",
+     "date": "2025-10-20"
+    }
+   ],
+   "citations_valid": true,
+   "blocked": null,
+   "usage": {
+    "prompt_tokens": 570,
+    "completion_tokens": 93
+   },
+   "latency_ms": 6.688,
+   "role": "hr"
+  }
+ },
+ {
+  "label": "sources/D18-p02, viewer",
+  "method": "GET",
+  "url": "/sources/D18-p02",
+  "status": 403,
+  "headers": {},
+  "body": {
+   "error": {
+    "code": "forbidden",
+    "message": "Недостатньо прав для цього джерела"
+   }
+  }
+ },
+ {
+  "label": "sources/D18-p02, hr",
+  "method": "GET",
+  "url": "/sources/D18-p02",
+  "status": 200,
+  "headers": {},
+  "body": {
+   "id": "D18-p02",
+   "doc_id": "D18",
+   "title": "Звіт про результати тестування компетенцій, III квартал 2025",
+   "section": "Методологія",
+   "type": "report",
+   "date": "2025-10-20",
+   "sensitivity": "confidential",
+   "source_url": "internal://hub/kb/D18",
+   "text": "Результати оцінювалися за шкалою від 0 до 100 балів. Прохідним для посади вважається значення 65 балів, для старших посад — 75 балів."
+  }
+ },
+ {
+  "label": "sources/невідомий id",
+  "method": "GET",
+  "url": "/sources/D99-p99",
+  "status": 404,
+  "headers": {},
+  "body": {
+   "error": {
+    "code": "not_found",
+    "message": "Джерело D99-p99 не знайдено"
+   }
+  }
+ },
+ {
+  "label": "ask без ключа",
+  "method": "POST",
+  "url": "/ask",
+  "status": 401,
+  "headers": {},
+  "body": {
+   "error": {
+    "code": "missing_api_key",
+    "message": "Потрібен заголовок X-API-Key"
+   }
+  }
+ },
+ {
+  "label": "ask з хибним ключем",
+  "method": "POST",
+  "url": "/ask",
+  "status": 401,
+  "headers": {},
+  "body": {
+   "error": {
+    "code": "invalid_api_key",
+    "message": "Невірний API-ключ"
+   }
+  }
+ },
+ {
+  "label": "ask, питання закоротке",
+  "method": "POST",
+  "url": "/ask",
+  "status": 422,
+  "headers": {},
+  "body": {
+   "error": {
+    "code": "validation_error",
+    "message": "question: String should have at least 3 characters"
+   }
+  }
+ },
+ {
+  "label": "ask, k поза межами",
+  "method": "POST",
+  "url": "/ask",
+  "status": 422,
+  "headers": {},
+  "body": {
+   "error": {
+    "code": "validation_error",
+    "message": "k: Input should be less than or equal to 8"
+   }
+  }
+ },
+ {
+  "label": "ask, питання про зв'язки з графом",
+  "method": "POST",
+  "url": "/ask",
+  "status": 200,
+  "headers": {},
+  "body": {
+   "answer": "[n:petro] Петро Бондар (Employee) має безпосереднього керівника [n:ivan] Іван Шевчук (Employee). [n:petro-DIRECT_MANAGER-ivan] У співбесіді беруть участь щонайменше двоє інтерв'юерів: безпосередній керівник і представник HR. [D06-p04] Він доповнює оцінку безпосереднього керівника. [D10-p01] Перехід на наступний рівень потребує підтвердження двома незалежними джерелами: результатом тесту та оцінкою безпосереднього керівника. [D01-p08]",
+   "sources": [
+    {
+     "id": "D06-p04",
+     "title": "Регламент проведення співбесід",
+     "sensitivity": "internal",
+     "date": "2025-04-01"
+    },
+    {
+     "id": "D10-p01",
+     "title": "Методика 360-градусного відгуку",
+     "sensitivity": "internal",
+     "date": "2025-06-23"
+    },
+    {
+     "id": "D01-p08",
+     "title": "Модель компетенцій розробника програмного забезпечення",
+     "sensitivity": "public",
+     "date": "2025-03-12"
+    },
+    {
+     "id": "n:petro-DIRECT_MANAGER-ivan",
+     "title": null,
+     "sensitivity": "internal",
+     "date": "graph"
+    },
+    {
+     "id": "n:petro-IN_STATE-stateActive",
+     "title": null,
+     "sensitivity": "internal",
+     "date": "graph"
+    },
+    {
+     "id": "n:petro-OCCUPIES-pythonDeveloperPost",
+     "title": null,
+     "sensitivity": "internal",
+     "date": "graph"
+    },
+    {
+     "id": "n:petro-HAS_COMPETENCE-pythonProgramming",
+     "title": null,
+     "sensitivity": "internal",
+     "date": "graph"
+    },
+    {
+     "id": "n:trainingPlanPetro-PLAN_FOR-petro",
+     "title": null,
+     "sensitivity": "internal",
+     "date": "graph"
+    },
+    {
+     "id": "n:dismissalProposal1-DECISION_ABOUT-petro",
+     "title": null,
+     "sensitivity": "internal",
+     "date": "graph"
+    },
+    {
+     "id": "n:hris1-STORES_RECORD_OF-petro",
+     "title": null,
+     "sensitivity": "internal",
+     "date": "graph"
+    },
+    {
+     "id": "n:eventLowProdPetro-CONCERNS_EMPLOYEE-petro",
+     "title": null,
+     "sensitivity": "internal",
+     "date": "graph"
+    }
+   ],
+   "citations_valid": true,
+   "blocked": null,
+   "usage": {
+    "prompt_tokens": 1039,
+    "completion_tokens": 146
+   },
+   "latency_ms": 7.243,
+   "role": "hr"
+  }
+ },
+ {
+  "label": "ліміт 3/хв, запит 1",
+  "method": "POST",
+  "url": "/ask",
+  "status": 200,
+  "headers": {},
+  "body": {
+   "answer": "Випробувальний термін становить три місяці. [D05-p07]",
+   "sources": [
+    {
+     "id": "D05-p07",
+     "title": "Програма адаптації нових співробітників",
+     "sensitivity": "public",
+     "date": "2024-09-10"
+    },
+    {
+     "id": "D05-p03",
+     "title": "Програма адаптації нових співробітників",
+     "sensitivity": "public",
+     "date": "2024-09-10"
+    },
+    {
+     "id": "D02-p05",
+     "title": "Положення про оцінювання продуктивності працівників",
+     "sensitivity": "internal",
+     "date": "2025-01-20"
+    }
+   ],
+   "citations_valid": true,
+   "blocked": null,
+   "usage": {
+    "prompt_tokens": 573,
+    "completion_tokens": 18
+   },
+   "latency_ms": 6.199,
+   "role": "hr"
+  }
+ },
+ {
+  "label": "ліміт 3/хв, запит 2",
+  "method": "POST",
+  "url": "/ask",
+  "status": 200,
+  "headers": {},
+  "body": {
+   "answer": "Випробувальний термін становить три місяці. [D05-p07]",
+   "sources": [
+    {
+     "id": "D05-p07",
+     "title": "Програма адаптації нових співробітників",
+     "sensitivity": "public",
+     "date": "2024-09-10"
+    },
+    {
+     "id": "D05-p03",
+     "title": "Програма адаптації нових співробітників",
+     "sensitivity": "public",
+     "date": "2024-09-10"
+    },
+    {
+     "id": "D02-p05",
+     "title": "Положення про оцінювання продуктивності працівників",
+     "sensitivity": "internal",
+     "date": "2025-01-20"
+    }
+   ],
+   "citations_valid": true,
+   "blocked": null,
+   "usage": {
+    "prompt_tokens": 573,
+    "completion_tokens": 18
+   },
+   "latency_ms": 6.174,
+   "role": "hr"
+  }
+ },
+ {
+  "label": "ліміт 3/хв, запит 3",
+  "method": "POST",
+  "url": "/ask",
+  "status": 200,
+  "headers": {},
+  "body": {
+   "answer": "Випробувальний термін становить три місяці. [D05-p07]",
+   "sources": [
+    {
+     "id": "D05-p07",
+     "title": "Програма адаптації нових співробітників",
+     "sensitivity": "public",
+     "date": "2024-09-10"
+    },
+    {
+     "id": "D05-p03",
+     "title": "Програма адаптації нових співробітників",
+     "sensitivity": "public",
+     "date": "2024-09-10"
+    },
+    {
+     "id": "D02-p05",
+     "title": "Положення про оцінювання продуктивності працівників",
+     "sensitivity": "internal",
+     "date": "2025-01-20"
+    }
+   ],
+   "citations_valid": true,
+   "blocked": null,
+   "usage": {
+    "prompt_tokens": 573,
+    "completion_tokens": 18
+   },
+   "latency_ms": 6.039,
+   "role": "hr"
+  }
+ },
+ {
+  "label": "ліміт 3/хв, запит 4",
+  "method": "POST",
+  "url": "/ask",
+  "status": 429,
+  "headers": {
+   "retry-after": "60"
+  },
+  "body": {
+   "error": {
+    "code": "rate_limited",
+    "message": "Ліміт 3 запитів за 60 с"
+   }
+  }
+ },
+ {
+  "label": "ліміт 3/хв, запит 5",
+  "method": "POST",
+  "url": "/ask",
+  "status": 429,
+  "headers": {
+   "retry-after": "60"
+  },
+  "body": {
+   "error": {
+    "code": "rate_limited",
+    "message": "Ліміт 3 запитів за 60 с"
+   }
+  }
+ }
+]

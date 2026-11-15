@@ -1,0 +1,7 @@
+# CQ14: Чи вірно, що Рекрутер НЕ є підкласом Керівника?
+# Очікуваний результат: False
+PREFIX hr: <http://example.org/hr#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+ASK { hr:Recruiter rdfs:subClassOf+ hr:Manager }

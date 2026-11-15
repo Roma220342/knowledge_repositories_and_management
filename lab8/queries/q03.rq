@@ -1,0 +1,6 @@
+# id: q03
+# CQ: Чи має Марія Гончар компетенцію pythonProgramming?
+# construct: ASK
+# interp: Булева відповідь true/false про наявність факту hasCompetence.
+PREFIX hr: <http://example.org/hr#>
+ASK { hr:maria hr:hasCompetence hr:pythonProgramming }

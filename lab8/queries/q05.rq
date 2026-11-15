@@ -1,0 +1,9 @@
+# id: q05
+# CQ: Скільки співробітників і яка середня продуктивність на кожній посаді?
+# construct: SELECT + GROUP BY + AVG
+# interp: Групує співробітників за назвою посади; показує навантаження та якість по посадах.
+PREFIX hr: <http://example.org/hr#>
+SELECT ?position (COUNT(?e) AS ?employees) (ROUND(AVG(?s) * 100) / 100 AS ?avgScore) WHERE {
+  ?e hr:occupies ?p ; hr:productivityScore ?s .
+  ?p hr:positionTitle ?position
+} GROUP BY ?position ORDER BY DESC(?employees)

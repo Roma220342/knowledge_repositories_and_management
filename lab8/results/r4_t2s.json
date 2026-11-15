@@ -1,0 +1,658 @@
+{
+  "metrics": [
+    {
+      "Набір / версія": "основний (n=16), v1",
+      "синтаксично коректні": "16/16 (100 %)",
+      "лише зі схеми": "16/16 (100 %)",
+      "правильний результат": "6/16 (38 %)"
+    },
+    {
+      "Набір / версія": "основний (n=16), v2",
+      "синтаксично коректні": "16/16 (100 %)",
+      "лише зі схеми": "16/16 (100 %)",
+      "правильний результат": "16/16 (100 %)"
+    },
+    {
+      "Набір / версія": "контрольний (n=4), v2",
+      "синтаксично коректні": "4/4 (100 %)",
+      "лише зі схеми": "4/4 (100 %)",
+      "правильний результат": "4/4 (100 %)"
+    }
+  ],
+  "errors": [
+    {
+      "питання": "T01",
+      "категорія": "aggregation",
+      "клас помилки": "B — ігнорування ієрархії класів",
+      "що пішло не так": "рядків 1 проти еталонних 1",
+      "виправлення у v2": "так"
+    },
+    {
+      "питання": "T02",
+      "категорія": "lookup",
+      "клас помилки": "E — точні літерали (xsd:string ≠ простий рядок)",
+      "що пішло не так": "рядків 0 проти еталонних 1",
+      "виправлення у v2": "так"
+    },
+    {
+      "питання": "T03",
+      "категорія": "lookup",
+      "клас помилки": "E — точні літерали (xsd:string ≠ простий рядок)",
+      "що пішло не так": "рядків 0 проти еталонних 1",
+      "виправлення у v2": "так"
+    },
+    {
+      "питання": "T05",
+      "категорія": "lookup",
+      "клас помилки": "E — точні літерали (xsd:string ≠ простий рядок)",
+      "що пішло не так": "рядків 0 проти еталонних 1",
+      "виправлення у v2": "так"
+    },
+    {
+      "питання": "T07",
+      "категорія": "path",
+      "клас помилки": "A — залежність від виведення (немає reasoner)",
+      "що пішло не так": "рядків 0 проти еталонних 13",
+      "виправлення у v2": "так"
+    },
+    {
+      "питання": "T09",
+      "категорія": "defined-class",
+      "клас помилки": "A — залежність від виведення (немає reasoner)",
+      "що пішло не так": "рядків 0 проти еталонних 6",
+      "виправлення у v2": "так"
+    },
+    {
+      "питання": "T11",
+      "категорія": "filter",
+      "клас помилки": "B — ігнорування ієрархії класів",
+      "що пішло не так": "рядків 9 проти еталонних 14",
+      "виправлення у v2": "так"
+    },
+    {
+      "питання": "T12",
+      "категорія": "aggregation",
+      "клас помилки": "B — ігнорування ієрархії класів",
+      "що пішло не так": "рядків 3 проти еталонних 2",
+      "виправлення у v2": "так"
+    },
+    {
+      "питання": "T15",
+      "категорія": "hierarchy",
+      "клас помилки": "B — ігнорування ієрархії класів",
+      "що пішло не так": "рядків 1 проти еталонних 1",
+      "виправлення у v2": "так"
+    },
+    {
+      "питання": "T16",
+      "категорія": "join",
+      "клас помилки": "F — інша семантична відмінність (див. результат)",
+      "що пішло не так": "рядків 16 проти еталонних 8",
+      "виправлення у v2": "так"
+    }
+  ],
+  "results": [
+    {
+      "id": "T01",
+      "difficulty": "easy",
+      "category": "aggregation",
+      "heldout": false,
+      "question": "Скільки співробітників мають продуктивність нижче 5?",
+      "gold_rows": 1,
+      "v1": {
+        "text": "SELECT (COUNT(?e) AS ?n) WHERE { ?e a hr:Employee ; hr:productivityScore ?s . FILTER(?s < 5) }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": false,
+        "rows": 1,
+        "error": "",
+        "ms": 15.7,
+        "class": "B — ігнорування ієрархії класів"
+      },
+      "v2": {
+        "text": "SELECT (COUNT(DISTINCT ?e) AS ?n) WHERE { ?e a/rdfs:subClassOf* hr:Employee ; hr:productivityScore ?s . FILTER(?s < 5) }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 1,
+        "error": "",
+        "ms": 35.8,
+        "class": ""
+      }
+    },
+    {
+      "id": "T02",
+      "difficulty": "easy",
+      "category": "lookup",
+      "heldout": false,
+      "question": "Яка посада у Петра Бондаря?",
+      "gold_rows": 1,
+      "v1": {
+        "text": "SELECT ?title WHERE { ?e hr:fullName \"Петро Бондар\" ; hr:occupies ?p . ?p hr:positionTitle ?title }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": false,
+        "rows": 0,
+        "error": "",
+        "ms": 5.3,
+        "class": "E — точні літерали (xsd:string ≠ простий рядок)"
+      },
+      "v2": {
+        "text": "SELECT ?title WHERE { ?e hr:fullName ?n ; hr:occupies ?p . ?p hr:positionTitle ?title . FILTER(STR(?n) = \"Петро Бондар\") }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 1,
+        "error": "",
+        "ms": 23.0,
+        "class": ""
+      }
+    },
+    {
+      "id": "T03",
+      "difficulty": "easy",
+      "category": "lookup",
+      "heldout": false,
+      "question": "Які компетенції вимагає посада «Рекрутер»?",
+      "gold_rows": 1,
+      "v1": {
+        "text": "SELECT ?c WHERE { ?p hr:positionTitle \"Рекрутер\" ; hr:requiresCompetence ?c }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": false,
+        "rows": 0,
+        "error": "",
+        "ms": 9.8,
+        "class": "E — точні літерали (xsd:string ≠ простий рядок)"
+      },
+      "v2": {
+        "text": "SELECT ?c WHERE { ?p hr:positionTitle ?t ; hr:requiresCompetence ?c . FILTER(STR(?t) = \"Рекрутер\") }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 1,
+        "error": "",
+        "ms": 17.1,
+        "class": ""
+      }
+    },
+    {
+      "id": "T04",
+      "difficulty": "easy",
+      "category": "ask",
+      "heldout": false,
+      "question": "Чи завершив Андрій Мельник курс Python Advanced?",
+      "gold_rows": 1,
+      "v1": {
+        "text": "ASK { hr:andriy hr:completedCourse hr:pythonAdvancedCourse }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 1,
+        "error": "",
+        "ms": 4.6,
+        "class": ""
+      },
+      "v2": {
+        "text": "ASK { hr:andriy hr:completedCourse hr:pythonAdvancedCourse }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 1,
+        "error": "",
+        "ms": 6.0,
+        "class": ""
+      }
+    },
+    {
+      "id": "T05",
+      "difficulty": "easy",
+      "category": "lookup",
+      "heldout": false,
+      "question": "Хто безпосередній керівник Марії Гончар?",
+      "gold_rows": 1,
+      "v1": {
+        "text": "SELECT ?manager WHERE { ?e hr:fullName \"Марія Гончар\" ; hr:directManager ?m . ?m hr:fullName ?manager }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": false,
+        "rows": 0,
+        "error": "",
+        "ms": 10.4,
+        "class": "E — точні літерали (xsd:string ≠ простий рядок)"
+      },
+      "v2": {
+        "text": "SELECT ?manager WHERE { ?e hr:fullName ?n ; hr:directManager ?m . ?m hr:fullName ?manager . FILTER(STR(?n) = \"Марія Гончар\") }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 1,
+        "error": "",
+        "ms": 26.7,
+        "class": ""
+      }
+    },
+    {
+      "id": "T06",
+      "difficulty": "medium",
+      "category": "aggregation",
+      "heldout": false,
+      "question": "Яка середня продуктивність на кожній посаді?",
+      "gold_rows": 4,
+      "v1": {
+        "text": "SELECT ?title (AVG(?s) AS ?avg) WHERE { ?e hr:occupies ?p ; hr:productivityScore ?s . ?p hr:positionTitle ?title } GROUP BY ?title",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 4,
+        "error": "",
+        "ms": 21.5,
+        "class": ""
+      },
+      "v2": {
+        "text": "SELECT ?title (AVG(?s) AS ?avg) WHERE { ?e hr:occupies ?p ; hr:productivityScore ?s . ?p hr:positionTitle ?title } GROUP BY ?title",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 4,
+        "error": "",
+        "ms": 19.0,
+        "class": ""
+      }
+    },
+    {
+      "id": "T07",
+      "difficulty": "medium",
+      "category": "path",
+      "heldout": false,
+      "question": "Хто транзитивно підпорядкований Івану Шевчуку?",
+      "gold_rows": 13,
+      "v1": {
+        "text": "SELECT ?e WHERE { ?e hr:reportsTo hr:ivan }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": false,
+        "rows": 0,
+        "error": "",
+        "ms": 3.9,
+        "class": "A — залежність від виведення (немає reasoner)"
+      },
+      "v2": {
+        "text": "SELECT DISTINCT ?e WHERE { ?e hr:directManager+ hr:ivan }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 13,
+        "error": "",
+        "ms": 5.8,
+        "class": ""
+      }
+    },
+    {
+      "id": "T08",
+      "difficulty": "medium",
+      "category": "aggregation",
+      "heldout": false,
+      "question": "Скільки менеджерів у графі?",
+      "gold_rows": 1,
+      "v1": {
+        "text": "SELECT (COUNT(?e) AS ?n) WHERE { ?e a hr:Manager }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 1,
+        "error": "",
+        "ms": 13.4,
+        "class": ""
+      },
+      "v2": {
+        "text": "SELECT (COUNT(DISTINCT ?e) AS ?n) WHERE { ?e a/rdfs:subClassOf* hr:Manager }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 1,
+        "error": "",
+        "ms": 9.3,
+        "class": ""
+      }
+    },
+    {
+      "id": "T09",
+      "difficulty": "medium",
+      "category": "defined-class",
+      "heldout": false,
+      "question": "Хто має низьку продуктивність (клас LowPerformer)?",
+      "gold_rows": 6,
+      "v1": {
+        "text": "SELECT ?name WHERE { ?e a hr:LowPerformer ; hr:fullName ?name }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": false,
+        "rows": 0,
+        "error": "",
+        "ms": 4.7,
+        "class": "A — залежність від виведення (немає reasoner)"
+      },
+      "v2": {
+        "text": "SELECT DISTINCT ?name WHERE { ?e hr:fullName ?name ; hr:productivityScore ?s . FILTER(?s < 5) }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 6,
+        "error": "",
+        "ms": 18.6,
+        "class": ""
+      }
+    },
+    {
+      "id": "T10",
+      "difficulty": "medium",
+      "category": "join",
+      "heldout": false,
+      "question": "Які курси входять до плану навчання Петра?",
+      "gold_rows": 2,
+      "v1": {
+        "text": "SELECT ?title WHERE { ?plan hr:planFor hr:petro ; hr:includesCourse ?c . ?c hr:courseTitle ?title }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 2,
+        "error": "",
+        "ms": 12.7,
+        "class": ""
+      },
+      "v2": {
+        "text": "SELECT ?title WHERE { ?plan hr:planFor hr:petro ; hr:includesCourse ?c . ?c hr:courseTitle ?title }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 2,
+        "error": "",
+        "ms": 12.6,
+        "class": ""
+      }
+    },
+    {
+      "id": "T11",
+      "difficulty": "medium",
+      "category": "filter",
+      "heldout": false,
+      "question": "Хто з співробітників пропрацював понад 60 місяців?",
+      "gold_rows": 14,
+      "v1": {
+        "text": "SELECT ?name WHERE { ?e a hr:Employee ; hr:fullName ?name ; hr:tenureMonths ?t . FILTER(?t > 60) }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": false,
+        "rows": 9,
+        "error": "",
+        "ms": 40.6,
+        "class": "B — ігнорування ієрархії класів"
+      },
+      "v2": {
+        "text": "SELECT ?name WHERE { ?e a/rdfs:subClassOf* hr:Employee ; hr:fullName ?name ; hr:tenureMonths ?t . FILTER(?t > 60) }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 14,
+        "error": "",
+        "ms": 27.6,
+        "class": ""
+      }
+    },
+    {
+      "id": "T12",
+      "difficulty": "medium",
+      "category": "aggregation",
+      "heldout": false,
+      "question": "Скільки співробітників у кожному стані?",
+      "gold_rows": 2,
+      "v1": {
+        "text": "SELECT ?st (COUNT(?e) AS ?n) WHERE { ?e hr:inState ?st } GROUP BY ?st",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": false,
+        "rows": 3,
+        "error": "",
+        "ms": 18.0,
+        "class": "B — ігнорування ієрархії класів"
+      },
+      "v2": {
+        "text": "SELECT ?st (COUNT(DISTINCT ?e) AS ?n) WHERE { ?e a/rdfs:subClassOf* hr:Employee ; hr:inState ?st } GROUP BY ?st",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 2,
+        "error": "",
+        "ms": 23.7,
+        "class": ""
+      }
+    },
+    {
+      "id": "T13",
+      "difficulty": "hard",
+      "category": "aggregation",
+      "heldout": false,
+      "question": "Який керівник має найбільше безпосередніх підлеглих?",
+      "gold_rows": 1,
+      "v1": {
+        "text": "SELECT ?m (COUNT(?e) AS ?n) WHERE { ?e hr:directManager ?m } GROUP BY ?m ORDER BY DESC(?n) LIMIT 1",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 1,
+        "error": "",
+        "ms": 26.3,
+        "class": ""
+      },
+      "v2": {
+        "text": "SELECT ?m (COUNT(?e) AS ?n) WHERE { ?e hr:directManager ?m } GROUP BY ?m ORDER BY DESC(?n) LIMIT 1",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 1,
+        "error": "",
+        "ms": 28.1,
+        "class": ""
+      }
+    },
+    {
+      "id": "T14",
+      "difficulty": "hard",
+      "category": "aggregation",
+      "heldout": false,
+      "question": "Для кожної посади: скільки співробітників мають оцінку не нижче 7?",
+      "gold_rows": 4,
+      "v1": {
+        "text": "SELECT ?title (COUNT(?e) AS ?n) WHERE { ?e hr:occupies ?p ; hr:productivityScore ?s . ?p hr:positionTitle ?title . FILTER(?s >= 7) } GROUP BY ?title",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 4,
+        "error": "",
+        "ms": 23.4,
+        "class": ""
+      },
+      "v2": {
+        "text": "SELECT ?title (COUNT(?e) AS ?n) WHERE { ?e hr:occupies ?p ; hr:productivityScore ?s . ?p hr:positionTitle ?title . FILTER(?s >= 7) } GROUP BY ?title",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 4,
+        "error": "",
+        "ms": 33.0,
+        "class": ""
+      }
+    },
+    {
+      "id": "T15",
+      "difficulty": "hard",
+      "category": "hierarchy",
+      "heldout": false,
+      "question": "Скільки різних компетенцій (будь-якого типу) вимагають посади?",
+      "gold_rows": 1,
+      "v1": {
+        "text": "SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE { ?p hr:requiresCompetence ?c . ?c a hr:Competence }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": false,
+        "rows": 1,
+        "error": "",
+        "ms": 8.5,
+        "class": "B — ігнорування ієрархії класів"
+      },
+      "v2": {
+        "text": "SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE { ?p hr:requiresCompetence ?c . ?c a/rdfs:subClassOf* hr:Competence }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 1,
+        "error": "",
+        "ms": 8.3,
+        "class": ""
+      }
+    },
+    {
+      "id": "T16",
+      "difficulty": "hard",
+      "category": "join",
+      "heldout": false,
+      "question": "Які події стосуються співробітників з оцінкою нижче 5 і яких вони типів?",
+      "gold_rows": 8,
+      "v1": {
+        "text": "SELECT ?ev ?type WHERE { ?ev a ?type ; hr:concernsEmployee ?e . ?e hr:productivityScore ?s . FILTER(?s < 5) }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": false,
+        "rows": 16,
+        "error": "",
+        "ms": 16.3,
+        "class": "F — інша семантична відмінність (див. результат)"
+      },
+      "v2": {
+        "text": "SELECT ?ev ?type WHERE { ?ev a ?type ; hr:concernsEmployee ?e . ?e hr:productivityScore ?s . FILTER(?s < 5) FILTER(?type != owl:NamedIndividual) }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 8,
+        "error": "",
+        "ms": 38.8,
+        "class": ""
+      }
+    },
+    {
+      "id": "H01",
+      "difficulty": "easy",
+      "category": "aggregation",
+      "heldout": true,
+      "question": "Скільки кандидатів у графі?",
+      "gold_rows": 1,
+      "v1": null,
+      "v2": {
+        "text": "SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE { ?c a/rdfs:subClassOf* hr:Candidate }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 1,
+        "error": "",
+        "ms": 6.9,
+        "class": ""
+      }
+    },
+    {
+      "id": "H02",
+      "difficulty": "medium",
+      "category": "aggregation",
+      "heldout": true,
+      "question": "Хто має найвищу продуктивність і яка вона?",
+      "gold_rows": 1,
+      "v1": null,
+      "v2": {
+        "text": "SELECT ?name ?s WHERE { ?e hr:fullName ?name ; hr:productivityScore ?s } ORDER BY DESC(?s) LIMIT 1",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 1,
+        "error": "",
+        "ms": 9.9,
+        "class": ""
+      }
+    },
+    {
+      "id": "H03",
+      "difficulty": "medium",
+      "category": "aggregation",
+      "heldout": true,
+      "question": "Скільки співробітників обіймають посаду «Python-розробник»?",
+      "gold_rows": 1,
+      "v1": null,
+      "v2": {
+        "text": "SELECT (COUNT(DISTINCT ?e) AS ?n) WHERE { ?e hr:occupies ?p . ?p hr:positionTitle ?t . FILTER(STR(?t) = \"Python-розробник\") }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 1,
+        "error": "",
+        "ms": 16.8,
+        "class": ""
+      }
+    },
+    {
+      "id": "H04",
+      "difficulty": "easy",
+      "category": "lookup",
+      "heldout": true,
+      "question": "Хто підпорядкований безпосередньо Олені Коваль?",
+      "gold_rows": 10,
+      "v1": null,
+      "v2": {
+        "text": "SELECT ?name WHERE { ?e hr:directManager hr:olena ; hr:fullName ?name }",
+        "syntax_ok": true,
+        "schema_ok": true,
+        "executed": true,
+        "correct": true,
+        "rows": 10,
+        "error": "",
+        "ms": 4.5,
+        "class": ""
+      }
+    }
+  ],
+  "prompt_v1": "Роль: SPARQL-експерт. Перетвори питання українською на ОДИН запит SPARQL 1.1 до RDF-графа HR-домену.\nПрефікс hr: <http://example.org/hr#>. Доступні класи: Action, ActiveState, Appraisal, AssignCourseAction, Attestation, Bonus, Candidate, CandidateState, CloseRecordAction, Competence, ConfirmEmploymentAction, Course, CourseCompletedEvent, DecisionRule, Dismissal, DismissedState, Document, Employee, Event, HRDecision, HRIS, HRISSensor, HRProcess, HardSkill, HighPerformer, HireEvent, InformationSystem, InitiateDismissalAction, Interview, KPI, KPISensor, LMS, LMSSensor, LowPerformer, LowProductivityEvent, ManagedEmployee, Manager, Metric, Motivation, Onboarding, OnboardingState, Person, Position, PositionProfile, ProbationReviewEvent, ProbationState, Productivity, Promotion, Recruiter, Recruitment, ResignationRequestEvent, Resume, Reward, Salary, Sensor, SituationTemplate, SoftSkill, StartOnboardingAction, State, TrainedEmployee, Training, TrainingPlan, Turnover, UnderReviewState, UpdateCompetenceAction.\nДоступні властивості: affects, appliesRule, candidateFor, completedCourse, concernsEmployee, courseHours, courseTitle, decisionAbout, directManager, employeeId, evaluates, evaluatesMetric, fromState, fullName, guard, hasCompetence, hasSubProcess, hireDate, inState, includesCourse, isOccupiedBy, kpiTarget, lowers, makesDecision, manages, observedBy, occupies, occurredOn, onEvent, performsAction, planFor, positionTitle, productivityScore, raises, reportedBy, reportsTo, requiresCompetence, requiresDocument, ruleLeadsTo, salaryAmount, salaryGrade, storesDocument, storesRecordOf, subProcessOf, submittedResume, tenureMonths, toState, turnoverRate.\nПоверни лише запит.",
+  "prompt_v2": "Роль: SPARQL-експерт. Перетвори питання українською на ОДИН запит SPARQL 1.1 до RDF-графа HR-домену.\nПрефікс hr: <http://example.org/hr#>. Доступні класи: Action, ActiveState, Appraisal, AssignCourseAction, Attestation, Bonus, Candidate, CandidateState, CloseRecordAction, Competence, ConfirmEmploymentAction, Course, CourseCompletedEvent, DecisionRule, Dismissal, DismissedState, Document, Employee, Event, HRDecision, HRIS, HRISSensor, HRProcess, HardSkill, HighPerformer, HireEvent, InformationSystem, InitiateDismissalAction, Interview, KPI, KPISensor, LMS, LMSSensor, LowPerformer, LowProductivityEvent, ManagedEmployee, Manager, Metric, Motivation, Onboarding, OnboardingState, Person, Position, PositionProfile, ProbationReviewEvent, ProbationState, Productivity, Promotion, Recruiter, Recruitment, ResignationRequestEvent, Resume, Reward, Salary, Sensor, SituationTemplate, SoftSkill, StartOnboardingAction, State, TrainedEmployee, Training, TrainingPlan, Turnover, UnderReviewState, UpdateCompetenceAction.\nДоступні властивості: affects, appliesRule, candidateFor, completedCourse, concernsEmployee, courseHours, courseTitle, decisionAbout, directManager, employeeId, evaluates, evaluatesMetric, fromState, fullName, guard, hasCompetence, hasSubProcess, hireDate, inState, includesCourse, isOccupiedBy, kpiTarget, lowers, makesDecision, manages, observedBy, occupies, occurredOn, onEvent, performsAction, planFor, positionTitle, productivityScore, raises, reportedBy, reportsTo, requiresCompetence, requiresDocument, ruleLeadsTo, salaryAmount, salaryGrade, storesDocument, storesRecordOf, subProcessOf, submittedResume, tenureMonths, toState, turnoverRate.\nПоверни лише запит.\nПравила (додано після аналізу помилок v1):\n1) У графі немає reasoner: ієрархію класів обходь шляхом a/rdfs:subClassOf* (Manager і Recruiter — підкласи Employee; HardSkill і SoftSkill — підкласи Competence).\n2) Визначені класи (наприклад LowPerformer) не мають явних екземплярів — замість них пиши FILTER за властивостями.\n3) Рядкові значення типізовані xsd:string: порівнюй через FILTER(STR(?x) = \"...\"), а не літералом у шаблоні.\n4) Властивість reportsTo не заповнена; транзитивних підлеглих шукай через hr:directManager+.\n5) Коли перелічуєш типи (a ?type), виключай owl:NamedIndividual; коли рахуєш людей, обмежуй вибірку класом Employee з підкласами."
+}

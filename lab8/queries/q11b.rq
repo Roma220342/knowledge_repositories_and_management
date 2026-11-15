@@ -1,0 +1,9 @@
+# id: q11b
+# CQ: Те саме, що q11a (оптимізований варіант)
+# construct: SELECT + COUNT (селективні підзапити першими, спільна змінна ?p)
+# interp: Підзапити відсіюють співробітників за оцінкою до з'єднання за посадою; результат той самий, час менший.
+PREFIX hr: <http://example.org/hr#>
+SELECT (COUNT(*) AS ?pairs) WHERE {
+  { SELECT ?p ?a WHERE { ?a hr:occupies ?p ; hr:productivityScore ?sa . FILTER(?sa < 5) } }
+  { SELECT ?p ?b WHERE { ?b hr:occupies ?p ; hr:productivityScore ?sb . FILTER(?sb >= 8) } }
+}

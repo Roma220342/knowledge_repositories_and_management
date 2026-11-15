@@ -1,0 +1,282 @@
+{
+ "T1: clearance=public": {
+  "query": "Чому люди звільнялися найчастіше за результатами вихідних бесід?",
+  "allowed_n": 90,
+  "before": [
+   [
+    "D09-p05",
+    "report",
+    "confidential",
+    "2026-01-18"
+   ],
+   [
+    "D04-p09",
+    "guide",
+    "internal",
+    "2025-02-14"
+   ],
+   [
+    "D10-p02",
+    "guide",
+    "internal",
+    "2025-06-23"
+   ],
+   [
+    "D02-p08",
+    "policy",
+    "internal",
+    "2025-01-20"
+   ],
+   [
+    "D18-p02",
+    "report",
+    "confidential",
+    "2025-10-20"
+   ]
+  ],
+  "after": [
+   [
+    "D05-p10",
+    "guide",
+    "public",
+    "2024-09-10"
+   ],
+   [
+    "D17-p09",
+    "guide",
+    "public",
+    "2025-03-31"
+   ],
+   [
+    "D19-p03",
+    "faq",
+    "public",
+    "2026-03-04"
+   ],
+   [
+    "D15-p02",
+    "guide",
+    "public",
+    "2025-01-09"
+   ],
+   [
+    "D07-p10",
+    "policy",
+    "public",
+    "2025-01-15"
+   ]
+  ],
+  "filter_respected": true,
+  "violations_before": 1
+ },
+ "T2: clearance=internal": {
+  "query": "Чи можна відправляти дані працівників у зовнішній чат-бот зі штучним інтелектом?",
+  "allowed_n": 159,
+  "before": [
+   [
+    "D11-p07",
+    "policy",
+    "restricted",
+    "2025-05-30"
+   ],
+   [
+    "D11-p10",
+    "policy",
+    "restricted",
+    "2025-05-30"
+   ],
+   [
+    "D13-p09",
+    "policy",
+    "confidential",
+    "2025-02-27"
+   ],
+   [
+    "D11-p03",
+    "policy",
+    "restricted",
+    "2025-05-30"
+   ],
+   [
+    "D03-p03",
+    "policy",
+    "internal",
+    "2024-11-05"
+   ]
+  ],
+  "after": [
+   [
+    "D03-p03",
+    "policy",
+    "internal",
+    "2024-11-05"
+   ],
+   [
+    "D08-p02",
+    "regulation",
+    "public",
+    "2024-12-01"
+   ],
+   [
+    "D03-p08",
+    "policy",
+    "internal",
+    "2024-11-05"
+   ],
+   [
+    "D04-p02",
+    "guide",
+    "internal",
+    "2025-02-14"
+   ],
+   [
+    "D20-p06",
+    "guide",
+    "internal",
+    "2025-09-02"
+   ]
+  ],
+  "filter_respected": true,
+  "violations_before": 1
+ },
+ "T3: type=policy": {
+  "query": "порядок оскарження та перегляд рішення",
+  "allowed_n": 50,
+  "before": [
+   [
+    "D02-p01",
+    "policy",
+    "internal",
+    "2025-01-20"
+   ],
+   [
+    "D05-p04",
+    "guide",
+    "public",
+    "2024-09-10"
+   ],
+   [
+    "D04-p10",
+    "guide",
+    "internal",
+    "2025-02-14"
+   ],
+   [
+    "D02-p09",
+    "policy",
+    "internal",
+    "2025-01-20"
+   ],
+   [
+    "D21-p08",
+    "guide",
+    "public",
+    "2026-02-11"
+   ]
+  ],
+  "after": [
+   [
+    "D02-p01",
+    "policy",
+    "internal",
+    "2025-01-20"
+   ],
+   [
+    "D02-p09",
+    "policy",
+    "internal",
+    "2025-01-20"
+   ],
+   [
+    "D13-p07",
+    "policy",
+    "confidential",
+    "2025-02-27"
+   ],
+   [
+    "D02-p07",
+    "policy",
+    "internal",
+    "2025-01-20"
+   ],
+   [
+    "D03-p09",
+    "policy",
+    "internal",
+    "2024-11-05"
+   ]
+  ],
+  "filter_respected": true,
+  "violations_before": 1
+ },
+ "T4: date>=2026-01-01": {
+  "query": "плинність кадрів і рекомендації",
+  "allowed_n": 30,
+  "before": [
+   [
+    "D04-p01",
+    "guide",
+    "internal",
+    "2025-02-14"
+   ],
+   [
+    "D09-p10",
+    "report",
+    "confidential",
+    "2026-01-18"
+   ],
+   [
+    "D20-p05",
+    "guide",
+    "internal",
+    "2025-09-02"
+   ],
+   [
+    "D15-p05",
+    "guide",
+    "public",
+    "2025-01-09"
+   ],
+   [
+    "D18-p10",
+    "report",
+    "confidential",
+    "2025-10-20"
+   ]
+  ],
+  "after": [
+   [
+    "D09-p10",
+    "report",
+    "confidential",
+    "2026-01-18"
+   ],
+   [
+    "D09-p02",
+    "report",
+    "confidential",
+    "2026-01-18"
+   ],
+   [
+    "D09-p03",
+    "report",
+    "confidential",
+    "2026-01-18"
+   ],
+   [
+    "D09-p01",
+    "report",
+    "confidential",
+    "2026-01-18"
+   ],
+   [
+    "D09-p09",
+    "report",
+    "confidential",
+    "2026-01-18"
+   ]
+  ],
+  "filter_respected": true,
+  "violations_before": 1
+ }
+}

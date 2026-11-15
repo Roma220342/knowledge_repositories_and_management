@@ -1,0 +1,16 @@
+{"id": "T01", "sparql": "SELECT (COUNT(?e) AS ?n) WHERE { ?e a hr:Employee ; hr:productivityScore ?s . FILTER(?s < 5) }"}
+{"id": "T02", "sparql": "SELECT ?title WHERE { ?e hr:fullName \"Петро Бондар\" ; hr:occupies ?p . ?p hr:positionTitle ?title }"}
+{"id": "T03", "sparql": "SELECT ?c WHERE { ?p hr:positionTitle \"Рекрутер\" ; hr:requiresCompetence ?c }"}
+{"id": "T04", "sparql": "ASK { hr:andriy hr:completedCourse hr:pythonAdvancedCourse }"}
+{"id": "T05", "sparql": "SELECT ?manager WHERE { ?e hr:fullName \"Марія Гончар\" ; hr:directManager ?m . ?m hr:fullName ?manager }"}
+{"id": "T06", "sparql": "SELECT ?title (AVG(?s) AS ?avg) WHERE { ?e hr:occupies ?p ; hr:productivityScore ?s . ?p hr:positionTitle ?title } GROUP BY ?title"}
+{"id": "T07", "sparql": "SELECT ?e WHERE { ?e hr:reportsTo hr:ivan }"}
+{"id": "T08", "sparql": "SELECT (COUNT(?e) AS ?n) WHERE { ?e a hr:Manager }"}
+{"id": "T09", "sparql": "SELECT ?name WHERE { ?e a hr:LowPerformer ; hr:fullName ?name }"}
+{"id": "T10", "sparql": "SELECT ?title WHERE { ?plan hr:planFor hr:petro ; hr:includesCourse ?c . ?c hr:courseTitle ?title }"}
+{"id": "T11", "sparql": "SELECT ?name WHERE { ?e a hr:Employee ; hr:fullName ?name ; hr:tenureMonths ?t . FILTER(?t > 60) }"}
+{"id": "T12", "sparql": "SELECT ?st (COUNT(?e) AS ?n) WHERE { ?e hr:inState ?st } GROUP BY ?st"}
+{"id": "T13", "sparql": "SELECT ?m (COUNT(?e) AS ?n) WHERE { ?e hr:directManager ?m } GROUP BY ?m ORDER BY DESC(?n) LIMIT 1"}
+{"id": "T14", "sparql": "SELECT ?title (COUNT(?e) AS ?n) WHERE { ?e hr:occupies ?p ; hr:productivityScore ?s . ?p hr:positionTitle ?title . FILTER(?s >= 7) } GROUP BY ?title"}
+{"id": "T15", "sparql": "SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE { ?p hr:requiresCompetence ?c . ?c a hr:Competence }"}
+{"id": "T16", "sparql": "SELECT ?ev ?type WHERE { ?ev a ?type ; hr:concernsEmployee ?e . ?e hr:productivityScore ?s . FILTER(?s < 5) }"}

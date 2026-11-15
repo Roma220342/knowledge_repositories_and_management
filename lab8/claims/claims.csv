@@ -1,0 +1,34 @@
+﻿id,claim,type,source,verification_level,status,comment
+link-L1,hr:Employee exactMatch wd:Q703534,факт,Wikidata (Q703534),V1,verified,"збігається ключова ознака (опис містить одне зі слів: person, employ)"
+link-L2,hr:Employee exactMatch wd:Q65964542,факт,Wikidata (Q65964542),V1,rejected,опис/мітка не відповідає визначенню або кращий кандидат уже обрано
+link-L3,hr:Resume exactMatch wd:Q186649,факт,Wikidata (Q186649),V1,verified,"збігається ключова ознака (опис містить одне зі слів: summary, document, career)"
+link-L4,hr:Resume closeMatch wd:Q16247137,факт,Wikidata (Q16247137),V1,rejected,опис/мітка не відповідає визначенню або кращий кандидат уже обрано
+link-L5,hr:Salary exactMatch wd:Q194489,факт,Wikidata (Q194489),V1,verified,"збігається ключова ознака (опис містить одне зі слів: payment, remuneration, pay, wage)"
+link-L6,hr:Salary closeMatch wd:Q37473853,факт,Wikidata (Q37473853),V1,rejected,опис/мітка не відповідає визначенню або кращий кандидат уже обрано
+link-L7,hr:Bonus closeMatch wd:Q11228121,факт,Wikidata (Q11228121),V1,rejected,опис/мітка не відповідає визначенню або кращий кандидат уже обрано
+link-L8,hr:Bonus closeMatch wd:Q18579777,факт,Wikidata (Q18579777),V1,rejected,опис/мітка не відповідає визначенню або кращий кандидат уже обрано
+link-L9,hr:KPI closeMatch wd:Q860554,факт,Wikidata (Q860554),V1,verified,"збігається ключова ознака (опис містить одне зі слів: performance, indicator, measure)"
+link-L10,hr:KPI closeMatch wd:Q63942470,факт,Wikidata (Q63942470),V1,rejected,опис/мітка не відповідає визначенню або кращий кандидат уже обрано
+link-L11,hr:Position closeMatch wd:Q2569062,факт,Wikidata (Q2569062),V1,rejected,опис/мітка не відповідає визначенню або кращий кандидат уже обрано
+link-L12,hr:Position closeMatch wd:Q687423,факт,Wikidata (Q687423),V1,rejected,опис/мітка не відповідає визначенню або кращий кандидат уже обрано
+link-L13,hr:Position closeMatch wd:Q12737077,факт,Wikidata (Q12737077),V1,verified,"збігається ключова ознака (опис містить одне зі слів: work, position, employment, occupation)"
+t2s-T01,Скільки співробітників мають продуктивність нижче 5? → SELECT (COUNT(DISTINCT ?e) AS ?n) WHERE { ?e a/rdfs:subClassOf* hr:Employee ; hr:productivityScore ?s . FILTER(?s < 5) },факт,"LLM (чат-сесія, підказка v2)",V4,verified,результат збігається з еталоном
+t2s-T02,"Яка посада у Петра Бондаря? → SELECT ?title WHERE { ?e hr:fullName ?n ; hr:occupies ?p . ?p hr:positionTitle ?title . FILTER(STR(?n) = ""Петро Бондар"") }",факт,"LLM (чат-сесія, підказка v2)",V4,verified,результат збігається з еталоном
+t2s-T03,"Які компетенції вимагає посада «Рекрутер»? → SELECT ?c WHERE { ?p hr:positionTitle ?t ; hr:requiresCompetence ?c . FILTER(STR(?t) = ""Рекрутер"") }",факт,"LLM (чат-сесія, підказка v2)",V4,verified,результат збігається з еталоном
+t2s-T04,Чи завершив Андрій Мельник курс Python Advanced? → ASK { hr:andriy hr:completedCourse hr:pythonAdvancedCourse },факт,"LLM (чат-сесія, підказка v2)",V4,verified,результат збігається з еталоном
+t2s-T05,"Хто безпосередній керівник Марії Гончар? → SELECT ?manager WHERE { ?e hr:fullName ?n ; hr:directManager ?m . ?m hr:fullName ?manager . FILTER(STR(?n) = ""Марія Гончар"") }",факт,"LLM (чат-сесія, підказка v2)",V4,verified,результат збігається з еталоном
+t2s-T06,Яка середня продуктивність на кожній посаді? → SELECT ?title (AVG(?s) AS ?avg) WHERE { ?e hr:occupies ?p ; hr:productivityScore ?s . ?p hr:positionTitle ?title } GROUP BY ?title,факт,"LLM (чат-сесія, підказка v2)",V4,verified,результат збігається з еталоном
+t2s-T07,Хто транзитивно підпорядкований Івану Шевчуку? → SELECT DISTINCT ?e WHERE { ?e hr:directManager+ hr:ivan },факт,"LLM (чат-сесія, підказка v2)",V4,verified,результат збігається з еталоном
+t2s-T08,Скільки менеджерів у графі? → SELECT (COUNT(DISTINCT ?e) AS ?n) WHERE { ?e a/rdfs:subClassOf* hr:Manager },факт,"LLM (чат-сесія, підказка v2)",V4,verified,результат збігається з еталоном
+t2s-T09,Хто має низьку продуктивність (клас LowPerformer)? → SELECT DISTINCT ?name WHERE { ?e hr:fullName ?name ; hr:productivityScore ?s . FILTER(?s < 5) },факт,"LLM (чат-сесія, підказка v2)",V4,verified,результат збігається з еталоном
+t2s-T10,Які курси входять до плану навчання Петра? → SELECT ?title WHERE { ?plan hr:planFor hr:petro ; hr:includesCourse ?c . ?c hr:courseTitle ?title },факт,"LLM (чат-сесія, підказка v2)",V4,verified,результат збігається з еталоном
+t2s-T11,Хто з співробітників пропрацював понад 60 місяців? → SELECT ?name WHERE { ?e a/rdfs:subClassOf* hr:Employee ; hr:fullName ?name ; hr:tenureMonths ?t . FILTER(?t > 60) },факт,"LLM (чат-сесія, підказка v2)",V4,verified,результат збігається з еталоном
+t2s-T12,Скільки співробітників у кожному стані? → SELECT ?st (COUNT(DISTINCT ?e) AS ?n) WHERE { ?e a/rdfs:subClassOf* hr:Employee ; hr:inState ?st } GROUP BY ?st,факт,"LLM (чат-сесія, підказка v2)",V4,verified,результат збігається з еталоном
+t2s-T13,Який керівник має найбільше безпосередніх підлеглих? → SELECT ?m (COUNT(?e) AS ?n) WHERE { ?e hr:directManager ?m } GROUP BY ?m ORDER BY DESC(?n) LIMIT 1,факт,"LLM (чат-сесія, підказка v2)",V4,verified,результат збігається з еталоном
+t2s-T14,Для кожної посади: скільки співробітників мають оцінку не нижче 7? → SELECT ?title (COUNT(?e) AS ?n) WHERE { ?e hr:occupies ?p ; hr:productivityScore ?s . ?p hr:positionTitle ?title . FILTER(?s >= 7) } GROUP BY ?title,факт,"LLM (чат-сесія, підказка v2)",V4,verified,результат збігається з еталоном
+t2s-T15,Скільки різних компетенцій (будь-якого типу) вимагають посади? → SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE { ?p hr:requiresCompetence ?c . ?c a/rdfs:subClassOf* hr:Competence },факт,"LLM (чат-сесія, підказка v2)",V4,verified,результат збігається з еталоном
+t2s-T16,Які події стосуються співробітників з оцінкою нижче 5 і яких вони типів? → SELECT ?ev ?type WHERE { ?ev a ?type ; hr:concernsEmployee ?e . ?e hr:productivityScore ?s . FILTER(?s < 5) FILTER(?type != owl:NamedIndividual) },факт,"LLM (чат-сесія, підказка v2)",V4,verified,результат збігається з еталоном
+t2s-H01,Скільки кандидатів у графі? → SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE { ?c a/rdfs:subClassOf* hr:Candidate },факт,"LLM (чат-сесія, підказка v2)",V4,verified,результат збігається з еталоном
+t2s-H02,Хто має найвищу продуктивність і яка вона? → SELECT ?name ?s WHERE { ?e hr:fullName ?name ; hr:productivityScore ?s } ORDER BY DESC(?s) LIMIT 1,факт,"LLM (чат-сесія, підказка v2)",V4,verified,результат збігається з еталоном
+t2s-H03,"Скільки співробітників обіймають посаду «Python-розробник»? → SELECT (COUNT(DISTINCT ?e) AS ?n) WHERE { ?e hr:occupies ?p . ?p hr:positionTitle ?t . FILTER(STR(?t) = ""Python-розробник"") }",факт,"LLM (чат-сесія, підказка v2)",V4,verified,результат збігається з еталоном
+t2s-H04,Хто підпорядкований безпосередньо Олені Коваль? → SELECT ?name WHERE { ?e hr:directManager hr:olena ; hr:fullName ?name },факт,"LLM (чат-сесія, підказка v2)",V4,verified,результат збігається з еталоном

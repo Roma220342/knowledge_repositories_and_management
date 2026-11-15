@@ -1,0 +1,9 @@
+# id: q09
+# CQ: Хто пропрацював в організації понад 60 місяців?
+# construct: SELECT + FILTER
+# interp: Фільтр за числовою властивістю tenureMonths; ядро «досвідчених» співробітників.
+PREFIX hr: <http://example.org/hr#>
+SELECT ?name ?months WHERE {
+  ?e hr:fullName ?name ; hr:tenureMonths ?months .
+  FILTER(?months > 60)
+} ORDER BY DESC(?months)

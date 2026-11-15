@@ -1,0 +1,12 @@
+numpy
+scipy
+scikit-learn
+faiss-cpu
+rank_bm25
+matplotlib
+fastapi
+uvicorn
+pydantic
+neo4j
+starlette
+httpx

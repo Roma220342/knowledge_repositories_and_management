@@ -1,0 +1,150 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix hr: <http://example.org/hr#> .
+@prefix lnk: <http://example.org/lnk#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+lnk:L1 a lnk:Link ;
+    lnk:confidence 0.9 ;
+    lnk:relation skos:exactMatch ;
+    lnk:source hr:Employee ;
+    lnk:status "verified" ;
+    lnk:target <http://www.wikidata.org/entity/Q703534> ;
+    lnk:verificationLevel "V1" ;
+    dcterms:date "2026-11-04"^^xsd:date ;
+    dcterms:source <https://www.wikidata.org/wiki/Q703534> ;
+    rdfs:comment "Локально: «особа, що перебуває в трудових відносинах з організацією». Wikidata: «employee» — «person who works for an employer». збігається ключова ознака (опис містить одне зі слів: person, employ)." .
+
+lnk:L10 a lnk:Link ;
+    lnk:confidence 0.7 ;
+    lnk:relation skos:closeMatch ;
+    lnk:source hr:KPI ;
+    lnk:status "rejected" ;
+    lnk:target <http://www.wikidata.org/entity/Q63942470> ;
+    lnk:verificationLevel "V1" ;
+    dcterms:date "2026-11-04"^^xsd:date ;
+    dcterms:source <https://www.wikidata.org/wiki/Q63942470> ;
+    rdfs:comment "Локально: «показник ефективності діяльності». Wikidata: «RFC 8592: Key Performance Indicator (KPI) Stamping for the Network Service Header (NSH)» — «request for comments publication». опис/мітка не відповідає визначенню або кращий кандидат уже обрано." .
+
+lnk:L11 a lnk:Link ;
+    lnk:confidence 0.3 ;
+    lnk:relation skos:closeMatch ;
+    lnk:source hr:Position ;
+    lnk:status "rejected" ;
+    lnk:target <http://www.wikidata.org/entity/Q2569062> ;
+    lnk:verificationLevel "V1" ;
+    dcterms:date "2026-11-04"^^xsd:date ;
+    dcterms:source <https://www.wikidata.org/wiki/Q2569062> ;
+    rdfs:comment "Локально: «посада в організаційній структурі». Wikidata: «Job» — «male given name». опис/мітка не відповідає визначенню або кращий кандидат уже обрано." .
+
+lnk:L12 a lnk:Link ;
+    lnk:confidence 0.3 ;
+    lnk:relation skos:closeMatch ;
+    lnk:source hr:Position ;
+    lnk:status "rejected" ;
+    lnk:target <http://www.wikidata.org/entity/Q687423> ;
+    lnk:verificationLevel "V1" ;
+    dcterms:date "2026-11-04"^^xsd:date ;
+    dcterms:source <https://www.wikidata.org/wiki/Q687423> ;
+    rdfs:comment "Локально: «посада в організаційній структурі». Wikidata: «Job» — «commune in Puy-de-Dôme, France». опис/мітка не відповідає визначенню або кращий кандидат уже обрано." .
+
+lnk:L13 a lnk:Link ;
+    lnk:confidence 0.7 ;
+    lnk:relation skos:closeMatch ;
+    lnk:source hr:Position ;
+    lnk:status "verified" ;
+    lnk:target <http://www.wikidata.org/entity/Q12737077> ;
+    lnk:verificationLevel "V1" ;
+    dcterms:date "2026-11-04"^^xsd:date ;
+    dcterms:source <https://www.wikidata.org/wiki/Q12737077> ;
+    rdfs:comment "Локально: «посада в організаційній структурі». Wikidata: «occupation» — «label applied to a person based on an activity they participate in». збігається ключова ознака (опис містить одне зі слів: work, position, employment, occupation)." .
+
+lnk:L2 a lnk:Link ;
+    lnk:confidence 0.9 ;
+    lnk:relation skos:exactMatch ;
+    lnk:source hr:Employee ;
+    lnk:status "rejected" ;
+    lnk:target <http://www.wikidata.org/entity/Q65964542> ;
+    lnk:verificationLevel "V1" ;
+    dcterms:date "2026-11-04"^^xsd:date ;
+    dcterms:source <https://www.wikidata.org/wiki/Q65964542> ;
+    rdfs:comment "Локально: «особа, що перебуває в трудових відносинах з організацією». Wikidata: «employee» — «inverse label for property P108». опис/мітка не відповідає визначенню або кращий кандидат уже обрано." .
+
+lnk:L3 a lnk:Link ;
+    lnk:confidence 0.9 ;
+    lnk:relation skos:exactMatch ;
+    lnk:source hr:Resume ;
+    lnk:status "verified" ;
+    lnk:target <http://www.wikidata.org/entity/Q186649> ;
+    lnk:verificationLevel "V1" ;
+    dcterms:date "2026-11-04"^^xsd:date ;
+    dcterms:source <https://www.wikidata.org/wiki/Q186649> ;
+    rdfs:comment "Локально: «документ із відомостями про освіту й досвід кандидата». Wikidata: «curriculum vitae» — «summary of career». збігається ключова ознака (опис містить одне зі слів: summary, document, career)." .
+
+lnk:L4 a lnk:Link ;
+    lnk:confidence 0.3 ;
+    lnk:relation skos:closeMatch ;
+    lnk:source hr:Resume ;
+    lnk:status "rejected" ;
+    lnk:target <http://www.wikidata.org/entity/Q16247137> ;
+    lnk:verificationLevel "V1" ;
+    dcterms:date "2026-11-04"^^xsd:date ;
+    dcterms:source <https://www.wikidata.org/wiki/Q16247137> ;
+    rdfs:comment "Локально: «документ із відомостями про освіту й досвід кандидата». Wikidata: «Curriculum Vitae» — «compilation album». опис/мітка не відповідає визначенню або кращий кандидат уже обрано." .
+
+lnk:L5 a lnk:Link ;
+    lnk:confidence 0.9 ;
+    lnk:relation skos:exactMatch ;
+    lnk:source hr:Salary ;
+    lnk:status "verified" ;
+    lnk:target <http://www.wikidata.org/entity/Q194489> ;
+    lnk:verificationLevel "V1" ;
+    dcterms:date "2026-11-04"^^xsd:date ;
+    dcterms:source <https://www.wikidata.org/wiki/Q194489> ;
+    rdfs:comment "Локально: «винагорода, що виплачується регулярно». Wikidata: «salary» — «remuneration paid by an employer to an employee periodically, rather than based on actual time worked». збігається ключова ознака (опис містить одне зі слів: payment, remuneration, pay, wage)." .
+
+lnk:L6 a lnk:Link ;
+    lnk:confidence 0.3 ;
+    lnk:relation skos:closeMatch ;
+    lnk:source hr:Salary ;
+    lnk:status "rejected" ;
+    lnk:target <http://www.wikidata.org/entity/Q37473853> ;
+    lnk:verificationLevel "V1" ;
+    dcterms:date "2026-11-04"^^xsd:date ;
+    dcterms:source <https://www.wikidata.org/wiki/Q37473853> ;
+    rdfs:comment "Локально: «винагорода, що виплачується регулярно». Wikidata: «Salary» — «family name». опис/мітка не відповідає визначенню або кращий кандидат уже обрано." .
+
+lnk:L7 a lnk:Link ;
+    lnk:confidence 0.3 ;
+    lnk:relation skos:closeMatch ;
+    lnk:source hr:Bonus ;
+    lnk:status "rejected" ;
+    lnk:target <http://www.wikidata.org/entity/Q11228121> ;
+    lnk:verificationLevel "V1" ;
+    dcterms:date "2026-11-04"^^xsd:date ;
+    dcterms:source <https://www.wikidata.org/wiki/Q11228121> ;
+    rdfs:comment "Локально: «додаткова винагорода за результати». Wikidata: «Bonus» — «Czech rapper». опис/мітка не відповідає визначенню або кращий кандидат уже обрано." .
+
+lnk:L8 a lnk:Link ;
+    lnk:confidence 0.3 ;
+    lnk:relation skos:closeMatch ;
+    lnk:source hr:Bonus ;
+    lnk:status "rejected" ;
+    lnk:target <http://www.wikidata.org/entity/Q18579777> ;
+    lnk:verificationLevel "V1" ;
+    dcterms:date "2026-11-04"^^xsd:date ;
+    dcterms:source <https://www.wikidata.org/wiki/Q18579777> ;
+    rdfs:comment "Локально: «додаткова винагорода за результати». Wikidata: «Bonus» — «genus of molluscs». опис/мітка не відповідає визначенню або кращий кандидат уже обрано." .
+
+lnk:L9 a lnk:Link ;
+    lnk:confidence 0.7 ;
+    lnk:relation skos:closeMatch ;
+    lnk:source hr:KPI ;
+    lnk:status "verified" ;
+    lnk:target <http://www.wikidata.org/entity/Q860554> ;
+    lnk:verificationLevel "V1" ;
+    dcterms:date "2026-11-04"^^xsd:date ;
+    dcterms:source <https://www.wikidata.org/wiki/Q860554> ;
+    rdfs:comment "Локально: «показник ефективності діяльності». Wikidata: «performance indicator» — «measurement of performance-related attributes that evaluates the success of an organization or of a particular activity, to be compared against benchmarks or expectations». збігається ключова ознака (опис містить одне зі слів: performance, indicator, measure)." .
+

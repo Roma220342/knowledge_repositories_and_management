@@ -1,0 +1,9 @@
+# id: q10
+# CQ: Які керівники мають щонайменше 5 безпосередніх підлеглих?
+# construct: SELECT + GROUP BY + HAVING
+# interp: HAVING відфільтровує групи після агрегації; показує навантаження керівників.
+PREFIX hr: <http://example.org/hr#>
+SELECT ?manager (COUNT(?e) AS ?team) WHERE {
+  ?e hr:directManager ?m .
+  ?m hr:fullName ?manager
+} GROUP BY ?manager HAVING (COUNT(?e) >= 5) ORDER BY DESC(?team)

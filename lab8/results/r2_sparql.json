@@ -1,0 +1,455 @@
+{
+  "queries": {
+    "q01": {
+      "meta": {
+        "id": "q01",
+        "CQ": "Які компетенції вимагає посада «Python-розробник»?",
+        "construct": "SELECT",
+        "interp": "Повертає IRI компетенцій, пов'язаних із посадою властивістю requiresCompetence; відповідає профілю посади."
+      },
+      "rows": [
+        {
+          "competence": "pythonProgramming"
+        },
+        {
+          "competence": "teamCommunication"
+        }
+      ],
+      "ms": 6.4,
+      "query": "PREFIX hr: <http://example.org/hr#>\nSELECT ?competence WHERE { hr:pythonDeveloperPost hr:requiresCompetence ?competence } ORDER BY ?competence"
+    },
+    "q02": {
+      "meta": {
+        "id": "q02",
+        "CQ": "Хто є безпосереднім керівником Петра Бондаря?",
+        "construct": "SELECT + FILTER",
+        "interp": "Знаходить співробітника за іменем і повертає ім'я керівника через directManager."
+      },
+      "rows": [
+        {
+          "manager": "Іван Шевчук"
+        }
+      ],
+      "ms": 32.6,
+      "query": "PREFIX hr: <http://example.org/hr#>\nSELECT ?manager WHERE {\n  ?e hr:fullName ?n ; hr:directManager ?m .\n  FILTER(STR(?n) = \"Петро Бондар\")\n  ?m hr:fullName ?manager\n}"
+    },
+    "q03": {
+      "meta": {
+        "id": "q03",
+        "CQ": "Чи має Марія Гончар компетенцію pythonProgramming?",
+        "construct": "ASK",
+        "interp": "Булева відповідь true/false про наявність факту hasCompetence."
+      },
+      "rows": [
+        {
+          "answer": "true"
+        }
+      ],
+      "ms": 5.3,
+      "query": "PREFIX hr: <http://example.org/hr#>\nASK { hr:maria hr:hasCompetence hr:pythonProgramming }"
+    },
+    "q04": {
+      "meta": {
+        "id": "q04",
+        "CQ": "Скільки всього співробітників (з урахуванням підкласів Manager і Recruiter)?",
+        "construct": "SELECT + агрегація COUNT + шлях rdfs:subClassOf*",
+        "interp": "Без reasoner підкласи потрібно обходити шляхом a/rdfs:subClassOf*; інакше менеджери й рекрутери не потраплять у вибірку."
+      },
+      "rows": [
+        {
+          "n": "30"
+        }
+      ],
+      "ms": 19.9,
+      "query": "PREFIX hr: <http://example.org/hr#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nSELECT (COUNT(DISTINCT ?e) AS ?n) WHERE { ?e a/rdfs:subClassOf* hr:Employee }"
+    },
+    "q05": {
+      "meta": {
+        "id": "q05",
+        "CQ": "Скільки співробітників і яка середня продуктивність на кожній посаді?",
+        "construct": "SELECT + GROUP BY + AVG",
+        "interp": "Групує співробітників за назвою посади; показує навантаження та якість по посадах."
+      },
+      "rows": [
+        {
+          "position": "Python-розробник",
+          "employees": "24",
+          "avgScore": "6.79"
+        },
+        {
+          "position": "Рекрутер",
+          "employees": "3",
+          "avgScore": "5.03"
+        },
+        {
+          "position": "Керівник команди",
+          "employees": "2",
+          "avgScore": "9.05"
+        },
+        {
+          "position": "HR-менеджер",
+          "employees": "1",
+          "avgScore": "7.9"
+        }
+      ],
+      "ms": 39.6,
+      "query": "PREFIX hr: <http://example.org/hr#>\nSELECT ?position (COUNT(?e) AS ?employees) (ROUND(AVG(?s) * 100) / 100 AS ?avgScore) WHERE {\n  ?e hr:occupies ?p ; hr:productivityScore ?s .\n  ?p hr:positionTitle ?position\n} GROUP BY ?position ORDER BY DESC(?employees)"
+    },
+    "q06": {
+      "meta": {
+        "id": "q06",
+        "CQ": "Хто має продуктивність нижче 5 і які курси вони завершили (якщо є)?",
+        "construct": "SELECT + FILTER + OPTIONAL",
+        "interp": "OPTIONAL зберігає співробітників без курсів (порожнє значення); вибірка — кандидати на навчання."
+      },
+      "rows": [
+        {
+          "name": "Тетяна Семенко",
+          "score": "3.6",
+          "course": ""
+        },
+        {
+          "name": "Святослав Ткачук",
+          "score": "3.9",
+          "course": "Ефективні перемовини"
+        },
+        {
+          "name": "Степан Дорош",
+          "score": "4.1",
+          "course": ""
+        },
+        {
+          "name": "Петро Бондар",
+          "score": "4.2",
+          "course": ""
+        },
+        {
+          "name": "Олег Олійник",
+          "score": "4.5",
+          "course": ""
+        },
+        {
+          "name": "Ярослав Захарчук",
+          "score": "4.7",
+          "course": "Python Advanced"
+        }
+      ],
+      "ms": 51.8,
+      "query": "PREFIX hr: <http://example.org/hr#>\nSELECT ?name ?score ?course WHERE {\n  ?e hr:fullName ?name ; hr:productivityScore ?score .\n  FILTER(?score < 5.0)\n  OPTIONAL { ?e hr:completedCourse ?c . ?c hr:courseTitle ?course }\n} ORDER BY ?score"
+    },
+    "q07": {
+      "meta": {
+        "id": "q07",
+        "CQ": "Хто (транзитивно) підпорядкований Олені Коваль?",
+        "construct": "SELECT + property path (alternative + one-or-more)",
+        "interp": "Шлях (directManager|reportsTo)+ обходить ланцюжок керівників без записаної транзитивності."
+      },
+      "rows": [
+        {
+          "e": "andriy"
+        },
+        {
+          "e": "emp007"
+        },
+        {
+          "e": "emp008"
+        },
+        {
+          "e": "emp009"
+        },
+        {
+          "e": "emp010"
+        },
+        {
+          "e": "emp011"
+        },
+        {
+          "e": "emp012"
+        },
+        {
+          "e": "emp013"
+        },
+        {
+          "e": "emp014"
+        },
+        {
+          "e": "emp015"
+        },
+        {
+          "e": "emp016"
+        },
+        {
+          "e": "emp017"
+        },
+        {
+          "e": "emp018"
+        },
+        {
+          "e": "emp019"
+        },
+        {
+          "e": "emp020"
+        },
+        {
+          "e": "emp021"
+        },
+        {
+          "e": "emp022"
+        },
+        {
+          "e": "emp023"
+        },
+        {
+          "e": "emp024"
+        },
+        {
+          "e": "emp025"
+        },
+        {
+          "e": "emp026"
+        },
+        {
+          "e": "emp027"
+        },
+        {
+          "e": "emp028"
+        },
+        {
+          "e": "emp029"
+        },
+        {
+          "e": "emp030"
+        },
+        {
+          "e": "ivan"
+        },
+        {
+          "e": "maria"
+        },
+        {
+          "e": "petro"
+        },
+        {
+          "e": "sofia"
+        }
+      ],
+      "ms": 16.7,
+      "query": "PREFIX hr: <http://example.org/hr#>\nSELECT DISTINCT ?e WHERE { ?e (hr:directManager|hr:reportsTo)+ hr:olena } ORDER BY ?e"
+    },
+    "q08": {
+      "meta": {
+        "id": "q08",
+        "CQ": "Який граф зв'язків «керівник керує підлеглим» можна отримати з directManager?",
+        "construct": "CONSTRUCT",
+        "interp": "Будує нові триплети hr:manages (обернена властивість), які можна завантажити окремим графом."
+      },
+      "rows": [
+        {
+          "triples": 29
+        }
+      ],
+      "ms": 9.6,
+      "query": "PREFIX hr: <http://example.org/hr#>\nCONSTRUCT { ?m hr:manages ?e } WHERE { ?e hr:directManager ?m }"
+    },
+    "q09": {
+      "meta": {
+        "id": "q09",
+        "CQ": "Хто пропрацював в організації понад 60 місяців?",
+        "construct": "SELECT + FILTER",
+        "interp": "Фільтр за числовою властивістю tenureMonths; ядро «досвідчених» співробітників."
+      },
+      "rows": [
+        {
+          "name": "Уляна Стасюк",
+          "months": "95"
+        },
+        {
+          "name": "Зоряна Левицький",
+          "months": "95"
+        },
+        {
+          "name": "Мирослава Литвин",
+          "months": "88"
+        },
+        {
+          "name": "Олена Коваль",
+          "months": "88"
+        },
+        {
+          "name": "Максим Федина",
+          "months": "84"
+        },
+        {
+          "name": "Остап Павлюк",
+          "months": "84"
+        },
+        {
+          "name": "Галина Головатий",
+          "months": "77"
+        },
+        {
+          "name": "Іван Шевчук",
+          "months": "76"
+        },
+        {
+          "name": "Тетяна Семенко",
+          "months": "73"
+        },
+        {
+          "name": "Дарина Вовк",
+          "months": "71"
+        },
+        {
+          "name": "Назар Кузьмич",
+          "months": "71"
+        },
+        {
+          "name": "Ольга Бойко",
+          "months": "70"
+        },
+        {
+          "name": "Олег Олійник",
+          "months": "70"
+        },
+        {
+          "name": "Андрій Мельник",
+          "months": "61"
+        }
+      ],
+      "ms": 22.8,
+      "query": "PREFIX hr: <http://example.org/hr#>\nSELECT ?name ?months WHERE {\n  ?e hr:fullName ?name ; hr:tenureMonths ?months .\n  FILTER(?months > 60)\n} ORDER BY DESC(?months)"
+    },
+    "q10": {
+      "meta": {
+        "id": "q10",
+        "CQ": "Які керівники мають щонайменше 5 безпосередніх підлеглих?",
+        "construct": "SELECT + GROUP BY + HAVING",
+        "interp": "HAVING відфільтровує групи після агрегації; показує навантаження керівників."
+      },
+      "rows": [
+        {
+          "manager": "Іван Шевчук",
+          "team": "13"
+        },
+        {
+          "manager": "Олена Коваль",
+          "team": "10"
+        },
+        {
+          "manager": "Остап Павлюк",
+          "team": "6"
+        }
+      ],
+      "ms": 47.5,
+      "query": "PREFIX hr: <http://example.org/hr#>\nSELECT ?manager (COUNT(?e) AS ?team) WHERE {\n  ?e hr:directManager ?m .\n  ?m hr:fullName ?manager\n} GROUP BY ?manager HAVING (COUNT(?e) >= 5) ORDER BY DESC(?team)"
+    },
+    "q12": {
+      "meta": {
+        "id": "q12",
+        "CQ": "Які зовнішні відповідники (Wikidata) мають наші поняття, зв'язки з якими верифіковано?",
+        "construct": "SELECT + federated SERVICE (Wikidata)",
+        "interp": "З локального графа беруться лише верифіковані зв'язки (data/links.ttl); мітку й опис отримуємо з query.wikidata.org.",
+        "template": "{{VALUES}} підставляє scripts/r2_queries.py зі списку верифікованих зв'язків"
+      },
+      "rows": [
+        {
+          "term": "Employee",
+          "relation": "exactMatch",
+          "conf": "0.9",
+          "label": "employee",
+          "desc": ""
+        },
+        {
+          "term": "Resume",
+          "relation": "exactMatch",
+          "conf": "0.9",
+          "label": "curriculum vitae",
+          "desc": ""
+        },
+        {
+          "term": "Salary",
+          "relation": "exactMatch",
+          "conf": "0.9",
+          "label": "salary",
+          "desc": ""
+        },
+        {
+          "term": "Position",
+          "relation": "closeMatch",
+          "conf": "0.7",
+          "label": "occupation",
+          "desc": ""
+        },
+        {
+          "term": "KPI",
+          "relation": "closeMatch",
+          "conf": "0.7",
+          "label": "performance indicator",
+          "desc": ""
+        }
+      ],
+      "ms": 6278.9,
+      "mode": "rdflib SERVICE → query.wikidata.org"
+    }
+  },
+  "optimization": [
+    {
+      "Варіант": "q11a (FILTER наприкінці, декартів добуток)",
+      "Рушій": "rdflib",
+      "Час, мс": 7348.7,
+      "Пар": "743"
+    },
+    {
+      "Варіант": "q11b (селективні підзапити першими)",
+      "Рушій": "rdflib",
+      "Час, мс": 480.2,
+      "Пар": "743"
+    },
+    {
+      "Варіант": "q11a (FILTER наприкінці, декартів добуток)",
+      "Рушій": "Oxigraph",
+      "Час, мс": 2.4,
+      "Пар": 743
+    },
+    {
+      "Варіант": "q11b (селективні підзапити першими)",
+      "Рушій": "Oxigraph",
+      "Час, мс": 1.1,
+      "Пар": 743
+    }
+  ],
+  "same_answer": true,
+  "triples_big": 3685,
+  "manual": [
+    {
+      "запит": "q02",
+      "очікування (перебір триплетів)": "Іван Шевчук",
+      "результат SPARQL": "Іван Шевчук",
+      "збіг": "так"
+    },
+    {
+      "запит": "q04",
+      "очікування (перебір триплетів)": "30",
+      "результат SPARQL": "30",
+      "збіг": "так"
+    },
+    {
+      "запит": "q07",
+      "очікування (перебір триплетів)": "29 підлеглих",
+      "результат SPARQL": "29 підлеглих",
+      "збіг": "так"
+    },
+    {
+      "запит": "q09",
+      "очікування (перебір триплетів)": "14 осіб",
+      "результат SPARQL": "14 осіб",
+      "збіг": "так"
+    },
+    {
+      "запит": "q10",
+      "очікування (перебір триплетів)": "Іван Шевчук 13; Олена Коваль 10; Остап Павлюк 6",
+      "результат SPARQL": "Іван Шевчук 13; Олена Коваль 10; Остап Павлюк 6",
+      "збіг": "так"
+    }
+  ]
+}

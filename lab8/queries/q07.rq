@@ -1,0 +1,6 @@
+# id: q07
+# CQ: Хто (транзитивно) підпорядкований Олені Коваль?
+# construct: SELECT + property path (alternative + one-or-more)
+# interp: Шлях (directManager|reportsTo)+ обходить ланцюжок керівників без записаної транзитивності.
+PREFIX hr: <http://example.org/hr#>
+SELECT DISTINCT ?e WHERE { ?e (hr:directManager|hr:reportsTo)+ hr:olena } ORDER BY ?e

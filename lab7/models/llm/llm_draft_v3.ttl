@@ -1,0 +1,72 @@
+@prefix : <http://example.org/hr#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/hr> a owl:Ontology ; rdfs:label "HR ontology (LLM draft)" .
+
+:Person a owl:Class .
+:Employee a owl:Class ; rdfs:subClassOf :Person .
+:Manager a owl:Class ; rdfs:subClassOf :Employee .
+:Recruiter a owl:Class ; rdfs:subClassOf :Manager .
+:Candidate a owl:Class ; rdfs:subClassOf :Employee .
+:Position a owl:Class .
+:Role a owl:Class .
+:Skill a owl:Class .
+:Competence a owl:Class ; rdfs:subClassOf :Skill .
+:SoftSkill a owl:Class ; rdfs:subClassOf :Competence .
+:HardSkill a owl:Class ; rdfs:subClassOf :Competence .
+:HRProcess a owl:Class .
+:Recruitment a owl:Class ; rdfs:subClassOf :HRProcess .
+:Appraisal a owl:Class ; rdfs:subClassOf :HRProcess .
+:Attestation a owl:Class ; rdfs:subClassOf :Appraisal .
+:Training a owl:Class ; rdfs:subClassOf :HRProcess .
+:Motivation a owl:Class ; rdfs:subClassOf :HRProcess .
+:Interview a owl:Class ; rdfs:subClassOf :HRProcess .
+:Onboarding a owl:Class ; rdfs:subClassOf :HRProcess .
+:HRDecision a owl:Class .
+:Promotion a owl:Class ; rdfs:subClassOf :HRDecision .
+:Dismissal a owl:Class ; rdfs:subClassOf :HRProcess .
+:DecisionRule a owl:Class .
+:Metric a owl:Class .
+:Productivity a owl:Class ; rdfs:subClassOf :Metric .
+:Turnover a owl:Class ; rdfs:subClassOf :Metric .
+:KPI a owl:Class ; rdfs:subClassOf :Metric .
+:Reward a owl:Class .
+:Salary a owl:Class ; rdfs:subClassOf :Metric .
+:Bonus a owl:Class ; rdfs:subClassOf :Reward .
+:Document a owl:Class .
+:Resume a owl:Class ; rdfs:subClassOf :Document .
+:PositionProfile a owl:Class ; rdfs:subClassOf :Document .
+:TrainingPlan a owl:Class ; rdfs:subClassOf :Document .
+:Course a owl:Class ; rdfs:subClassOf :HRProcess .
+:InformationSystem a owl:Class .
+:HRIS a owl:Class ; rdfs:subClassOf :InformationSystem .
+:LMS a owl:Class ; rdfs:subClassOf :InformationSystem .
+:Organization a owl:Class .
+:Department a owl:Class ; rdfs:subClassOf :Organization .
+:Contract a owl:Class ; rdfs:subClassOf :Document .
+:Manager rdfs:subClassOf :Position .
+:occupies a owl:ObjectProperty ; rdfs:domain :Position ; rdfs:range :Employee .
+:requiresCompetence a owl:ObjectProperty ; rdfs:domain :Position ; rdfs:range :Competence .
+:hasCompetence a owl:ObjectProperty ; rdfs:domain :Person ; rdfs:range :Competence .
+:partOf a owl:ObjectProperty, owl:TransitiveProperty ; rdfs:domain :HRProcess ; rdfs:range :HRProcess .
+:reportsTo a owl:ObjectProperty, owl:TransitiveProperty ; rdfs:domain :Employee ; rdfs:range :Manager .
+:makesDecision a owl:ObjectProperty ; rdfs:domain :Manager ; rdfs:range :HRDecision .
+:evaluates a owl:ObjectProperty ; rdfs:domain :Appraisal ; rdfs:range :Competence .
+:contains a owl:ObjectProperty ; rdfs:domain :InformationSystem ; rdfs:range owl:Thing .
+:raises a owl:ObjectProperty ; rdfs:range :Metric .
+:lowers a owl:ObjectProperty ; rdfs:range :Metric .
+:candidateFor a owl:ObjectProperty ; rdfs:domain :Candidate ; rdfs:range :Position .
+:includesCourse a owl:ObjectProperty ; rdfs:domain :TrainingPlan ; rdfs:range :Course .
+:employeeId a owl:DatatypeProperty, owl:FunctionalProperty ; rdfs:domain :Employee ; rdfs:range xsd:string .
+:fullName a owl:DatatypeProperty ; rdfs:domain :Person ; rdfs:range xsd:string .
+:hireDate a owl:DatatypeProperty ; rdfs:domain :Employee ; rdfs:range xsd:date .
+:salaryAmount a owl:DatatypeProperty ; rdfs:domain :Salary ; rdfs:range xsd:decimal .
+:productivityScore a owl:DatatypeProperty ; rdfs:domain :Employee ; rdfs:range xsd:string .
+:Position rdfs:subClassOf [ a owl:Restriction ; owl:onProperty :requiresCompetence ; owl:someValuesFrom :Competence ] .
+:Manager rdfs:subClassOf [ a owl:Restriction ; owl:onProperty :makesDecision ; owl:allValuesFrom :HRDecision ] .
+[ a owl:AllDisjointClasses ; owl:members ( :Employee :Candidate ) ] .
+[ a owl:AllDisjointClasses ; owl:members ( :SoftSkill :HardSkill ) ] .
+:Person owl:disjointWith :Position .

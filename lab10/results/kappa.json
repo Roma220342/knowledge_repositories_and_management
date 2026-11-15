@@ -1,0 +1,9 @@
+{
+ "n_queries": 12,
+ "n_pairs": 78,
+ "kappa": 0.639,
+ "observed_agreement": 0.872,
+ "A_pos": 18,
+ "B_pos": 18,
+ "annotator_B": "automatic-rule"
+}

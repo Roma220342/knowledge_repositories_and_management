@@ -1,0 +1,937 @@
+{
+ "@context": {
+  "directManager": {
+   "@id": "http://example.org/hr#directManager",
+   "@type": "@id"
+  },
+  "fullName": "http://example.org/hr#fullName",
+  "hasCompetence": {
+   "@id": "http://example.org/hr#hasCompetence",
+   "@type": "@id"
+  },
+  "hr": "http://example.org/hr#",
+  "owl": "http://www.w3.org/2002/07/owl#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "xsd": "http://www.w3.org/2001/XMLSchema#"
+ },
+ "@graph": [
+  {
+   "@id": "hr:emp029",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:emp013",
+   "fullName": "Зоряна Левицький",
+   "hasCompetence": "hr:hrAnalytics",
+   "hr:employeeId": "E-029",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2018-12-01T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "6.8"
+   },
+   "hr:tenureMonths": 95
+  },
+  {
+   "@id": "hr:candidate1",
+   "@type": [
+    "hr:Candidate",
+    "owl:NamedIndividual"
+   ],
+   "fullName": "Дмитро Савчук",
+   "hr:candidateFor": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:inState": {
+    "@id": "hr:stateCandidate"
+   },
+   "hr:submittedResume": {
+    "@id": "hr:resume1"
+   }
+  },
+  {
+   "@id": "hr:emp027",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Recruiter"
+   ],
+   "directManager": "hr:ivan",
+   "fullName": "Тетяна Семенко",
+   "hasCompetence": [
+    "hr:teamCommunication",
+    "hr:pythonProgramming",
+    "hr:negotiation"
+   ],
+   "hr:employeeId": "E-027",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2020-09-30T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:recruiterPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "3.6"
+   },
+   "hr:tenureMonths": 73
+  },
+  {
+   "@id": "hr:emp030",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:emp013",
+   "fullName": "Ярослав Захарчук",
+   "hasCompetence": [
+    "hr:hrAnalytics",
+    "hr:teamCommunication"
+   ],
+   "hr:completedCourse": {
+    "@id": "hr:pythonAdvancedCourse"
+   },
+   "hr:employeeId": "E-030",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2025-07-29T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "4.7"
+   },
+   "hr:tenureMonths": 15
+  },
+  {
+   "@id": "hr:emp022",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:olena",
+   "fullName": "Ольга Бойко",
+   "hasCompetence": [
+    "hr:negotiation",
+    "hr:teamCommunication",
+    "hr:pythonProgramming"
+   ],
+   "hr:completedCourse": {
+    "@id": "hr:negotiationCourse"
+   },
+   "hr:employeeId": "E-022",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2020-12-30T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "6.8"
+   },
+   "hr:tenureMonths": 70
+  },
+  {
+   "@id": "hr:appraisal1",
+   "@type": [
+    "hr:Appraisal",
+    "owl:NamedIndividual"
+   ],
+   "hr:evaluatesMetric": {
+    "@id": "hr:productivityQ3"
+   },
+   "hr:hasSubProcess": {
+    "@id": "hr:attestation2026"
+   }
+  },
+  {
+   "@id": "hr:emp015",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:emp013",
+   "fullName": "Василь Пономаренко",
+   "hasCompetence": "hr:negotiation",
+   "hr:completedCourse": {
+    "@id": "hr:negotiationCourse"
+   },
+   "hr:employeeId": "E-015",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2022-05-31T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "7.5"
+   },
+   "hr:tenureMonths": 53
+  },
+  {
+   "@id": "hr:emp008",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:ivan",
+   "fullName": "Оксана Мороз",
+   "hasCompetence": [
+    "hr:pythonProgramming",
+    "hr:teamCommunication"
+   ],
+   "hr:completedCourse": {
+    "@id": "hr:negotiationCourse"
+   },
+   "hr:employeeId": "E-008",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2026-02-27T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "5.1"
+   },
+   "hr:tenureMonths": 8
+  },
+  {
+   "@id": "hr:emp019",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:ivan",
+   "fullName": "Назар Кузьмич",
+   "hasCompetence": [
+    "hr:negotiation",
+    "hr:pythonProgramming",
+    "hr:teamCommunication"
+   ],
+   "hr:completedCourse": {
+    "@id": "hr:negotiationCourse"
+   },
+   "hr:employeeId": "E-019",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2020-11-30T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "7.7"
+   },
+   "hr:tenureMonths": 71
+  },
+  {
+   "@id": "hr:actionConfirmEmployment",
+   "@type": [
+    "hr:ConfirmEmploymentAction",
+    "owl:NamedIndividual"
+   ]
+  },
+  {
+   "@id": "hr:eventCourse008",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:CourseCompletedEvent"
+   ],
+   "hr:concernsEmployee": {
+    "@id": "hr:emp008"
+   },
+   "hr:occurredOn": {
+    "@type": "xsd:dateTime",
+    "@value": "2026-10-15T00:00:00"
+   },
+   "hr:reportedBy": {
+    "@id": "hr:sensorLMS"
+   }
+  },
+  {
+   "@id": "hr:actionInitiateDismissal",
+   "@type": [
+    "hr:InitiateDismissalAction",
+    "owl:NamedIndividual"
+   ]
+  },
+  {
+   "@id": "hr:andriy",
+   "@type": [
+    "hr:Employee",
+    "owl:NamedIndividual"
+   ],
+   "directManager": "hr:ivan",
+   "fullName": "Андрій Мельник",
+   "hasCompetence": [
+    "hr:pythonProgramming",
+    "hr:teamCommunication"
+   ],
+   "hr:completedCourse": {
+    "@id": "hr:pythonAdvancedCourse"
+   },
+   "hr:employeeId": "E-005",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2021-09-01T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "9.1"
+   },
+   "hr:tenureMonths": 61
+  },
+  {
+   "@id": "hr:emp009",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:ivan",
+   "fullName": "Богдан Демчук",
+   "hasCompetence": "hr:pythonProgramming",
+   "hr:completedCourse": {
+    "@id": "hr:pythonAdvancedCourse"
+   },
+   "hr:employeeId": "E-009",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2022-09-30T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "8.9"
+   },
+   "hr:tenureMonths": 49
+  },
+  {
+   "@id": "hr:emp020",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:ivan",
+   "fullName": "Уляна Стасюк",
+   "hasCompetence": [
+    "hr:teamCommunication",
+    "hr:negotiation",
+    "hr:pythonProgramming"
+   ],
+   "hr:employeeId": "E-020",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2018-12-01T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "9.3"
+   },
+   "hr:tenureMonths": 95
+  },
+  {
+   "@id": "hr:eventCourse007",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:CourseCompletedEvent"
+   ],
+   "hr:concernsEmployee": {
+    "@id": "hr:emp007"
+   },
+   "hr:occurredOn": {
+    "@type": "xsd:dateTime",
+    "@value": "2026-10-15T00:00:00"
+   },
+   "hr:reportedBy": {
+    "@id": "hr:sensorLMS"
+   }
+  },
+  {
+   "@id": "hr:emp013",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Manager"
+   ],
+   "directManager": "hr:olena",
+   "fullName": "Остап Павлюк",
+   "hasCompetence": [
+    "hr:teamCommunication",
+    "hr:negotiation",
+    "hr:hrAnalytics"
+   ],
+   "hr:employeeId": "E-013",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2019-11-01T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:teamLeadPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "9.5"
+   },
+   "hr:tenureMonths": 84
+  },
+  {
+   "@id": "hr:actionUpdateCompetence",
+   "@type": [
+    "hr:UpdateCompetenceAction",
+    "owl:NamedIndividual"
+   ]
+  },
+  {
+   "@id": "hr:attestation2026",
+   "@type": [
+    "hr:Attestation",
+    "owl:NamedIndividual"
+   ],
+   "hr:evaluates": [
+    {
+     "@id": "hr:pythonProgramming"
+    },
+    {
+     "@id": "hr:teamCommunication"
+    }
+   ],
+   "hr:evaluatesMetric": {
+    "@id": "hr:kpiSprint"
+   }
+  },
+  {
+   "@id": "hr:emp011",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:ivan",
+   "fullName": "Юрій Кравець",
+   "hasCompetence": "hr:negotiation",
+   "hr:employeeId": "E-011",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2022-08-30T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "5.7"
+   },
+   "hr:tenureMonths": 50
+  },
+  {
+   "@id": "hr:actionCloseRecord",
+   "@type": [
+    "hr:CloseRecordAction",
+    "owl:NamedIndividual"
+   ]
+  },
+  {
+   "@id": "hr:emp026",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:ivan",
+   "fullName": "Мирослава Литвин",
+   "hasCompetence": [
+    "hr:hrAnalytics",
+    "hr:pythonProgramming"
+   ],
+   "hr:completedCourse": {
+    "@id": "hr:pythonAdvancedCourse"
+   },
+   "hr:employeeId": "E-026",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2019-07-02T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "5.9"
+   },
+   "hr:tenureMonths": 88
+  },
+  {
+   "@id": "hr:emp018",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:emp013",
+   "fullName": "Леся Романюк",
+   "hasCompetence": [
+    "hr:hrAnalytics",
+    "hr:negotiation"
+   ],
+   "hr:completedCourse": {
+    "@id": "hr:pythonAdvancedCourse"
+   },
+   "hr:employeeId": "E-018",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2025-11-28T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "6.1"
+   },
+   "hr:tenureMonths": 11
+  },
+  {
+   "@id": "hr:emp021",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:ivan",
+   "fullName": "Максим Федина",
+   "hasCompetence": "hr:negotiation",
+   "hr:employeeId": "E-021",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2019-11-01T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "5.3"
+   },
+   "hr:tenureMonths": 84
+  },
+  {
+   "@id": "hr:emp017",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:olena",
+   "fullName": "Степан Дорош",
+   "hasCompetence": "hr:teamCommunication",
+   "hr:employeeId": "E-017",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2026-01-28T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "4.1"
+   },
+   "hr:tenureMonths": 9
+  },
+  {
+   "@id": "hr:dismissalProposal1",
+   "@type": [
+    "hr:Dismissal",
+    "owl:NamedIndividual"
+   ],
+   "hr:decisionAbout": {
+    "@id": "hr:petro"
+   },
+   "hr:lowers": {
+    "@id": "hr:productivityQ3"
+   }
+  },
+  {
+   "@id": "hr:emp024",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:ivan",
+   "fullName": "Дарина Вовк",
+   "hasCompetence": "hr:hrAnalytics",
+   "hr:employeeId": "E-024",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2020-11-30T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "9.5"
+   },
+   "hr:tenureMonths": 71
+  },
+  {
+   "@id": "hr:emp023",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:olena",
+   "fullName": "Роман Остапчук",
+   "hasCompetence": "hr:hrAnalytics",
+   "hr:employeeId": "E-023",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2024-01-29T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "5.0"
+   },
+   "hr:tenureMonths": 33
+  },
+  {
+   "@id": "hr:candidate2",
+   "@type": [
+    "hr:Candidate",
+    "owl:NamedIndividual"
+   ],
+   "fullName": "Ірина Петренко",
+   "hr:candidateFor": {
+    "@id": "hr:recruiterPost"
+   },
+   "hr:submittedResume": {
+    "@id": "hr:resume2"
+   }
+  },
+  {
+   "@id": "hr:emp014",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:olena",
+   "fullName": "Ірина Яремчук",
+   "hasCompetence": [
+    "hr:hrAnalytics",
+    "hr:teamCommunication"
+   ],
+   "hr:completedCourse": {
+    "@id": "hr:negotiationCourse"
+   },
+   "hr:employeeId": "E-014",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2024-02-29T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "8.2"
+   },
+   "hr:tenureMonths": 32
+  },
+  {
+   "@id": "hr:emp012",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:ivan",
+   "fullName": "Наталія Савченко",
+   "hasCompetence": [
+    "hr:teamCommunication",
+    "hr:negotiation",
+    "hr:pythonProgramming"
+   ],
+   "hr:completedCourse": {
+    "@id": "hr:negotiationCourse"
+   },
+   "hr:employeeId": "E-012",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2025-10-29T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "7.7"
+   },
+   "hr:tenureMonths": 12
+  },
+  {
+   "@id": "hr:emp007",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:olena",
+   "fullName": "Тарас Гнатюк",
+   "hasCompetence": "hr:hrAnalytics",
+   "hr:completedCourse": {
+    "@id": "hr:negotiationCourse"
+   },
+   "hr:employeeId": "E-007",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2022-12-30T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "9.3"
+   },
+   "hr:tenureMonths": 46
+  },
+  {
+   "@id": "hr:emp028",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:olena",
+   "fullName": "Святослав Ткачук",
+   "hasCompetence": [
+    "hr:pythonProgramming",
+    "hr:negotiation"
+   ],
+   "hr:completedCourse": {
+    "@id": "hr:negotiationCourse"
+   },
+   "hr:employeeId": "E-028",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2025-11-28T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "3.9"
+   },
+   "hr:tenureMonths": 11
+  },
+  {
+   "@id": "hr:emp016",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:emp013",
+   "fullName": "Галина Головатий",
+   "hasCompetence": [
+    "hr:teamCommunication",
+    "hr:pythonProgramming"
+   ],
+   "hr:employeeId": "E-016",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2020-06-01T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "6.1"
+   },
+   "hr:tenureMonths": 77
+  },
+  {
+   "@id": "hr:emp010",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Employee"
+   ],
+   "directManager": "hr:olena",
+   "fullName": "Христина Гуменюк",
+   "hasCompetence": [
+    "hr:negotiation",
+    "hr:teamCommunication"
+   ],
+   "hr:employeeId": "E-010",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2024-02-29T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:pythonDeveloperPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "9.5"
+   },
+   "hr:tenureMonths": 32
+  },
+  {
+   "@id": "hr:actionAssignCourse",
+   "@type": [
+    "hr:AssignCourseAction",
+    "owl:NamedIndividual"
+   ]
+  },
+  {
+   "@id": "hr:actionStartOnboarding",
+   "@type": [
+    "hr:StartOnboardingAction",
+    "owl:NamedIndividual"
+   ]
+  },
+  {
+   "@id": "hr:emp025",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:Recruiter"
+   ],
+   "directManager": "hr:emp013",
+   "fullName": "Олег Олійник",
+   "hasCompetence": "hr:teamCommunication",
+   "hr:employeeId": "E-025",
+   "hr:hireDate": {
+    "@type": "xsd:dateTime",
+    "@value": "2020-12-30T00:00:00"
+   },
+   "hr:inState": {
+    "@id": "hr:stateActive"
+   },
+   "hr:occupies": {
+    "@id": "hr:recruiterPost"
+   },
+   "hr:productivityScore": {
+    "@type": "xsd:decimal",
+    "@value": "4.5"
+   },
+   "hr:tenureMonths": 70
+  },
+  {
+   "@id": "hr:bonusQ3",
+   "@type": [
+    "hr:Bonus",
+    "owl:NamedIndividual"
+   ],
+   "hr:raises": {
+    "@id": "hr:productivityQ3"
+   }
+  },
+  {
+   "@id": "hr:eventCourse009",
+   "@type": [
+    "owl:NamedIndividual",
+    "hr:CourseCompletedEvent"
+   ],
+   "hr:concernsEmployee": {
+    "@id": "hr:emp009"
+   },
+   "hr:occurredOn": {
+    "@type": "xsd:dateTime",
+    "@value": "2026-05-15T00:00:00"
+   },
+   "hr:reportedBy": {
+    "@id": "hr:sensorLMS"
+   }
+  }
+ ]
+}

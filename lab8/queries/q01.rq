@@ -1,0 +1,6 @@
+# id: q01
+# CQ: Які компетенції вимагає посада «Python-розробник»?
+# construct: SELECT
+# interp: Повертає IRI компетенцій, пов'язаних із посадою властивістю requiresCompetence; відповідає профілю посади.
+PREFIX hr: <http://example.org/hr#>
+SELECT ?competence WHERE { hr:pythonDeveloperPost hr:requiresCompetence ?competence } ORDER BY ?competence

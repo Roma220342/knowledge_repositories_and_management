@@ -1,0 +1,7 @@
+# id: q04
+# CQ: Скільки всього співробітників (з урахуванням підкласів Manager і Recruiter)?
+# construct: SELECT + агрегація COUNT + шлях rdfs:subClassOf*
+# interp: Без reasoner підкласи потрібно обходити шляхом a/rdfs:subClassOf*; інакше менеджери й рекрутери не потраплять у вибірку.
+PREFIX hr: <http://example.org/hr#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT (COUNT(DISTINCT ?e) AS ?n) WHERE { ?e a/rdfs:subClassOf* hr:Employee }

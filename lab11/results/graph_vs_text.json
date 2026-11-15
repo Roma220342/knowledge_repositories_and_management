@@ -1,0 +1,418 @@
+{
+ "text": {
+  "correct": 0,
+  "n": 12,
+  "acc": 0.0,
+  "abstain": 1,
+  "explain": 0.917,
+  "graph_cited": 0.0,
+  "noise": 1.75,
+  "ptok": 575.6,
+  "ctok": 71.2
+ },
+ "graph": {
+  "correct": 12,
+  "n": 12,
+  "acc": 1.0,
+  "abstain": 0,
+  "explain": 1.0,
+  "graph_cited": 1.0,
+  "noise": 2.17,
+  "ptok": 1321.9,
+  "ctok": 254.9
+ },
+ "rows": [
+  {
+   "q": "Хто безпосередній керівник Петра Бондаря?",
+   "kind": "керівник",
+   "gold": [
+    "Іван Шевчук"
+   ],
+   "text": {
+    "correct": false,
+    "abstain": false,
+    "cited": 2,
+    "graph_cited": 0,
+    "ptok": 584,
+    "ctok": 55,
+    "ans": "У співбесіді беруть участь щонайменше двоє інтерв'юерів: безпосередній керівник і представник HR. [D06-p04] Він доповнює оцінку безпосереднього керівника. [D10-p01]"
+   },
+   "graph": {
+    "correct": true,
+    "abstain": false,
+    "cited": 6,
+    "graph_cited": 3,
+    "ptok": 1039,
+    "ctok": 146,
+    "ans": "[n:petro] Петро Бондар (Employee) має безпосереднього керівника [n:ivan] Іван Шевчук (Employee). [n:petro-DIRECT_MANAGER-ivan] У співбесіді беруть участь щонайменше двоє інтерв'юерів: безпосередній керівник і представник HR. [D06-p04] Він доповнює оцінку безпосереднього керівника. [D10-p01] Перехід на наступний рівень потребує підтвердження двома незалежними джерелами: результатом тесту та оцінкою безпосереднього керівника. [D01-p08]"
+   }
+  },
+  {
+   "q": "Хто безпосередній керівник Андрія Мельника?",
+   "kind": "керівник",
+   "gold": [
+    "Іван Шевчук"
+   ],
+   "text": {
+    "correct": false,
+    "abstain": false,
+    "cited": 2,
+    "graph_cited": 0,
+    "ptok": 584,
+    "ctok": 55,
+    "ans": "У співбесіді беруть участь щонайменше двоє інтерв'юерів: безпосередній керівник і представник HR. [D06-p04] Він доповнює оцінку безпосереднього керівника. [D10-p01]"
+   },
+   "graph": {
+    "correct": true,
+    "abstain": false,
+    "cited": 6,
+    "graph_cited": 3,
+    "ptok": 1161,
+    "ctok": 147,
+    "ans": "[n:andriy] Андрій Мельник (Employee) має безпосереднього керівника [n:ivan] Іван Шевчук (Employee). [n:andriy-DIRECT_MANAGER-ivan] У співбесіді беруть участь щонайменше двоє інтерв'юерів: безпосередній керівник і представник HR. [D06-p04] Він доповнює оцінку безпосереднього керівника. [D10-p01] Перехід на наступний рівень потребує підтвердження двома незалежними джерелами: результатом тесту та оцінкою безпосереднього керівника. [D01-p08]"
+   }
+  },
+  {
+   "q": "Хто безпосередній керівник Тараса Гнатюка?",
+   "kind": "керівник",
+   "gold": [
+    "Олена Коваль"
+   ],
+   "text": {
+    "correct": false,
+    "abstain": false,
+    "cited": 2,
+    "graph_cited": 0,
+    "ptok": 584,
+    "ctok": 55,
+    "ans": "У співбесіді беруть участь щонайменше двоє інтерв'юерів: безпосередній керівник і представник HR. [D06-p04] Він доповнює оцінку безпосереднього керівника. [D10-p01]"
+   },
+   "graph": {
+    "correct": true,
+    "abstain": false,
+    "cited": 6,
+    "graph_cited": 3,
+    "ptok": 1197,
+    "ctok": 148,
+    "ans": "[n:emp007] Тарас Гнатюк (Employee) має безпосереднього керівника [n:olena] Олена Коваль (Employee). [n:emp007-DIRECT_MANAGER-olena] У співбесіді беруть участь щонайменше двоє інтерв'юерів: безпосередній керівник і представник HR. [D06-p04] Він доповнює оцінку безпосереднього керівника. [D10-p01] Перехід на наступний рівень потребує підтвердження двома незалежними джерелами: результатом тесту та оцінкою безпосереднього керівника. [D01-p08]"
+   }
+  },
+  {
+   "q": "Хто безпосередній керівник Івана Шевчука?",
+   "kind": "керівник",
+   "gold": [
+    "Олена Коваль"
+   ],
+   "text": {
+    "correct": false,
+    "abstain": false,
+    "cited": 2,
+    "graph_cited": 0,
+    "ptok": 584,
+    "ctok": 55,
+    "ans": "У співбесіді беруть участь щонайменше двоє інтерв'юерів: безпосередній керівник і представник HR. [D06-p04] Він доповнює оцінку безпосереднього керівника. [D10-p01]"
+   },
+   "graph": {
+    "correct": true,
+    "abstain": false,
+    "cited": 24,
+    "graph_cited": 24,
+    "ptok": 1729,
+    "ctok": 347,
+    "ans": "[n:ivan] Іван Шевчук (Employee) має безпосереднього керівника [n:olena] Олена Коваль (Employee). [n:ivan-DIRECT_MANAGER-olena] [n:andriy] Андрій Мельник (Employee) має безпосереднього керівника [n:ivan] Іван Шевчук (Employee). [n:andriy-DIRECT_MANAGER-ivan] [n:emp008] Оксана Яремчук (Employee) має безпосереднього керівника [n:ivan] Іван Шевчук (Employee). [n:emp008-DIRECT_MANAGER-ivan] [n:emp011] Юрій Кравець (Employee) має безпосереднього керівника [n:ivan] Іван Шевчук (Employee). [n:emp011-DIRECT_MANAGER-ivan] [n:emp013] Остап Олійник (Employee) має безпосереднього керівника [n:ivan] Іван Шевчук (Employee). [n:emp013-DIRECT_MANAGER-ivan] [n:emp014] Ірина Мороз (Employee) має безпосереднього керівника [n:ivan] Іван Шевчук (Employee). [n:emp014-DIRECT_MANAGER-ivan] [n:emp015] Василь Пономаренко (Employee) має безпосереднього керівника [n:ivan] Іван Шевчук (Employee). [n:emp015-DIRECT_MANAGER-ivan] [n:emp016] Галина Бойко (Employee) має безпосереднього керівника [n:ivan] Іван Шевчук (Employee). [n:emp016-DIRECT_MANAGER-ivan]"
+   }
+  },
+  {
+   "q": "Які компетенції потрібні для посади Python-розробник?",
+   "kind": "залежність",
+   "gold": [
+    "pythonProgramming",
+    "teamCommunication"
+   ],
+   "text": {
+    "correct": false,
+    "abstain": false,
+    "cited": 2,
+    "graph_cited": 0,
+    "ptok": 594,
+    "ctok": 94,
+    "ans": "Модель компетенцій описує знання, навички та поведінкові ознаки, потрібні розробнику програмного забезпечення для ефективної роботи. [D01-p01] Планування чисельності визначає, скільки працівників і з якими компетенціями потрібно для виконання бізнес-цілей наступного року. [D20-p01]"
+   },
+   "graph": {
+    "correct": true,
+    "abstain": false,
+    "cited": 20,
+    "graph_cited": 18,
+    "ptok": 2223,
+    "ctok": 411,
+    "ans": "Модель компетенцій описує знання, навички та поведінкові ознаки, потрібні розробнику програмного забезпечення для ефективної роботи. [D01-p01] [n:pythonDeveloperPost] Python-розробник (Position) вимагає компетенцію [n:pythonProgramming] pythonProgramming (Competence). [n:pythonDeveloperPost-REQUIRES_COMPETENCE-pythonProgramming] [n:pythonDeveloperPost] Python-розробник (Position) вимагає компетенцію [n:teamCommunication] teamCommunication (Competence). [n:pythonDeveloperPost-REQUIRES_COMPETENCE-teamCommunication] Планування чисельності визначає, скільки працівників і з якими компетенціями потрібно для виконання бізнес-цілей наступного року. [D20-p01] [n:andriy] Андрій Мельник (Employee) займає посаду [n:pythonDeveloperPost] Python-розробник (Position). [n:andriy-OCCUPIES-pythonDeveloperPost] [n:emp007] Тарас Гнатюк (Employee) займає посаду [n:pythonDeveloperPost] Python-розробник (Position). [n:emp007-OCCUPIES-pythonDeveloperPost] [n:emp008] Оксана Яремчук (Employee) займає посаду [n:pythonDeveloperPost] Python-розробник (Position). [n:emp008-OCCUPIES-pythonDeveloperPost] [n:emp009] Богдан Федина (Employee) займає посаду [n:pythonDeveloperPost] Python-розробник (Position). [n:emp009-OCCUPIES-pythonDeveloperPost]"
+   }
+  },
+  {
+   "q": "Які компетенції потрібні для посади HR-менеджер?",
+   "kind": "залежність",
+   "gold": [
+    "hrAnalytics",
+    "negotiation"
+   ],
+   "text": {
+    "correct": false,
+    "abstain": false,
+    "cited": 2,
+    "graph_cited": 0,
+    "ptok": 578,
+    "ctok": 96,
+    "ans": "Планування чисельності визначає, скільки працівників і з якими компетенціями потрібно для виконання бізнес-цілей наступного року. [D20-p01] Приклад правила: якщо продуктивність нижча за 5 балів три квартали поспіль, система створює завдання на перегляд посади для HR-партнера. [D21-p08]"
+   },
+   "graph": {
+    "correct": true,
+    "abstain": false,
+    "cited": 15,
+    "graph_cited": 12,
+    "ptok": 817,
+    "ctok": 329,
+    "ans": "[n:hrManagerPost] HR-менеджер (Position) вимагає компетенцію [n:hrAnalytics] hrAnalytics (Competence). [n:hrManagerPost-REQUIRES_COMPETENCE-hrAnalytics] [n:hrManagerPost] HR-менеджер (Position) вимагає компетенцію [n:negotiation] negotiation (Competence). [n:hrManagerPost-REQUIRES_COMPETENCE-negotiation] Планування чисельності визначає, скільки працівників і з якими компетенціями потрібно для виконання бізнес-цілей наступного року. [D20-p01] Приклад правила: якщо продуктивність нижча за 5 балів три квартали поспіль, система створює завдання на перегляд посади для HR-партнера. [D21-p08] Модель компетенцій описує знання, навички та поведінкові ознаки, потрібні розробнику програмного забезпечення для ефективної роботи. [D01-p01] [n:emp010] Христина Ткачук (Employee) займає посаду [n:hrManagerPost] HR-менеджер (Position). [n:emp010-OCCUPIES-hrManagerPost] [n:olena] Олена Коваль (Employee) займає посаду [n:hrManagerPost] HR-менеджер (Position). [n:olena-OCCUPIES-hrManagerPost]"
+   }
+  },
+  {
+   "q": "Які компетенції потрібні для посади Рекрутер?",
+   "kind": "залежність",
+   "gold": [
+    "negotiation"
+   ],
+   "text": {
+    "correct": false,
+    "abstain": false,
+    "cited": 2,
+    "graph_cited": 0,
+    "ptok": 576,
+    "ctok": 94,
+    "ans": "Планування чисельності визначає, скільки працівників і з якими компетенціями потрібно для виконання бізнес-цілей наступного року. [D20-p01] Модель компетенцій описує знання, навички та поведінкові ознаки, потрібні розробнику програмного забезпечення для ефективної роботи. [D01-p01]"
+   },
+   "graph": {
+    "correct": true,
+    "abstain": false,
+    "cited": 6,
+    "graph_cited": 3,
+    "ptok": 866,
+    "ctok": 192,
+    "ans": "Планування чисельності визначає, скільки працівників і з якими компетенціями потрібно для виконання бізнес-цілей наступного року. [D20-p01] Модель компетенцій описує знання, навички та поведінкові ознаки, потрібні розробнику програмного забезпечення для ефективної роботи. [D01-p01] Зовнішній найм на керівні посади допускається лише тоді, коли в резерві немає кандидатів, що відповідають профілю компетенцій посади. [D03-p08] [n:recruiterPost] Рекрутер (Position) вимагає компетенцію [n:negotiation] negotiation (Competence). [n:recruiterPost-REQUIRES_COMPETENCE-negotiation]"
+   }
+  },
+  {
+   "q": "Які компетенції потрібні для посади Керівник команди?",
+   "kind": "залежність",
+   "gold": [
+    "negotiation",
+    "teamCommunication"
+   ],
+   "text": {
+    "correct": false,
+    "abstain": false,
+    "cited": 2,
+    "graph_cited": 0,
+    "ptok": 564,
+    "ctok": 95,
+    "ans": "Зовнішній найм на керівні посади допускається лише тоді, коли в резерві немає кандидатів, що відповідають профілю компетенцій посади. [D03-p08] Планування чисельності визначає, скільки працівників і з якими компетенціями потрібно для виконання бізнес-цілей наступного року. [D20-p01]"
+   },
+   "graph": {
+    "correct": true,
+    "abstain": false,
+    "cited": 18,
+    "graph_cited": 15,
+    "ptok": 872,
+    "ctok": 367,
+    "ans": "Зовнішній найм на керівні посади допускається лише тоді, коли в резерві немає кандидатів, що відповідають профілю компетенцій посади. [D03-p08] [n:teamLeadPost] Керівник команди (Position) вимагає компетенцію [n:negotiation] negotiation (Competence). [n:teamLeadPost-REQUIRES_COMPETENCE-negotiation] [n:teamLeadPost] Керівник команди (Position) вимагає компетенцію [n:teamCommunication] teamCommunication (Competence). [n:teamLeadPost-REQUIRES_COMPETENCE-teamCommunication] Планування чисельності визначає, скільки працівників і з якими компетенціями потрібно для виконання бізнес-цілей наступного року. [D20-p01] Керівник бачить лише дані своїх підлеглих, потрібні для управління: посаду, оцінки, відпустки. [D11-p06] [n:emp019] Назар Кузьмич (Employee) займає посаду [n:teamLeadPost] Керівник команди (Position). [n:emp019-OCCUPIES-teamLeadPost] [n:emp023] Роман Остапчук (Employee) займає посаду [n:teamLeadPost] Керівник команди (Position). [n:emp023-OCCUPIES-teamLeadPost] [n:ivan] Іван Шевчук (Employee) займає посаду [n:teamLeadPost] Керівник команди (Position). [n:ivan-OCCUPIES-teamLeadPost]"
+   }
+  },
+  {
+   "q": "Які посади вимагають компетенцію переговори?",
+   "kind": "залежність",
+   "gold": [
+    "HR-менеджер",
+    "Рекрутер",
+    "Керівник команди"
+   ],
+   "text": {
+    "correct": false,
+    "abstain": false,
+    "cited": 2,
+    "graph_cited": 0,
+    "ptok": 560,
+    "ctok": 99,
+    "ans": "Зв'язки між класами: Працівник займає Посаду, Посада вимагає Компетенцію, Працівник володіє Компетенцією на рівні, Курс розвиває Компетенцію. [D21-p05] Зовнішній найм на керівні посади допускається лише тоді, коли в резерві немає кандидатів, що відповідають профілю компетенцій посади. [D03-p08]"
+   },
+   "graph": {
+    "correct": true,
+    "abstain": false,
+    "cited": 12,
+    "graph_cited": 9,
+    "ptok": 1894,
+    "ctok": 302,
+    "ans": "Зв'язки між класами: Працівник займає Посаду, Посада вимагає Компетенцію, Працівник володіє Компетенцією на рівні, Курс розвиває Компетенцію. [D21-p05] Зовнішній найм на керівні посади допускається лише тоді, коли в резерві немає кандидатів, що відповідають профілю компетенцій посади. [D03-p08] Віднесення посади до грейду здійснюється за методом оцінки посад з урахуванням відповідальності, складності завдань та вимог до компетенцій. [D13-p02] [n:hrManagerPost] HR-менеджер (Position) вимагає компетенцію [n:negotiation] negotiation (Competence). [n:hrManagerPost-REQUIRES_COMPETENCE-negotiation] [n:recruiterPost] Рекрутер (Position) вимагає компетенцію [n:negotiation] negotiation (Competence). [n:recruiterPost-REQUIRES_COMPETENCE-negotiation] [n:teamLeadPost] Керівник команди (Position) вимагає компетенцію [n:negotiation] negotiation (Competence). [n:teamLeadPost-REQUIRES_COMPETENCE-negotiation]"
+   }
+  },
+  {
+   "q": "Які посади вимагають компетенцію командна комунікація?",
+   "kind": "залежність",
+   "gold": [
+    "Python-розробник",
+    "Керівник команди"
+   ],
+   "text": {
+    "correct": false,
+    "abstain": false,
+    "cited": 2,
+    "graph_cited": 0,
+    "ptok": 580,
+    "ctok": 90,
+    "ans": "Поведінкові компетенції включають комунікацію, командну роботу, відповідальність і готовність до навчання. [D01-p05] Зв'язки між класами: Працівник займає Посаду, Посада вимагає Компетенцію, Працівник володіє Компетенцією на рівні, Курс розвиває Компетенцію. [D21-p05]"
+   },
+   "graph": {
+    "correct": true,
+    "abstain": false,
+    "cited": 9,
+    "graph_cited": 6,
+    "ptok": 1914,
+    "ctok": 257,
+    "ans": "Поведінкові компетенції включають комунікацію, командну роботу, відповідальність і готовність до навчання. [D01-p05] [n:teamLeadPost] Керівник команди (Position) вимагає компетенцію [n:teamCommunication] teamCommunication (Competence). [n:teamLeadPost-REQUIRES_COMPETENCE-teamCommunication] Зв'язки між класами: Працівник займає Посаду, Посада вимагає Компетенцію, Працівник володіє Компетенцією на рівні, Курс розвиває Компетенцію. [D21-p05] Найсильнішою компетенцією в компанії виявилася командна робота (78 балів), найслабшою — управління часом і пріоритетами (64 бали). [D18-p05] [n:pythonDeveloperPost] Python-розробник (Position) вимагає компетенцію [n:teamCommunication] teamCommunication (Competence). [n:pythonDeveloperPost-REQUIRES_COMPETENCE-teamCommunication]"
+   }
+  },
+  {
+   "q": "Які курси завершив Андрій Мельник?",
+   "kind": "зв'язок",
+   "gold": [
+    "Python Advanced"
+   ],
+   "text": {
+    "correct": false,
+    "abstain": true,
+    "cited": 0,
+    "graph_cited": 0,
+    "ptok": 554,
+    "ctok": 15,
+    "ans": "Не знаю: у наданих джерелах немає відповіді"
+   },
+   "graph": {
+    "correct": true,
+    "abstain": false,
+    "cited": 24,
+    "graph_cited": 24,
+    "ptok": 1131,
+    "ctok": 366,
+    "ans": "[n:andriy] Андрій Мельник (Employee) завершив(ла) курс [n:pythonAdvancedCourse] Python Advanced (Course). [n:andriy-COMPLETED_COURSE-pythonAdvancedCourse] [n:andriy] Андрій Мельник (Employee) перебуває у стані [n:stateActive] stateActive (State). [n:andriy-IN_STATE-stateActive] [n:andriy] Андрій Мельник (Employee) займає посаду [n:pythonDeveloperPost] Python-розробник (Position). [n:andriy-OCCUPIES-pythonDeveloperPost] [n:andriy] Андрій Мельник (Employee) має компетенцію [n:pythonProgramming] pythonProgramming (Competence). [n:andriy-HAS_COMPETENCE-pythonProgramming] [n:andriy] Андрій Мельник (Employee) має компетенцію [n:teamCommunication] teamCommunication (Competence). [n:andriy-HAS_COMPETENCE-teamCommunication] [n:andriy] Андрій Мельник (Employee) має безпосереднього керівника [n:ivan] Іван Шевчук (Employee). [n:andriy-DIRECT_MANAGER-ivan] [n:promotion1] promotion1 (Decision) DECISION_ABOUT [n:andriy] Андрій Мельник (Employee). [n:promotion1-DECISION_ABOUT-andriy] [n:hris1] hris1 (System) STORES_RECORD_OF [n:andriy] Андрій Мельник (Employee). [n:hris1-STORES_RECORD_OF-andriy]"
+   }
+  },
+  {
+   "q": "Яку посаду займає Петро Бондар?",
+   "kind": "зв'язок",
+   "gold": [
+    "Python-розробник"
+   ],
+   "text": {
+    "correct": false,
+    "abstain": false,
+    "cited": 1,
+    "graph_cited": 0,
+    "ptok": 565,
+    "ctok": 51,
+    "ans": "Зв'язки між класами: Працівник займає Посаду, Посада вимагає Компетенцію, Працівник володіє Компетенцією на рівні, Курс розвиває Компетенцію. [D21-p05]"
+   },
+   "graph": {
+    "correct": true,
+    "abstain": false,
+    "cited": 3,
+    "graph_cited": 3,
+    "ptok": 1020,
+    "ctok": 47,
+    "ans": "[n:petro] Петро Бондар (Employee) займає посаду [n:pythonDeveloperPost] Python-розробник (Position). [n:petro-OCCUPIES-pythonDeveloperPost]"
+   }
+  }
+ ],
+ "linking": [
+  {
+   "q": "Хто безпосередній керівник Петра Бондаря?",
+   "seeds": [
+    "petro"
+   ],
+   "edges": 8
+  },
+  {
+   "q": "Хто безпосередній керівник Андрія Мельника?",
+   "seeds": [
+    "andriy"
+   ],
+   "edges": 10
+  },
+  {
+   "q": "Хто безпосередній керівник Тараса Гнатюка?",
+   "seeds": [
+    "emp007"
+   ],
+   "edges": 10
+  },
+  {
+   "q": "Хто безпосередній керівник Івана Шевчука?",
+   "seeds": [
+    "ivan"
+   ],
+   "edges": 20
+  },
+  {
+   "q": "Які компетенції потрібні для посади Python-розробник?",
+   "seeds": [
+    "pythonDeveloperPost"
+   ],
+   "edges": 25
+  },
+  {
+   "q": "Які компетенції потрібні для посади HR-менеджер?",
+   "seeds": [
+    "hrManagerPost"
+   ],
+   "edges": 4
+  },
+  {
+   "q": "Які компетенції потрібні для посади Рекрутер?",
+   "seeds": [
+    "recruiterPost"
+   ],
+   "edges": 5
+  },
+  {
+   "q": "Які компетенції потрібні для посади Керівник команди?",
+   "seeds": [
+    "teamLeadPost"
+   ],
+   "edges": 5
+  },
+  {
+   "q": "Які посади вимагають компетенцію переговори?",
+   "seeds": [
+    "negotiation"
+   ],
+   "edges": 22
+  },
+  {
+   "q": "Які посади вимагають компетенцію командна комунікація?",
+   "seeds": [
+    "teamCommunication"
+   ],
+   "edges": 20
+  },
+  {
+   "q": "Які курси завершив Андрій Мельник?",
+   "seeds": [
+    "andriy"
+   ],
+   "edges": 10
+  },
+  {
+   "q": "Яку посаду займає Петро Бондар?",
+   "seeds": [
+    "petro"
+   ],
+   "edges": 8
+  }
+ ]
+}

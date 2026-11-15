@@ -1,0 +1,72 @@
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix hr:   <http://example.org/hr#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Форма 1 — співробітник (targetClass охоплює й підкласи Manager, Recruiter, бо ієрархія є в графі)
+hr:EmployeeShape a sh:NodeShape ;
+    sh:targetClass hr:Employee ;
+    sh:name "Форма співробітника" ;
+    sh:property [ sh:path hr:employeeId ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+                  sh:pattern "^E-[0-9]{3,4}$" ; sh:message "employeeId: рівно одне значення за шаблоном E-NNN" ] ;
+    sh:property [ sh:path hr:fullName ; sh:minCount 1 ; sh:datatype xsd:string ;
+                  sh:message "fullName обов'язкове (xsd:string)" ] ;
+    sh:property [ sh:path hr:productivityScore ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ;
+                  sh:minInclusive 0 ; sh:maxInclusive 10 ; sh:message "productivityScore: десяткове число в діапазоні 0..10" ] ;
+    sh:property [ sh:path hr:tenureMonths ; sh:datatype xsd:integer ; sh:minInclusive 0 ;
+                  sh:message "tenureMonths: невід'ємне ціле число" ] ;
+    sh:property [ sh:path hr:occupies ; sh:minCount 1 ; sh:maxCount 1 ; sh:class hr:Position ;
+                  sh:message "occupies: рівно одна посада класу Position" ] ;
+    sh:property [ sh:path hr:directManager ; sh:maxCount 1 ; sh:class hr:Employee ;
+                  sh:message "directManager: не більше одного керівника класу Employee" ] .
+
+# Форма 2 — посада
+hr:PositionShape a sh:NodeShape ;
+    sh:targetClass hr:Position ;
+    sh:name "Форма посади" ;
+    sh:property [ sh:path hr:positionTitle ; sh:minCount 1 ; sh:datatype xsd:string ; sh:message "positionTitle обов'язкове" ] ;
+    sh:property [ sh:path hr:salaryGrade ; sh:minCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 1 ; sh:maxInclusive 10 ;
+                  sh:message "salaryGrade: ціле число 1..10" ] ;
+    sh:property [ sh:path hr:requiresCompetence ; sh:minCount 1 ; sh:nodeKind sh:IRI ;
+                  sh:message "посада має вимагати хоча б одну компетенцію" ] .
+
+# Форма 3 — курс
+hr:CourseShape a sh:NodeShape ;
+    sh:targetClass hr:Course ;
+    sh:name "Форма курсу" ;
+    sh:property [ sh:path hr:courseTitle ; sh:minCount 1 ; sh:datatype xsd:string ; sh:message "courseTitle обов'язкове" ] ;
+    sh:property [ sh:path hr:courseHours ; sh:minCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 1 ;
+                  sh:message "courseHours: додатне ціле число" ] .
+
+# Форма 4 — кандидат
+hr:CandidateShape a sh:NodeShape ;
+    sh:targetClass hr:Candidate ;
+    sh:name "Форма кандидата" ;
+    sh:property [ sh:path hr:fullName ; sh:minCount 1 ; sh:datatype xsd:string ; sh:message "fullName обов'язкове" ] ;
+    sh:property [ sh:path hr:candidateFor ; sh:minCount 1 ; sh:class hr:Position ;
+                  sh:message "candidateFor: посада класу Position" ] .
+
+# Форма 5 — подія
+hr:EventShape a sh:NodeShape ;
+    sh:targetClass hr:Event ;
+    sh:name "Форма події" ;
+    sh:property [ sh:path hr:concernsEmployee ; sh:minCount 1 ; sh:class hr:Employee ;
+                  sh:message "подія має стосуватися співробітника (клас Employee)" ] ;
+    sh:property [ sh:path hr:reportedBy ; sh:minCount 1 ; sh:nodeKind sh:IRI ; sh:message "reportedBy: джерело даних обов'язкове" ] ;
+    sh:property [ sh:path hr:occurredOn ; sh:minCount 1 ; sh:datatype xsd:dateTime ; sh:message "occurredOn: xsd:dateTime" ] .
+
+# Форма 6 — шаблон ситуації
+hr:SituationTemplateShape a sh:NodeShape ;
+    sh:targetClass hr:SituationTemplate ;
+    sh:name "Форма шаблону ситуації" ;
+    sh:property [ sh:path hr:fromState ; sh:minCount 1 ; sh:maxCount 1 ; sh:message "fromState: рівно один початковий стан" ] ;
+    sh:property [ sh:path hr:toState ; sh:minCount 1 ; sh:maxCount 1 ; sh:message "toState: рівно один новий стан" ] ;
+    sh:property [ sh:path hr:onEvent ; sh:minCount 1 ; sh:message "onEvent: подія обов'язкова" ] ;
+    sh:property [ sh:path hr:performsAction ; sh:minCount 1 ; sh:message "performsAction: дія обов'язкова" ] .
+
+# Форма 7 — зарплата
+hr:SalaryShape a sh:NodeShape ;
+    sh:targetClass hr:Salary ;
+    sh:name "Форма зарплати" ;
+    sh:property [ sh:path hr:salaryAmount ; sh:minCount 1 ; sh:datatype xsd:decimal ; sh:minInclusive 0 ;
+                  sh:message "salaryAmount: невід'ємне десяткове число" ] .

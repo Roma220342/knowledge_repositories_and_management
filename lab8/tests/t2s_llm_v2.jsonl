@@ -1,0 +1,20 @@
+{"id": "T01", "sparql": "SELECT (COUNT(DISTINCT ?e) AS ?n) WHERE { ?e a/rdfs:subClassOf* hr:Employee ; hr:productivityScore ?s . FILTER(?s < 5) }"}
+{"id": "T02", "sparql": "SELECT ?title WHERE { ?e hr:fullName ?n ; hr:occupies ?p . ?p hr:positionTitle ?title . FILTER(STR(?n) = \"Петро Бондар\") }"}
+{"id": "T03", "sparql": "SELECT ?c WHERE { ?p hr:positionTitle ?t ; hr:requiresCompetence ?c . FILTER(STR(?t) = \"Рекрутер\") }"}
+{"id": "T04", "sparql": "ASK { hr:andriy hr:completedCourse hr:pythonAdvancedCourse }"}
+{"id": "T05", "sparql": "SELECT ?manager WHERE { ?e hr:fullName ?n ; hr:directManager ?m . ?m hr:fullName ?manager . FILTER(STR(?n) = \"Марія Гончар\") }"}
+{"id": "T06", "sparql": "SELECT ?title (AVG(?s) AS ?avg) WHERE { ?e hr:occupies ?p ; hr:productivityScore ?s . ?p hr:positionTitle ?title } GROUP BY ?title"}
+{"id": "T07", "sparql": "SELECT DISTINCT ?e WHERE { ?e hr:directManager+ hr:ivan }"}
+{"id": "T08", "sparql": "SELECT (COUNT(DISTINCT ?e) AS ?n) WHERE { ?e a/rdfs:subClassOf* hr:Manager }"}
+{"id": "T09", "sparql": "SELECT DISTINCT ?name WHERE { ?e hr:fullName ?name ; hr:productivityScore ?s . FILTER(?s < 5) }"}
+{"id": "T10", "sparql": "SELECT ?title WHERE { ?plan hr:planFor hr:petro ; hr:includesCourse ?c . ?c hr:courseTitle ?title }"}
+{"id": "T11", "sparql": "SELECT ?name WHERE { ?e a/rdfs:subClassOf* hr:Employee ; hr:fullName ?name ; hr:tenureMonths ?t . FILTER(?t > 60) }"}
+{"id": "T12", "sparql": "SELECT ?st (COUNT(DISTINCT ?e) AS ?n) WHERE { ?e a/rdfs:subClassOf* hr:Employee ; hr:inState ?st } GROUP BY ?st"}
+{"id": "T13", "sparql": "SELECT ?m (COUNT(?e) AS ?n) WHERE { ?e hr:directManager ?m } GROUP BY ?m ORDER BY DESC(?n) LIMIT 1"}
+{"id": "T14", "sparql": "SELECT ?title (COUNT(?e) AS ?n) WHERE { ?e hr:occupies ?p ; hr:productivityScore ?s . ?p hr:positionTitle ?title . FILTER(?s >= 7) } GROUP BY ?title"}
+{"id": "T15", "sparql": "SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE { ?p hr:requiresCompetence ?c . ?c a/rdfs:subClassOf* hr:Competence }"}
+{"id": "T16", "sparql": "SELECT ?ev ?type WHERE { ?ev a ?type ; hr:concernsEmployee ?e . ?e hr:productivityScore ?s . FILTER(?s < 5) FILTER(?type != owl:NamedIndividual) }"}
+{"id": "H01", "sparql": "SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE { ?c a/rdfs:subClassOf* hr:Candidate }"}
+{"id": "H02", "sparql": "SELECT ?name ?s WHERE { ?e hr:fullName ?name ; hr:productivityScore ?s } ORDER BY DESC(?s) LIMIT 1"}
+{"id": "H03", "sparql": "SELECT (COUNT(DISTINCT ?e) AS ?n) WHERE { ?e hr:occupies ?p . ?p hr:positionTitle ?t . FILTER(STR(?t) = \"Python-розробник\") }"}
+{"id": "H04", "sparql": "SELECT ?name WHERE { ?e hr:directManager hr:olena ; hr:fullName ?name }"}

@@ -1,0 +1,35 @@
+{
+ "n_docs": 21,
+ "n_frags": 210,
+ "raw_lines": 903,
+ "removed": {
+  "R1_breadcrumb": 21,
+  "R5_cookie_banner": 21,
+  "R4_nav_buttons": 63,
+  "R2_page_number": 42,
+  "R3_copyright": 21
+ },
+ "removed_total": 168,
+ "words_total": 3987,
+ "words_mean": 19.0,
+ "by_type": {
+  "guide": 80,
+  "policy": 50,
+  "regulation": 40,
+  "report": 20,
+  "case": 10,
+  "faq": 10
+ },
+ "by_sens": {
+  "public": 90,
+  "internal": 69,
+  "confidential": 40,
+  "restricted": 11
+ },
+ "docs_by_sens": {
+  "public": 9,
+  "internal": 7,
+  "confidential": 4,
+  "restricted": 1
+ }
+}

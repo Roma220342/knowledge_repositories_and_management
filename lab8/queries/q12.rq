@@ -1,0 +1,18 @@
+# id: q12
+# CQ: Які зовнішні відповідники (Wikidata) мають наші поняття, зв'язки з якими верифіковано?
+# construct: SELECT + federated SERVICE (Wikidata)
+# interp: З локального графа беруться лише верифіковані зв'язки (data/links.ttl); мітку й опис отримуємо з query.wikidata.org.
+# template: {{VALUES}} підставляє scripts/r2_queries.py зі списку верифікованих зв'язків
+PREFIX lnk: <http://example.org/lnk#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <https://schema.org/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+SELECT ?term ?relation ?conf ?label ?desc WHERE {
+  ?link a lnk:Link ; lnk:source ?term ; lnk:relation ?relation ;
+        lnk:target ?wd ; lnk:confidence ?conf ; lnk:status "verified" .
+  SERVICE <https://query.wikidata.org/sparql> {
+    VALUES ?wd { {{VALUES}} }
+    ?wd rdfs:label ?label . FILTER(LANG(?label) = "en")
+    OPTIONAL { ?wd schema:description ?desc . FILTER(LANG(?desc) = "en") }
+  }
+} ORDER BY DESC(?conf)

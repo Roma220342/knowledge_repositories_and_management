@@ -1,0 +1,1982 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:ns1="http://example.org/hr#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+>
+  <rdf:Description rdf:about="http://example.org/hr#Course">
+    <rdfs:label xml:lang="uk">Курс навчання</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="uk">Структурований навчальний модуль, що розвиває визначені компетенції.</rdfs:comment>
+    <skos:exactMatch rdf:resource="http://schema.org/Course"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#LMS">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">LMS</rdfs:label>
+    <rdfs:comment xml:lang="uk">Інформаційна система управління навчанням, що зберігає курси та результати їх проходження.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#InformationSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3aa50a1968144a3c84f93e096c555699">
+    <rdf:rest rdf:nodeID="Naff7bb98c5924951bff0087af8e5ab13"/>
+    <rdf:first rdf:resource="http://example.org/hr#Resume"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6a3604db23f94c919cad89dfabdb229d">
+    <rdf:first rdf:resource="http://example.org/hr#Candidate"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#subProcessOf">
+    <owl:inverseOf rdf:resource="http://example.org/hr#hasSubProcess"/>
+    <rdfs:range rdf:resource="http://example.org/hr#HRProcess"/>
+    <rdfs:domain rdf:resource="http://example.org/hr#HRProcess"/>
+    <rdfs:label xml:lang="uk">є підпроцесом</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nce2facd1b8fc4b0f9eaad7a5384db132">
+    <rdf:first rdf:resource="http://example.org/hr#OnboardingState"/>
+    <rdf:rest rdf:nodeID="Na27be4f8766c4e8f8a6302f104d6ebf3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N34eeaafe6438411ab149d3c3869c8c7b">
+    <rdf:rest rdf:nodeID="N5a6365dab2f94c16ac3b641998f882a4"/>
+    <rdf:first rdf:resource="http://example.org/hr#recruiterPost"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#ivan">
+    <ns1:hireDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-06-15T00:00:00</ns1:hireDate>
+    <ns1:inState rdf:resource="http://example.org/hr#stateActive"/>
+    <ns1:makesDecision rdf:resource="http://example.org/hr#promotion1"/>
+    <ns1:employeeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E-002</ns1:employeeId>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#Manager"/>
+    <ns1:productivityScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8.6</ns1:productivityScore>
+    <ns1:directManager rdf:resource="http://example.org/hr#olena"/>
+    <ns1:hasCompetence rdf:resource="http://example.org/hr#negotiation"/>
+    <ns1:hasCompetence rdf:resource="http://example.org/hr#teamCommunication"/>
+    <ns1:occupies rdf:resource="http://example.org/hr#teamLeadPost"/>
+    <ns1:tenureMonths rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">76</ns1:tenureMonths>
+    <ns1:fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Іван Шевчук</ns1:fullName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1d3c8b1c18a747c5941a7b4d81437904">
+    <owl:onProperty rdf:resource="http://example.org/hr#productivityScore"/>
+    <owl:someValuesFrom rdf:nodeID="N7cd6878337894dbfb0da55fc37f3d3d1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#onboarding1">
+    <ns1:raises rdf:resource="http://example.org/hr#productivityQ3"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#Onboarding"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naf93931e67b64ea39d143477c9b9ebb9">
+    <rdf:rest rdf:nodeID="Na972036a64b541bf83dfce20a2299535"/>
+    <rdf:first rdf:resource="http://example.org/hr#CourseCompletedEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N16002b93f21a4cdb94517c3da41089bd">
+    <rdf:first rdf:resource="http://example.org/hr#kpiSprint"/>
+    <rdf:rest rdf:nodeID="Nda0f9cb4fac34e44831ec9536954044e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N212dc5a3135242c29a064bb4a8c1b86f">
+    <rdf:first rdf:resource="http://example.org/hr#Onboarding"/>
+    <rdf:rest rdf:nodeID="N822ae6caa7384a82a9e5dbd948fe462e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#fullName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <skos:exactMatch rdf:resource="http://xmlns.com/foaf/0.1/name"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://example.org/hr#Person"/>
+    <rdfs:label xml:lang="uk">ПІБ</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr">
+    <dcterms:title xml:lang="uk">Онтологія предметної області «Управління персоналом»</dcterms:title>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <dcterms:source>лекція 7; ЛР 4 (таксономія); ЛР 6 (карта v2, triples_final.csv); Guarino &amp; Welty (2002)</dcterms:source>
+    <ns1:trustStatus>draft-verified (V2 reasoner HermiT, V4 CQ-тести; V3 — перевірка автором)</ns1:trustStatus>
+    <owl:versionInfo>1.0.0</owl:versionInfo>
+    <dcterms:creator>Дячук Роман, ФЕІ-42</dcterms:creator>
+    <rdfs:comment xml:lang="uk">Результат ЛР 7. Зовнішні словники підключено через skos:closeMatch/exactMatch (FOAF, W3C ORG, schema.org, ESCO).</rdfs:comment>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-14</dcterms:created>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N124333c4e5c44e66a52d0a5a911be4e8">
+    <rdf:rest rdf:nodeID="N6d384007a7934f6197fe0c16b5d87c83"/>
+    <rdf:first rdf:resource="http://example.org/hr#resume2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#occurredOn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="uk">дата події</rdfs:label>
+    <rdfs:domain rdf:resource="http://example.org/hr#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N93c92f08a91a4fe38ab1b0c49032244e">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://example.org/hr#situationS6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#pythonDeveloperPost">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#Position"/>
+    <ns1:requiresCompetence rdf:resource="http://example.org/hr#pythonProgramming"/>
+    <ns1:requiresCompetence rdf:resource="http://example.org/hr#teamCommunication"/>
+    <ns1:salaryGrade rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ns1:salaryGrade>
+    <ns1:positionTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python-розробник</ns1:positionTitle>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#situationS3">
+    <rdf:type rdf:resource="http://example.org/hr#SituationTemplate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:fromState rdf:resource="http://example.org/hr#stateCandidate"/>
+    <ns1:guard>рішення про прийом схвалено керівником</ns1:guard>
+    <ns1:toState rdf:resource="http://example.org/hr#stateOnboarding"/>
+    <ns1:observedBy rdf:resource="http://example.org/hr#sensorHRIS"/>
+    <ns1:performsAction rdf:resource="http://example.org/hr#actionStartOnboarding"/>
+    <ns1:onEvent rdf:resource="http://example.org/hr#eventHire1"/>
+    <rdfs:label xml:lang="uk">Початок адаптації нового співробітника</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne4d7ef7c6bba457eac9a5343b8490ff6">
+    <rdf:first rdf:nodeID="N1d3c8b1c18a747c5941a7b4d81437904"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9ca17d63313d490c84f202b07e508e13">
+    <rdf:first rdf:resource="http://example.org/hr#sensorHRIS"/>
+    <rdf:rest rdf:nodeID="Ne861ad56a45246308863af4d2564b830"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#LMSSensor">
+    <rdfs:comment xml:lang="uk">Джерело даних, що фіксує проходження навчальних курсів.</rdfs:comment>
+    <rdfs:label xml:lang="uk">Джерело LMS</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Sensor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7a83a4a4ce9b46f6be295dd37bfbdae1">
+    <rdf:rest rdf:nodeID="Nb23c1c69a4cc4a2a933af396ceb50a29"/>
+    <rdf:first rdf:resource="http://example.org/hr#hris1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4a09b2c04bb840408522c884f9f9002c">
+    <owl:onClass rdf:resource="http://example.org/hr#Manager"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <owl:onProperty rdf:resource="http://example.org/hr#directManager"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#submittedResume">
+    <rdfs:range rdf:resource="http://example.org/hr#Resume"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">подав резюме</rdfs:label>
+    <rdfs:domain rdf:resource="http://example.org/hr#Candidate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#productivityScore">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">оцінка продуктивності</rdfs:label>
+    <rdfs:domain rdf:resource="http://example.org/hr#Employee"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#pythonAdvancedCourse">
+    <ns1:courseHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</ns1:courseHours>
+    <ns1:courseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python Advanced</ns1:courseTitle>
+    <ns1:raises rdf:resource="http://example.org/hr#productivityQ3"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#Course"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N717d8ad199174f8ea4b6ad58c4e21d91">
+    <owl:members rdf:nodeID="Nb011733d7f3e428ea6d07359bdb86bc2"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#StartOnboardingAction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="uk">Дія початку адаптації нового співробітника.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Action"/>
+    <rdfs:label xml:lang="uk">Запуск онбордингу</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#andriy">
+    <ns1:hasCompetence rdf:resource="http://example.org/hr#teamCommunication"/>
+    <ns1:hasCompetence rdf:resource="http://example.org/hr#pythonProgramming"/>
+    <ns1:inState rdf:resource="http://example.org/hr#stateActive"/>
+    <ns1:tenureMonths rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">61</ns1:tenureMonths>
+    <ns1:productivityScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9.1</ns1:productivityScore>
+    <ns1:occupies rdf:resource="http://example.org/hr#pythonDeveloperPost"/>
+    <ns1:directManager rdf:resource="http://example.org/hr#ivan"/>
+    <ns1:employeeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E-005</ns1:employeeId>
+    <ns1:completedCourse rdf:resource="http://example.org/hr#pythonAdvancedCourse"/>
+    <ns1:fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Андрій Мельник</ns1:fullName>
+    <rdf:type rdf:resource="http://example.org/hr#Employee"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hireDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-01T00:00:00</ns1:hireDate>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Promotion">
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#HRDecision"/>
+    <rdfs:comment xml:lang="uk">Кадрове рішення про переведення співробітника на вищу посаду.</rdfs:comment>
+    <rdfs:label xml:lang="uk">Підвищення</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N913368c0c44e4c1884b8db744bd36887">
+    <rdf:rest rdf:nodeID="Ne4d7ef7c6bba457eac9a5343b8490ff6"/>
+    <rdf:first rdf:resource="http://example.org/hr#Employee"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3eefcd3724dc44e5a9fb5cdb1c82ab3a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Nee589339dedf4447bcdf4cd8854a8d1d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#toState">
+    <rdfs:label xml:lang="uk">новий стан</rdfs:label>
+    <rdfs:domain rdf:resource="http://example.org/hr#SituationTemplate"/>
+    <rdfs:range rdf:resource="http://example.org/hr#State"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#eventResignation1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#ResignationRequestEvent"/>
+    <ns1:occurredOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-10-10T00:00:00</ns1:occurredOn>
+    <ns1:reportedBy rdf:resource="http://example.org/hr#sensorHRIS"/>
+    <ns1:concernsEmployee rdf:resource="http://example.org/hr#sofia"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N123387b41ea64fa28e3d8ea9a68e92b0">
+    <rdf:first rdf:resource="http://example.org/hr#TrainingPlan"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N645be1c3e3db468b85ad1b1410c0d0bf">
+    <rdf:first rdf:resource="http://example.org/hr#Position"/>
+    <rdf:rest rdf:nodeID="N56f2bd818cfa49178ca165b2aab6c0b3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#ResignationRequestEvent">
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Заява про звільнення</rdfs:label>
+    <rdfs:comment xml:lang="uk">Подія, що фіксує подання співробітником заяви про звільнення.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd7096af285af499b917a65e3eb886744">
+    <rdf:first rdf:resource="http://example.org/hr#actionUpdateCompetence"/>
+    <rdf:rest rdf:nodeID="Nba9befe0001c4c0987828d2d7af889d9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#salaryAmount">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/hr#Salary"/>
+    <rdfs:label xml:lang="uk">розмір зарплати</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#CandidateState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="uk">Стан особи, яка перебуває на етапі відбору.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#State"/>
+    <rdfs:label xml:lang="uk">Стан кандидата</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc0f681da9f634917aad9a7a522f85fd3">
+    <rdf:rest rdf:nodeID="Nd76bf26627b44e2b84a4bdf4e73fce2b"/>
+    <rdf:first rdf:resource="http://example.org/hr#negotiation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#occupies">
+    <rdfs:range rdf:resource="http://example.org/hr#Position"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://example.org/hr#isOccupiedBy"/>
+    <rdfs:domain rdf:resource="http://example.org/hr#Employee"/>
+    <rdfs:label xml:lang="uk">займає</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#sofia">
+    <ns1:tenureMonths rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">56</ns1:tenureMonths>
+    <ns1:occupies rdf:resource="http://example.org/hr#recruiterPost"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#Recruiter"/>
+    <ns1:hireDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-14T00:00:00</ns1:hireDate>
+    <ns1:employeeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E-006</ns1:employeeId>
+    <ns1:productivityScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7.0</ns1:productivityScore>
+    <ns1:directManager rdf:resource="http://example.org/hr#olena"/>
+    <ns1:hasCompetence rdf:resource="http://example.org/hr#negotiation"/>
+    <ns1:fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Софія Лисенко</ns1:fullName>
+    <ns1:inState rdf:resource="http://example.org/hr#stateActive"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb23c1c69a4cc4a2a933af396ceb50a29">
+    <rdf:first rdf:resource="http://example.org/hr#lms1"/>
+    <rdf:rest rdf:nodeID="Nf96258d409174bb498e1821d9aca1b1e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndd214ee2b82e4601826e824e008109a2">
+    <rdf:first rdf:resource="http://example.org/hr#eventResignation1"/>
+    <rdf:rest rdf:nodeID="Naa27ea485a9b46dcb7a3bb68621aa9b9"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf75d89e1eb354ba6b94bffeb1b7ed0ee">
+    <rdf:first rdf:resource="http://example.org/hr#stateUnderReview"/>
+    <rdf:rest rdf:nodeID="N6ff00f0115c04ac89269a5ff3a2c1386"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#makesDecision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/hr#HRDecision"/>
+    <rdfs:label xml:lang="uk">ухвалює</rdfs:label>
+    <rdfs:domain rdf:resource="http://example.org/hr#Manager"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9975b11212104c68be43c495e67b3ed3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N66196704496c4e4983e5843538434020"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf05173960f20404e9613cdef7c86e2e2">
+    <rdf:rest rdf:nodeID="N7a78fff5a3d54490ab2631ec5a860ecd"/>
+    <rdf:first rdf:resource="http://example.org/hr#Reward"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6b2577ec07a24844b35f7ba7030bf226">
+    <rdf:rest rdf:nodeID="Nd8eada773c724557ad2bf2c97b590054"/>
+    <rdf:first rdf:resource="http://example.org/hr#Motivation"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne8efb6e7317c41fbb366e50bf1a2b22c">
+    <owl:members rdf:nodeID="Nbc17af93694941169675b056cecd27a4"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#storesRecordOf">
+    <rdfs:domain rdf:resource="http://example.org/hr#InformationSystem"/>
+    <rdfs:label xml:lang="uk">зберігає дані про</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/hr#Employee"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#LowProductivityEvent">
+    <rdfs:comment xml:lang="uk">Подія, що фіксує нижчу за порогову продуктивність співробітника за квартал.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Низька продуктивність</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Event">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="uk">Факт, що фіксується в HR-системах і може змінити стан співробітника.</rdfs:comment>
+    <rdfs:label xml:lang="uk">Подія</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf7397991596c4231b994d479b12ddf8d">
+    <rdf:rest rdf:nodeID="N50948c813a1245a8b5da7f96011e6cf3"/>
+    <rdf:first rdf:resource="http://example.org/hr#Interview"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd76bf26627b44e2b84a4bdf4e73fce2b">
+    <rdf:first rdf:resource="http://example.org/hr#teamCommunication"/>
+    <rdf:rest rdf:nodeID="N1c842f20def240b6b8c9ecb190b554b0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#attestation2026">
+    <rdf:type rdf:resource="http://example.org/hr#Attestation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:evaluates rdf:resource="http://example.org/hr#teamCommunication"/>
+    <ns1:evaluates rdf:resource="http://example.org/hr#pythonProgramming"/>
+    <ns1:evaluatesMetric rdf:resource="http://example.org/hr#kpiSprint"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#decisionAbout">
+    <rdfs:label xml:lang="uk">стосується співробітника</rdfs:label>
+    <rdfs:domain rdf:resource="http://example.org/hr#HRDecision"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/hr#Employee"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#petro">
+    <ns1:fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Петро Бондар</ns1:fullName>
+    <ns1:hasCompetence rdf:resource="http://example.org/hr#pythonProgramming"/>
+    <ns1:hireDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-01-10T00:00:00</ns1:hireDate>
+    <ns1:tenureMonths rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">44</ns1:tenureMonths>
+    <ns1:inState rdf:resource="http://example.org/hr#stateActive"/>
+    <ns1:employeeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E-003</ns1:employeeId>
+    <ns1:occupies rdf:resource="http://example.org/hr#pythonDeveloperPost"/>
+    <ns1:productivityScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.2</ns1:productivityScore>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#Employee"/>
+    <ns1:directManager rdf:resource="http://example.org/hr#ivan"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N67bb8fdd82884d6792e7c0493cbca8b4">
+    <owl:someValuesFrom rdf:resource="http://example.org/hr#Course"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://example.org/hr#completedCourse"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Position">
+    <rdfs:subClassOf rdf:nodeID="Nc7f59c0e65684f99894c490831870ca3"/>
+    <rdfs:subClassOf rdf:nodeID="N4af4386b9e6b4e0aa9a37c8c3fddacf6"/>
+    <rdfs:comment xml:lang="uk">Штатна одиниця організаційної структури з визначеними обов'язками та вимогами до виконавця.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:closeMatch rdf:resource="http://www.w3.org/ns/org#Post"/>
+    <rdfs:label xml:lang="uk">Посада</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N639b00189c144fd48ffab5f042affc48">
+    <rdf:first rdf:resource="http://example.org/hr#SituationTemplate"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#UpdateCompetenceAction">
+    <rdfs:comment xml:lang="uk">Дія оновлення рівня компетенції співробітника в HRIS.</rdfs:comment>
+    <rdfs:label xml:lang="uk">Оновлення компетенції</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Action"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#TrainingPlan">
+    <rdfs:comment xml:lang="uk">Документ із переліком курсів і строків навчання співробітника.</rdfs:comment>
+    <rdfs:label xml:lang="uk">Навчальний план</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="N558c89bf758a4b4288de7bbe91509126"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Document"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#performsAction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/hr#SituationTemplate"/>
+    <rdfs:label xml:lang="uk">виконує дію</rdfs:label>
+    <rdfs:range rdf:resource="http://example.org/hr#Action"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N473fa66db6514cd9a79567803dcf62e5">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://example.org/hr#HardSkill"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#hireDate">
+    <rdfs:label xml:lang="uk">дата прийому</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:domain rdf:resource="http://example.org/hr#Employee"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Turnover">
+    <rdfs:comment xml:lang="uk">Показник частки співробітників, що залишили організацію протягом періоду.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Metric"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Плинність кадрів</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#stateDismissed">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#DismissedState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#reportedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/hr#Sensor"/>
+    <rdfs:domain rdf:resource="http://example.org/hr#Event"/>
+    <rdfs:label xml:lang="uk">зафіксовано джерелом</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#onEvent">
+    <rdfs:domain rdf:resource="http://example.org/hr#SituationTemplate"/>
+    <rdfs:range rdf:resource="http://example.org/hr#Event"/>
+    <rdfs:label xml:lang="uk">подія</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1398babd31c94c67b334f06a3bd7cd67">
+    <rdf:first rdf:resource="http://example.org/hr#situationS5"/>
+    <rdf:rest rdf:nodeID="N93c92f08a91a4fe38ab1b0c49032244e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9090ed2d75c54d38b37712dbbd9c1590">
+    <owl:members rdf:nodeID="N8182431127614afeb3c92be52bd3d106"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N02d2382d862748fea332eb5d240a81e7">
+    <rdf:first rdf:resource="http://example.org/hr#Reward"/>
+    <rdf:rest rdf:nodeID="Ne4faa431f7624110b752a55313dc84cd"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#concernsEmployee">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/hr#Employee"/>
+    <rdfs:domain rdf:resource="http://example.org/hr#Event"/>
+    <rdfs:label xml:lang="uk">стосується співробітника</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na27be4f8766c4e8f8a6302f104d6ebf3">
+    <rdf:first rdf:resource="http://example.org/hr#ProbationState"/>
+    <rdf:rest rdf:nodeID="N7667cb4ce1874639a145ca90d3b7f5d8"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N26519d04b68c4f599677dc36bab28672">
+    <rdf:rest rdf:nodeID="N7fa0031134af4939b228b8bd2f30bfc6"/>
+    <rdf:first rdf:resource="http://example.org/hr#Metric"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#kpiTarget">
+    <rdfs:domain rdf:resource="http://example.org/hr#KPI"/>
+    <rdfs:label xml:lang="uk">цільове значення KPI</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7825f5b678b640e285983418f76da407">
+    <rdf:first rdf:resource="http://example.org/hr#Event"/>
+    <rdf:rest rdf:nodeID="Nede28b10aa3e4823b81d71f53e5fce5a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#hrManagerPost">
+    <ns1:requiresCompetence rdf:resource="http://example.org/hr#hrAnalytics"/>
+    <ns1:requiresCompetence rdf:resource="http://example.org/hr#negotiation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#Position"/>
+    <ns1:salaryGrade rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</ns1:salaryGrade>
+    <ns1:positionTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HR-менеджер</ns1:positionTitle>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#situationS5">
+    <ns1:performsAction rdf:resource="http://example.org/hr#actionAssignCourse"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#SituationTemplate"/>
+    <ns1:onEvent rdf:resource="http://example.org/hr#eventLowProdPetro"/>
+    <ns1:guard>5.0 ≤ productivityScore &lt; 6.5</ns1:guard>
+    <ns1:toState rdf:resource="http://example.org/hr#stateActive"/>
+    <ns1:fromState rdf:resource="http://example.org/hr#stateActive"/>
+    <ns1:observedBy rdf:resource="http://example.org/hr#sensorKPI"/>
+    <rdfs:label xml:lang="uk">Низька продуктивність: призначення курсу</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd6504124c54d4bf6900bb1e135c63f6d">
+    <rdf:first rdf:resource="http://example.org/hr#stateCandidate"/>
+    <rdf:rest rdf:nodeID="N1c861b2cf1784f41afda8897c3f45de0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3e2f17bb77f04260b317b1dd600a0a1b">
+    <rdf:first rdf:resource="http://example.org/hr#actionAssignCourse"/>
+    <rdf:rest rdf:nodeID="Nd7096af285af499b917a65e3eb886744"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#ruleLowProductivity">
+    <rdf:type rdf:resource="http://example.org/hr#DecisionRule"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:ruleLeadsTo rdf:resource="http://example.org/hr#dismissalProposal1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#employeeId">
+    <rdfs:label xml:lang="uk">табельний номер</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/hr#Employee"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#situationS1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#SituationTemplate"/>
+    <ns1:guard>productivityScore ≥ 6.0</ns1:guard>
+    <ns1:toState rdf:resource="http://example.org/hr#stateActive"/>
+    <ns1:performsAction rdf:resource="http://example.org/hr#actionConfirmEmployment"/>
+    <ns1:observedBy rdf:resource="http://example.org/hr#sensorKPI"/>
+    <ns1:fromState rdf:resource="http://example.org/hr#stateProbation"/>
+    <ns1:onEvent rdf:resource="http://example.org/hr#eventProbationMaria"/>
+    <rdfs:label xml:lang="uk">Підтвердження після випробувального терміну</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#directManager">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/hr#Manager"/>
+    <rdfs:label xml:lang="uk">безпосередній керівник</rdfs:label>
+    <rdfs:domain rdf:resource="http://example.org/hr#Employee"/>
+    <rdfs:subPropertyOf rdf:resource="http://example.org/hr#reportsTo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#hrAnalytics">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#HardSkill"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N01c5e4aa7ed444f3ac86a6b553a1674e">
+    <rdf:rest rdf:nodeID="N2b1feaa924d44e0486b368e04ce479e2"/>
+    <rdf:first rdf:resource="http://example.org/hr#petro"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#motivation1">
+    <rdf:type rdf:resource="http://example.org/hr#Motivation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:raises rdf:resource="http://example.org/hr#productivityQ3"/>
+    <ns1:lowers rdf:resource="http://example.org/hr#turnover2026"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7a308885e7d84bd2850013c07cb62d69">
+    <rdf:rest rdf:nodeID="Nee1b6e11dbcc4e28adc09dced55a8eb1"/>
+    <rdf:first rdf:resource="http://example.org/hr#dismissalProposal1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N89dbd6bdeb5f45659b363aaf983cc4fa">
+    <rdf:rest rdf:nodeID="Nf774fc8b06d94ab4a5e2e1fdba175fe0"/>
+    <rdf:first rdf:resource="http://example.org/hr#Course"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf9d9130d16f84c9dbca8427352e664e9">
+    <rdf:first rdf:resource="http://example.org/hr#ProbationReviewEvent"/>
+    <rdf:rest rdf:nodeID="N2759018a923f4399b2f940370e74ed2f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#manages">
+    <rdfs:domain rdf:resource="http://example.org/hr#Manager"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:range rdf:resource="http://example.org/hr#Employee"/>
+    <rdfs:label xml:lang="uk">керує</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#HRIS">
+    <rdfs:subClassOf rdf:nodeID="N0382a1bf5d8b4bf29100a0936ef80c42"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#InformationSystem"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="uk">Інформаційна система обліку кадрових даних і підтримки HR-процесів.</rdfs:comment>
+    <rdfs:label xml:lang="uk">HRIS</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Bonus">
+    <rdfs:comment xml:lang="uk">Винагорода, що виплачується додатково за досягнуті результати.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Reward"/>
+    <rdfs:label xml:lang="uk">Премія</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb882aebd04594f12a6c590ed2c63551d">
+    <rdf:rest rdf:nodeID="N439b6ff891344cb991d7125bed81e89d"/>
+    <rdf:first rdf:resource="http://example.org/hr#Motivation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#actionConfirmEmployment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#ConfirmEmploymentAction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf8e73f84c85f4387a6349a773914b57e">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <owl:withRestrictions rdf:nodeID="N816bcd05f0a74f2894443382ee8d6c97"/>
+    <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf2585b64d234417786f46a80b967a0f0">
+    <owl:members rdf:nodeID="Ncec46aae562440f39d54f6b67b90a086"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndca19d6e863d45d3a57a77f42d89c8e5">
+    <rdf:first rdf:resource="http://example.org/hr#Recruiter"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#sensorKPI">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#KPISensor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#lowers">
+    <rdfs:subPropertyOf rdf:resource="http://example.org/hr#affects"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/hr#Metric"/>
+    <rdfs:label xml:lang="uk">знижує</rdfs:label>
+    <rdfs:domain rdf:nodeID="Nfa89e2912bdf486cbbd6817156708842"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#requiresDocument">
+    <rdfs:range rdf:resource="http://example.org/hr#PositionProfile"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">вимагає документ</rdfs:label>
+    <rdfs:domain rdf:resource="http://example.org/hr#Recruitment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#ManagedEmployee">
+    <owl:equivalentClass rdf:nodeID="N6df55e4ecab14a8aa6106969ed7fb657"/>
+    <rdfs:label xml:lang="uk">Підпорядкований співробітник</rdfs:label>
+    <rdfs:comment xml:lang="uk">Співробітник, що має безпосереднього керівника.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#affects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/hr#Metric"/>
+    <rdfs:domain rdf:nodeID="N708d1f5d2c274ddfa2b3db1a6af6f766"/>
+    <rdfs:label xml:lang="uk">впливає на</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#ProbationState">
+    <rdfs:comment xml:lang="uk">Стан співробітника в період випробування.</rdfs:comment>
+    <rdfs:label xml:lang="uk">Випробувальний термін</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7d61f472590144ecb729bf6ee311ef6f">
+    <rdf:first rdf:resource="http://example.org/hr#Training"/>
+    <rdf:rest rdf:nodeID="Nf6718eff774c41b384c11bae9dd057d5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8012f4779c76477587d9b516ff8a395e">
+    <rdf:first rdf:resource="http://example.org/hr#Employee"/>
+    <rdf:rest rdf:nodeID="N6a3604db23f94c919cad89dfabdb229d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#includesCourse">
+    <rdfs:range rdf:resource="http://example.org/hr#Course"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/hr#TrainingPlan"/>
+    <rdfs:label xml:lang="uk">включає курс</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Dismissal">
+    <rdfs:comment xml:lang="uk">Кадрове рішення про припинення трудових відносин.</rdfs:comment>
+    <rdfs:label xml:lang="uk">Звільнення</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#HRDecision"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#stateActive">
+    <rdf:type rdf:resource="http://example.org/hr#ActiveState"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0382a1bf5d8b4bf29100a0936ef80c42">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="http://example.org/hr#Employee"/>
+    <owl:onProperty rdf:resource="http://example.org/hr#storesRecordOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#training1">
+    <rdf:type rdf:resource="http://example.org/hr#Training"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:raises rdf:resource="http://example.org/hr#productivityQ3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Appraisal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Оцінювання</rdfs:label>
+    <rdfs:comment xml:lang="uk">HR-процес визначення результатів і компетенцій співробітників.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#HRProcess"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8428021645b34ac1bcf6e72352157a27">
+    <rdf:first rdf:resource="http://example.org/hr#pythonAdvancedCourse"/>
+    <rdf:rest rdf:nodeID="N7a83a4a4ce9b46f6be295dd37bfbdae1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Onboarding">
+    <rdfs:comment xml:lang="uk">HR-процес адаптації нового співробітника в організації.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#HRProcess"/>
+    <rdfs:label xml:lang="uk">Онбординг</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N50948c813a1245a8b5da7f96011e6cf3">
+    <rdf:first rdf:resource="http://example.org/hr#Onboarding"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf479267b5327497d8df0143b3096d3df">
+    <rdf:rest rdf:nodeID="N33fbf1f4d7ce455097413911e2e22ad3"/>
+    <rdf:first rdf:resource="http://example.org/hr#Turnover"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#conflictPerson">
+    <rdf:type rdf:resource="http://example.org/hr#Employee"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Тестова Особа</ns1:fullName>
+    <ns1:employeeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E-999</ns1:employeeId>
+    <ns1:occupies rdf:resource="http://example.org/hr#pythonDeveloperPost"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Training">
+    <rdfs:comment xml:lang="uk">HR-процес підвищення компетенцій співробітників.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#HRProcess"/>
+    <rdfs:label xml:lang="uk">Навчання та розвиток</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#promotion1">
+    <ns1:raises rdf:resource="http://example.org/hr#productivityQ3"/>
+    <rdf:type rdf:resource="http://example.org/hr#Promotion"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:decisionAbout rdf:resource="http://example.org/hr#andriy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#reportsTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/hr#Manager"/>
+    <rdfs:domain rdf:resource="http://example.org/hr#Employee"/>
+    <owl:inverseOf rdf:resource="http://example.org/hr#manages"/>
+    <rdfs:label xml:lang="uk">підпорядковується</rdfs:label>
+    <skos:closeMatch rdf:resource="http://www.w3.org/ns/org#reportsTo"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N378953ee6ec947c4a9664ec1915e8ff5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="Ne0bf256e1f91416b9c152f00e584b4cd"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Manager">
+    <rdfs:subClassOf rdf:nodeID="N2ce970c5232f4fb0be7fb054fa245c93"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Employee"/>
+    <rdfs:label xml:lang="uk">Керівник</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="uk">Співробітник, який відповідає за підрозділ і ухвалює кадрові рішення щодо підлеглих.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf0642d9304be49348cafea7c5b6188ef">
+    <rdf:first rdf:resource="http://example.org/hr#KPISensor"/>
+    <rdf:rest rdf:nodeID="Nac0ae95b2ec24bbfba2208d4d1b29404"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#observedBy">
+    <rdfs:label xml:lang="uk">спостерігається джерелом</rdfs:label>
+    <rdfs:domain rdf:resource="http://example.org/hr#SituationTemplate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/hr#Sensor"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc18936f5bcf342a58bd332a0c65c14c2">
+    <rdf:first rdf:resource="http://example.org/hr#Motivation"/>
+    <rdf:rest rdf:nodeID="Nf7397991596c4231b994d479b12ddf8d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#actionCloseRecord">
+    <rdf:type rdf:resource="http://example.org/hr#CloseRecordAction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nee1b6e11dbcc4e28adc09dced55a8eb1">
+    <rdf:rest rdf:nodeID="N63eda410a68f4f4d89e51aed91073152"/>
+    <rdf:first rdf:resource="http://example.org/hr#ruleLowProductivity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N416f63ea5d1c44e58521ec7192e183d7">
+    <owl:members rdf:nodeID="N7a979e74ae0b4388be0ac4d6048d5975"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#recruiterPost">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#Position"/>
+    <ns1:requiresCompetence rdf:resource="http://example.org/hr#negotiation"/>
+    <ns1:salaryGrade rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ns1:salaryGrade>
+    <ns1:positionTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Рекрутер</ns1:positionTitle>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne502b2e8ac154284a5a86a2ad8e8e032">
+    <rdf:rest rdf:nodeID="Nde2f73ce69d748ee9f4c7c7617742a54"/>
+    <rdf:first rdf:resource="http://example.org/hr#motivation1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne770cbc832b54327b2e45604441ebfee">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://example.org/hr#occupies"/>
+    <owl:someValuesFrom rdf:resource="http://example.org/hr#Position"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Action">
+    <rdfs:comment xml:lang="uk">Операція, що виконується в HR-процесі у відповідь на подію.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Дія</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#isOccupiedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">обіймається</rdfs:label>
+    <rdfs:range rdf:resource="http://example.org/hr#Employee"/>
+    <rdfs:domain rdf:resource="http://example.org/hr#Position"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#appliesRule">
+    <rdfs:domain rdf:resource="http://example.org/hr#Manager"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">застосовує</rdfs:label>
+    <rdfs:range rdf:resource="http://example.org/hr#DecisionRule"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#inState">
+    <rdfs:domain rdf:resource="http://example.org/hr#Person"/>
+    <rdfs:label xml:lang="uk">перебуває у стані</rdfs:label>
+    <rdfs:range rdf:resource="http://example.org/hr#State"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N399c687e97124d21b4dae5fa462427f8">
+    <rdf:rest rdf:nodeID="Nf0cd86396b6a4195b624ab90703249d3"/>
+    <rdf:first rdf:resource="http://example.org/hr#personnelManagement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#actionAssignCourse">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#AssignCourseAction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd776e3f2ad874160a9553df11ec55622">
+    <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8.0</xsd:minInclusive>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Recruitment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="N30bb9d2ec8d24a1684a3a3155304ed39"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#HRProcess"/>
+    <rdfs:label xml:lang="uk">Найм</rdfs:label>
+    <rdfs:comment xml:lang="uk">HR-процес пошуку, відбору та прийняття на роботу нових співробітників.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#eventProbationMaria">
+    <ns1:concernsEmployee rdf:resource="http://example.org/hr#maria"/>
+    <ns1:occurredOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-10-02T00:00:00</ns1:occurredOn>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#ProbationReviewEvent"/>
+    <ns1:reportedBy rdf:resource="http://example.org/hr#sensorKPI"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7d38fa65b4f2480681b20f1364c44ecf">
+    <rdf:first rdf:resource="http://example.org/hr#candidate1"/>
+    <rdf:rest rdf:nodeID="Nba04a1b44b354a9985cab9909c730cb3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#requiresCompetence">
+    <rdfs:range rdf:resource="http://example.org/hr#Competence"/>
+    <rdfs:domain rdf:resource="http://example.org/hr#Position"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">вимагає компетенцію</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#hris1">
+    <rdf:type rdf:resource="http://example.org/hr#HRIS"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:storesRecordOf rdf:resource="http://example.org/hr#olena"/>
+    <ns1:storesRecordOf rdf:resource="http://example.org/hr#maria"/>
+    <ns1:storesRecordOf rdf:resource="http://example.org/hr#sofia"/>
+    <ns1:storesRecordOf rdf:resource="http://example.org/hr#andriy"/>
+    <ns1:storesRecordOf rdf:resource="http://example.org/hr#petro"/>
+    <ns1:storesRecordOf rdf:resource="http://example.org/hr#ivan"/>
+    <ns1:storesDocument rdf:resource="http://example.org/hr#resume2"/>
+    <ns1:storesDocument rdf:resource="http://example.org/hr#resume1"/>
+    <ns1:storesDocument rdf:resource="http://example.org/hr#positionProfilePython"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Metric">
+    <rdfs:label xml:lang="uk">Показник</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="uk">Кількісна характеристика стану чи результату HR-діяльності.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9173999d4e4a4dc6a0e0b14d14281b89">
+    <rdf:first rdf:nodeID="N8e4043a3c9514464ab43eaea07e588a4"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Salary">
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Reward"/>
+    <rdfs:comment xml:lang="uk">Винагорода, що виплачується регулярно за виконану роботу.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Заробітна плата</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#AssignCourseAction">
+    <rdfs:comment xml:lang="uk">Дія призначення співробітнику курсу навчання.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Action"/>
+    <rdfs:label xml:lang="uk">Призначення курсу</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#olena">
+    <ns1:appliesRule rdf:resource="http://example.org/hr#ruleLowProductivity"/>
+    <ns1:hasCompetence rdf:resource="http://example.org/hr#negotiation"/>
+    <ns1:hasCompetence rdf:resource="http://example.org/hr#hrAnalytics"/>
+    <rdf:type rdf:resource="http://example.org/hr#Manager"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:occupies rdf:resource="http://example.org/hr#hrManagerPost"/>
+    <ns1:hireDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-01T00:00:00</ns1:hireDate>
+    <ns1:inState rdf:resource="http://example.org/hr#stateActive"/>
+    <ns1:fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Олена Коваль</ns1:fullName>
+    <ns1:employeeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E-001</ns1:employeeId>
+    <ns1:makesDecision rdf:resource="http://example.org/hr#dismissalProposal1"/>
+    <ns1:productivityScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7.9</ns1:productivityScore>
+    <ns1:tenureMonths rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">88</ns1:tenureMonths>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#trainingPlanPetro">
+    <rdf:type rdf:resource="http://example.org/hr#TrainingPlan"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:includesCourse rdf:resource="http://example.org/hr#pythonAdvancedCourse"/>
+    <ns1:includesCourse rdf:resource="http://example.org/hr#negotiationCourse"/>
+    <ns1:planFor rdf:resource="http://example.org/hr#petro"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#situationS2">
+    <rdf:type rdf:resource="http://example.org/hr#SituationTemplate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:fromState rdf:resource="http://example.org/hr#stateActive"/>
+    <ns1:observedBy rdf:resource="http://example.org/hr#sensorKPI"/>
+    <ns1:toState rdf:resource="http://example.org/hr#stateUnderReview"/>
+    <rdfs:label xml:lang="uk">Ініціювання звільнення за низької продуктивності</rdfs:label>
+    <ns1:guard>productivityScore &lt; 5.0 три квартали поспіль</ns1:guard>
+    <ns1:onEvent rdf:resource="http://example.org/hr#eventLowProdPetro"/>
+    <ns1:performsAction rdf:resource="http://example.org/hr#actionInitiateDismissal"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na0421cb9e98d4381a58ec327a9151f77">
+    <rdf:first rdf:resource="http://example.org/hr#bonusQ3"/>
+    <rdf:rest rdf:nodeID="N39482b3092534d1bb168eb1f302adefc"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf6718eff774c41b384c11bae9dd057d5">
+    <rdf:first rdf:resource="http://example.org/hr#Motivation"/>
+    <rdf:rest rdf:nodeID="N212dc5a3135242c29a064bb4a8c1b86f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N515960bdb6d04f089d3278229842f8e4">
+    <rdf:first rdf:resource="http://example.org/hr#actionInitiateDismissal"/>
+    <rdf:rest rdf:nodeID="Nf167d4df7d3d4c5e9676dfb31468a920"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#interview1">
+    <rdf:type rdf:resource="http://example.org/hr#Interview"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Document">
+    <rdfs:label xml:lang="uk">Документ</rdfs:label>
+    <rdfs:comment xml:lang="uk">Зафіксований носій відомостей, що використовується в кадровому процесі.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Employee">
+    <skos:broadMatch rdf:resource="http://schema.org/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="N24cee854fad84e0a840cf054f8bf7559"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Person"/>
+    <rdfs:subClassOf rdf:nodeID="N4a09b2c04bb840408522c884f9f9002c"/>
+    <rdfs:subClassOf rdf:nodeID="Ne770cbc832b54327b2e45604441ebfee"/>
+    <rdfs:label xml:lang="uk">Співробітник</rdfs:label>
+    <rdfs:comment xml:lang="uk">Особа, яка перебуває в трудових відносинах з організацією.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#stateOnboarding">
+    <rdf:type rdf:resource="http://example.org/hr#OnboardingState"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#CourseCompletedEvent">
+    <rdfs:label xml:lang="uk">Завершення курсу</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="uk">Подія, що фіксує завершення співробітником курсу навчання.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#positionProfilePython">
+    <rdf:type rdf:resource="http://example.org/hr#PositionProfile"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#candidateFor">
+    <rdfs:range rdf:resource="http://example.org/hr#Position"/>
+    <rdfs:label xml:lang="uk">претендує на</rdfs:label>
+    <rdfs:domain rdf:resource="http://example.org/hr#Candidate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Sensor">
+    <rdfs:comment xml:lang="uk">Система, що регулярно фіксує показники та генерує події.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Джерело даних</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Competence">
+    <skos:closeMatch rdf:resource="http://data.europa.eu/esco/model#Skill"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Компетенція</rdfs:label>
+    <rdfs:comment xml:lang="uk">Здатність виконувати завдання, що поєднує знання, навички та поведінкові ознаки.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#sensorHRIS">
+    <rdf:type rdf:resource="http://example.org/hr#HRISSensor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#kpiSprint">
+    <rdf:type rdf:resource="http://example.org/hr#KPI"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:kpiTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">90.0</ns1:kpiTarget>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#teamLeadPost">
+    <rdf:type rdf:resource="http://example.org/hr#Position"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:positionTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Керівник команди</ns1:positionTitle>
+    <ns1:requiresCompetence rdf:resource="http://example.org/hr#negotiation"/>
+    <ns1:requiresCompetence rdf:resource="http://example.org/hr#teamCommunication"/>
+    <ns1:salaryGrade rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</ns1:salaryGrade>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naa27ea485a9b46dcb7a3bb68621aa9b9">
+    <rdf:rest rdf:nodeID="Nbdba72ff4604435c99d42f62bb22d903"/>
+    <rdf:first rdf:resource="http://example.org/hr#eventCourseAndriy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Attestation">
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Appraisal"/>
+    <rdfs:subClassOf rdf:nodeID="N09432025dceb4ba78f04c669348b9f95"/>
+    <rdfs:comment xml:lang="uk">Оцінювання, що завершується формальним висновком про відповідність співробітника посаді.</rdfs:comment>
+    <rdfs:label xml:lang="uk">Атестація</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#UnderReviewState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="uk">Стан співробітника, щодо якого розглядається кадрове рішення.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#State"/>
+    <rdfs:label xml:lang="uk">Стан розгляду</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#eventCourseAndriy">
+    <rdf:type rdf:resource="http://example.org/hr#CourseCompletedEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:concernsEmployee rdf:resource="http://example.org/hr#andriy"/>
+    <ns1:reportedBy rdf:resource="http://example.org/hr#sensorLMS"/>
+    <ns1:occurredOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-09-20T00:00:00</ns1:occurredOn>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7a3eedf744bd4634963e5b95964919e8">
+    <rdf:first rdf:resource="http://example.org/hr#sensorKPI"/>
+    <rdf:rest rdf:nodeID="N66152b567c9d4ee9b8384752a64757af"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N420a91eb8d4747d89934c537eb34139a">
+    <rdf:rest rdf:nodeID="N5983232db7944b778eb061f7aae7ad27"/>
+    <rdf:first rdf:resource="http://example.org/hr#teamLeadPost"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#storesDocument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">зберігає документ</rdfs:label>
+    <rdfs:range rdf:resource="http://example.org/hr#Document"/>
+    <rdfs:domain rdf:resource="http://example.org/hr#InformationSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#situationS4">
+    <rdf:type rdf:resource="http://example.org/hr#SituationTemplate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:onEvent rdf:resource="http://example.org/hr#eventCourseAndriy"/>
+    <ns1:guard>courseHours ≥ 8</ns1:guard>
+    <ns1:fromState rdf:resource="http://example.org/hr#stateActive"/>
+    <ns1:toState rdf:resource="http://example.org/hr#stateActive"/>
+    <ns1:performsAction rdf:resource="http://example.org/hr#actionUpdateCompetence"/>
+    <rdfs:label xml:lang="uk">Завершення курсу навчання</rdfs:label>
+    <ns1:observedBy rdf:resource="http://example.org/hr#sensorLMS"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf0cd86396b6a4195b624ab90703249d3">
+    <rdf:first rdf:resource="http://example.org/hr#recruitment1"/>
+    <rdf:rest rdf:nodeID="Nd33a3facdb1a4fe2bb60cbb448c2e7a9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr/data">
+    <owl:versionInfo>1.0.0</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#SoftSkill">
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Competence"/>
+    <rdfs:label xml:lang="uk">Soft skills</rdfs:label>
+    <rdfs:comment xml:lang="uk">Компетенція, яка є поведінковою та комунікаційною.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Resume">
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Document"/>
+    <rdfs:label xml:lang="uk">Резюме</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="uk">Документ із відомостями кандидата про освіту, досвід і навички.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N070c4f2f6fbe4efd9faccd6f53a3bf86">
+    <rdf:rest rdf:nodeID="N7b9bc27c4a584e72b17330411ef263c0"/>
+    <rdf:first rdf:resource="http://example.org/hr#onboarding1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#evaluatesMetric">
+    <rdfs:domain rdf:resource="http://example.org/hr#Appraisal"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/hr#Metric"/>
+    <rdfs:label xml:lang="uk">оцінює показник</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N56f2bd818cfa49178ca165b2aab6c0b3">
+    <rdf:first rdf:resource="http://example.org/hr#Competence"/>
+    <rdf:rest rdf:nodeID="N5762328c401a40a0a303a471a2fa6f1b"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#lms1">
+    <ns1:storesRecordOf rdf:resource="http://example.org/hr#andriy"/>
+    <ns1:storesRecordOf rdf:resource="http://example.org/hr#maria"/>
+    <rdf:type rdf:resource="http://example.org/hr#LMS"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:storesDocument rdf:resource="http://example.org/hr#trainingPlanPetro"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#DecisionRule">
+    <rdfs:comment xml:lang="uk">Формалізована умова «якщо — то», за якою ухвалюється кадрове рішення.</rdfs:comment>
+    <rdfs:label xml:lang="uk">Правило прийняття рішень</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#stateProbation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#ProbationState"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N35e99b4deea24f1ea1aa568ac8732c1e">
+    <rdf:first rdf:resource="http://example.org/hr#stateProbation"/>
+    <rdf:rest rdf:nodeID="N4177ecfb3b6940d3a0505a78d187c736"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#ActiveState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Активний стан</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#State"/>
+    <rdfs:comment xml:lang="uk">Стан співробітника, що працює на постійній основі.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N09432025dceb4ba78f04c669348b9f95">
+    <owl:onProperty rdf:resource="http://example.org/hr#evaluates"/>
+    <owl:allValuesFrom rdf:resource="http://example.org/hr#Competence"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#fromState">
+    <rdfs:domain rdf:resource="http://example.org/hr#SituationTemplate"/>
+    <rdfs:range rdf:resource="http://example.org/hr#State"/>
+    <rdfs:label xml:lang="uk">початковий стан</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd0901699501142209baf59dd18c7b300">
+    <rdf:first rdf:resource="http://example.org/hr#training1"/>
+    <rdf:rest rdf:nodeID="Ne502b2e8ac154284a5a86a2ad8e8e032"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5c0b2d7ae20047859079e904eee2bc74">
+    <rdf:first rdf:resource="http://example.org/hr#ConfirmEmploymentAction"/>
+    <rdf:rest rdf:nodeID="N97e244c1ec1643d1a576ed8b911d2f10"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#ruleLeadsTo">
+    <rdfs:label xml:lang="uk">призводить до рішення</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/hr#DecisionRule"/>
+    <rdfs:range rdf:resource="http://example.org/hr#HRDecision"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N220e781a1b774e55834acf5e387638a7">
+    <rdf:first rdf:resource="http://example.org/hr#Sensor"/>
+    <rdf:rest rdf:nodeID="N639b00189c144fd48ffab5f042affc48"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#actionUpdateCompetence">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#UpdateCompetenceAction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#InformationSystem">
+    <rdfs:label xml:lang="uk">Інформаційна система</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="uk">Програмна система обліку та обробки кадрових даних.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nce8679754d9f4c819a0f78f1c0c21850">
+    <rdf:first rdf:resource="http://example.org/hr#Training"/>
+    <rdf:rest rdf:nodeID="Nb882aebd04594f12a6c590ed2c63551d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6bd285f58d5f4b8484be170b3026767a">
+    <owl:someValuesFrom rdf:resource="http://example.org/hr#Position"/>
+    <owl:onProperty rdf:resource="http://example.org/hr#candidateFor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#actionInitiateDismissal">
+    <rdf:type rdf:resource="http://example.org/hr#InitiateDismissalAction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd9ed6959f7c644ce9f9d34a05c9cbd89">
+    <rdf:first rdf:resource="http://example.org/hr#Document"/>
+    <rdf:rest rdf:nodeID="N89dbd6bdeb5f45659b363aaf983cc4fa"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7de1b97bdba74f29bc096638b02b7266">
+    <rdf:first rdf:resource="http://example.org/hr#Course"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#situationS6">
+    <ns1:performsAction rdf:resource="http://example.org/hr#actionCloseRecord"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#SituationTemplate"/>
+    <ns1:toState rdf:resource="http://example.org/hr#stateDismissed"/>
+    <ns1:onEvent rdf:resource="http://example.org/hr#eventResignation1"/>
+    <ns1:guard>заява зареєстрована в HRIS</ns1:guard>
+    <ns1:fromState rdf:resource="http://example.org/hr#stateActive"/>
+    <rdfs:label xml:lang="uk">Заява про звільнення</rdfs:label>
+    <ns1:observedBy rdf:resource="http://example.org/hr#sensorHRIS"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#resume1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#Resume"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne0bf256e1f91416b9c152f00e584b4cd">
+    <rdf:first rdf:resource="http://example.org/hr#Employee"/>
+    <rdf:rest rdf:nodeID="Nca0d55d5db364db6b4e2c10fee0f8334"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#courseHours">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="http://example.org/hr#Course"/>
+    <rdfs:label xml:lang="uk">тривалість курсу, год</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nec9818c8fa3a4e76b84be215a3dc4002">
+    <rdf:first rdf:resource="http://example.org/hr#Appraisal"/>
+    <rdf:rest rdf:nodeID="N162f5b5346d44c019d486e70fd0089f1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#HRDecision">
+    <rdfs:comment xml:lang="uk">Управлінське рішення щодо прийому, переміщення, винагороди чи звільнення працівника.</rdfs:comment>
+    <rdfs:label xml:lang="uk">Кадрове рішення</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#bonusQ3">
+    <ns1:raises rdf:resource="http://example.org/hr#productivityQ3"/>
+    <rdf:type rdf:resource="http://example.org/hr#Bonus"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#candidate2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#Candidate"/>
+    <ns1:submittedResume rdf:resource="http://example.org/hr#resume2"/>
+    <ns1:fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ірина Петренко</ns1:fullName>
+    <ns1:candidateFor rdf:resource="http://example.org/hr#recruiterPost"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2759018a923f4399b2f940370e74ed2f">
+    <rdf:first rdf:resource="http://example.org/hr#LowProductivityEvent"/>
+    <rdf:rest rdf:nodeID="Naf93931e67b64ea39d143477c9b9ebb9"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nba8ba1daec08434785752f459596e625">
+    <rdf:first rdf:resource="http://example.org/hr#DismissedState"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#raises">
+    <rdfs:subPropertyOf rdf:resource="http://example.org/hr#affects"/>
+    <rdfs:range rdf:resource="http://example.org/hr#Metric"/>
+    <rdfs:label xml:lang="uk">підвищує</rdfs:label>
+    <rdfs:domain rdf:nodeID="N45f6217f3f504b0db1629959e49555b0"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Productivity">
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Metric"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Продуктивність</rdfs:label>
+    <rdfs:comment xml:lang="uk">Показник відношення результатів роботи співробітника до витрат часу та ресурсів.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfba2a4bd768e4b7b844cdfcadcedfbe8">
+    <rdf:rest rdf:nodeID="N6db387e4b0614ca39e0ee6c885c0d5b6"/>
+    <rdf:first rdf:resource="http://example.org/hr#UpdateCompetenceAction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nca0d55d5db364db6b4e2c10fee0f8334">
+    <rdf:first rdf:nodeID="N67bb8fdd82884d6792e7c0493cbca8b4"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8182431127614afeb3c92be52bd3d106">
+    <rdf:rest rdf:nodeID="N078137cc88c44d35a48f57fd71218cb6"/>
+    <rdf:first rdf:resource="http://example.org/hr#HRIS"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N74595a5ae9c04c1882765f5e1e226a01">
+    <rdf:first rdf:resource="http://example.org/hr#situationS1"/>
+    <rdf:rest rdf:nodeID="N8966f22e4ece49928392e7dd7345a94d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Person">
+    <rdfs:comment xml:lang="uk">Людина, що взаємодіє з організацією у сфері праці.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:exactMatch rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdfs:label xml:lang="uk">Особа</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#HighPerformer">
+    <rdfs:label xml:lang="uk">Співробітник із високою продуктивністю</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:equivalentClass rdf:nodeID="N30b38fd749404e03b982bf566b2d1d9f"/>
+    <rdfs:comment xml:lang="uk">Співробітник, продуктивність якого не нижча за 8 балів.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#hasCompetence">
+    <rdfs:label xml:lang="uk">має компетенцію</rdfs:label>
+    <rdfs:range rdf:resource="http://example.org/hr#Competence"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/hr#Employee"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#maria">
+    <ns1:tenureMonths rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ns1:tenureMonths>
+    <ns1:hireDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-05-02T00:00:00</ns1:hireDate>
+    <ns1:inState rdf:resource="http://example.org/hr#stateProbation"/>
+    <rdf:type rdf:resource="http://example.org/hr#Employee"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:productivityScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.5</ns1:productivityScore>
+    <ns1:hasCompetence rdf:resource="http://example.org/hr#teamCommunication"/>
+    <ns1:hasCompetence rdf:resource="http://example.org/hr#pythonProgramming"/>
+    <ns1:occupies rdf:resource="http://example.org/hr#pythonDeveloperPost"/>
+    <ns1:employeeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E-004</ns1:employeeId>
+    <ns1:completedCourse rdf:resource="http://example.org/hr#negotiationCourse"/>
+    <ns1:fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Марія Гончар</ns1:fullName>
+    <ns1:directManager rdf:resource="http://example.org/hr#ivan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#eventHire1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#HireEvent"/>
+    <ns1:reportedBy rdf:resource="http://example.org/hr#sensorHRIS"/>
+    <ns1:concernsEmployee rdf:resource="http://example.org/hr#maria"/>
+    <ns1:occurredOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-05-02T00:00:00</ns1:occurredOn>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6ca52a9388b44e58999e1632b8a079a4">
+    <rdf:first rdf:resource="http://example.org/hr#Reward"/>
+    <rdf:rest rdf:nodeID="N7de1b97bdba74f29bc096638b02b7266"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc7f59c0e65684f99894c490831870ca3">
+    <owl:someValuesFrom rdf:resource="http://example.org/hr#Competence"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://example.org/hr#requiresCompetence"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7807c0db6b4947f383bb71b8e26a37fa">
+    <rdf:rest rdf:nodeID="N7d38fa65b4f2480681b20f1364c44ecf"/>
+    <rdf:first rdf:resource="http://example.org/hr#sofia"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbb2b5cca5ed046d0a3dfe9f5e13d4446">
+    <rdf:first rdf:resource="http://example.org/hr#situationS3"/>
+    <rdf:rest rdf:nodeID="Necae6eb1c6414ec9901f2843af05e7e4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#productivityQ3">
+    <rdf:type rdf:resource="http://example.org/hr#Productivity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7cd6878337894dbfb0da55fc37f3d3d1">
+    <owl:withRestrictions rdf:nodeID="N7a5d177f55334b019c723578988e73fd"/>
+    <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na6a3740a0365457da78afd3cecfafd4b">
+    <owl:members rdf:nodeID="Nf0642d9304be49348cafea7c5b6188ef"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#HireEvent">
+    <rdfs:label xml:lang="uk">Подія найму</rdfs:label>
+    <rdfs:comment xml:lang="uk">Подія, що фіксує ухвалення рішення про прийом кандидата.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8e4043a3c9514464ab43eaea07e588a4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:nodeID="Nf8e73f84c85f4387a6349a773914b57e"/>
+    <owl:onProperty rdf:resource="http://example.org/hr#productivityScore"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N39482b3092534d1bb168eb1f302adefc">
+    <rdf:rest rdf:nodeID="N7a308885e7d84bd2850013c07cb62d69"/>
+    <rdf:first rdf:resource="http://example.org/hr#promotion1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#salaryGrade">
+    <rdfs:domain rdf:resource="http://example.org/hr#Position"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label xml:lang="uk">тарифний розряд</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd33a3facdb1a4fe2bb60cbb448c2e7a9">
+    <rdf:first rdf:resource="http://example.org/hr#interview1"/>
+    <rdf:rest rdf:nodeID="N070c4f2f6fbe4efd9faccd6f53a3bf86"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N63eda410a68f4f4d89e51aed91073152">
+    <rdf:rest rdf:nodeID="N124333c4e5c44e66a52d0a5a911be4e8"/>
+    <rdf:first rdf:resource="http://example.org/hr#resume1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N05d45b06f84c4b5185af388683923336">
+    <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.0</xsd:maxExclusive>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N420d32ccb89242d1b904fc95dc010953">
+    <rdf:first rdf:resource="http://example.org/hr#Training"/>
+    <rdf:rest rdf:nodeID="N6b2577ec07a24844b35f7ba7030bf226"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#HRISSensor">
+    <rdfs:label xml:lang="uk">Джерело HRIS</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Sensor"/>
+    <rdfs:comment xml:lang="uk">Джерело даних, що фіксує кадрові події в HRIS.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#HRProcess">
+    <rdfs:comment xml:lang="uk">Повторювана послідовність дій у межах управління персоналом.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">HR-процес</rdfs:label>
+    <skos:relatedMatch rdf:resource="http://www.w3.org/ns/org#OrganizationalUnit"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nde2f73ce69d748ee9f4c7c7617742a54">
+    <rdf:rest rdf:nodeID="N420a91eb8d4747d89934c537eb34139a"/>
+    <rdf:first rdf:resource="http://example.org/hr#pythonDeveloperPost"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N01ea85922ef64461a082741ccd467a3a">
+    <rdf:first rdf:resource="http://example.org/hr#HRDecision"/>
+    <rdf:rest rdf:nodeID="N02d2382d862748fea332eb5d240a81e7"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3d8fe8d1336e40098788742efd98c148">
+    <rdf:rest rdf:nodeID="Nd6504124c54d4bf6900bb1e135c63f6d"/>
+    <rdf:first rdf:resource="http://example.org/hr#trainingPlanPetro"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#ConfirmEmploymentAction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Підтвердження працевлаштування</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Action"/>
+    <rdfs:comment xml:lang="uk">Дія переведення співробітника на постійну роботу.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#turnoverRate">
+    <rdfs:label xml:lang="uk">рівень плинності, %</rdfs:label>
+    <rdfs:domain rdf:resource="http://example.org/hr#Turnover"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N72134fe463354bca9bbd11e046a23c28">
+    <rdf:first rdf:resource="http://example.org/hr#eventHire1"/>
+    <rdf:rest rdf:nodeID="Ndeaf936cb25644b2994f3322b30b77ca"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N33fbf1f4d7ce455097413911e2e22ad3">
+    <rdf:first rdf:resource="http://example.org/hr#KPI"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7ff69060796d415e8c0706b8a2b52e4a">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://example.org/hr#Dismissal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#personnelManagement">
+    <ns1:hasSubProcess rdf:resource="http://example.org/hr#appraisal1"/>
+    <ns1:hasSubProcess rdf:resource="http://example.org/hr#recruitment1"/>
+    <ns1:hasSubProcess rdf:resource="http://example.org/hr#training1"/>
+    <ns1:hasSubProcess rdf:resource="http://example.org/hr#motivation1"/>
+    <rdf:type rdf:resource="http://example.org/hr#HRProcess"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfa89e2912bdf486cbbd6817156708842">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N7d61f472590144ecb729bf6ee311ef6f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Candidate">
+    <rdfs:label xml:lang="uk">Кандидат</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="uk">Особа, яка претендує на вакантну посаду, але ще не уклала трудовий договір.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="N6bd285f58d5f4b8484be170b3026767a"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5762328c401a40a0a303a471a2fa6f1b">
+    <rdf:first rdf:resource="http://example.org/hr#HRProcess"/>
+    <rdf:rest rdf:nodeID="N92fab9f2e81b4dd08a7d2b31792e20e4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#salaryIvan">
+    <rdf:type rdf:resource="http://example.org/hr#Salary"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:salaryAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3200.00</ns1:salaryAmount>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Interview">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Співбесіда</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#HRProcess"/>
+    <rdfs:comment xml:lang="uk">HR-процес розмови з кандидатом для оцінки його відповідності посаді.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndeaf936cb25644b2994f3322b30b77ca">
+    <rdf:rest rdf:nodeID="N2c83948771784824935844ce402af832"/>
+    <rdf:first rdf:resource="http://example.org/hr#eventProbationMaria"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6d384007a7934f6197fe0c16b5d87c83">
+    <rdf:rest rdf:nodeID="N3d8fe8d1336e40098788742efd98c148"/>
+    <rdf:first rdf:resource="http://example.org/hr#positionProfilePython"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N18c39f3cda5743e59af005cad7a35bd1">
+    <rdf:rest rdf:nodeID="N9173999d4e4a4dc6a0e0b14d14281b89"/>
+    <rdf:first rdf:resource="http://example.org/hr#Employee"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N822ae6caa7384a82a9e5dbd948fe462e">
+    <rdf:first rdf:resource="http://example.org/hr#HRDecision"/>
+    <rdf:rest rdf:nodeID="N6ca52a9388b44e58999e1632b8a079a4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N92fab9f2e81b4dd08a7d2b31792e20e4">
+    <rdf:rest rdf:nodeID="N09476c2a8d20493382e6ddf6b116ff52"/>
+    <rdf:first rdf:resource="http://example.org/hr#HRDecision"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#State">
+    <rdfs:label xml:lang="uk">Стан</rdfs:label>
+    <rdfs:comment xml:lang="uk">Сукупність умов, що характеризує перебування співробітника чи кандидата в HR-процесі.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N601cf214b3584ca9823acbec4bfa1a63">
+    <owl:members rdf:nodeID="Nc172d7cb17cc4cb699e93a021213019f"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#negotiation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#SoftSkill"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6df55e4ecab14a8aa6106969ed7fb657">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N240f764ed4354605b70d7631593bb31d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N078137cc88c44d35a48f57fd71218cb6">
+    <rdf:first rdf:resource="http://example.org/hr#LMS"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#evaluates">
+    <rdfs:domain rdf:resource="http://example.org/hr#Appraisal"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">оцінює компетенцію</rdfs:label>
+    <rdfs:range rdf:resource="http://example.org/hr#Competence"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#actionStartOnboarding">
+    <rdf:type rdf:resource="http://example.org/hr#StartOnboardingAction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2b1feaa924d44e0486b368e04ce479e2">
+    <rdf:first rdf:resource="http://example.org/hr#maria"/>
+    <rdf:rest rdf:nodeID="N378a0f4ab5d04260938dc11349c9ac0f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#CloseRecordAction">
+    <rdfs:label xml:lang="uk">Закриття кадрового запису</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="uk">Дія завершення ведення активного кадрового запису.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Action"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nede28b10aa3e4823b81d71f53e5fce5a">
+    <rdf:rest rdf:nodeID="N3d18692c12e047d9bd0f236d97cc1172"/>
+    <rdf:first rdf:resource="http://example.org/hr#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbdba72ff4604435c99d42f62bb22d903">
+    <rdf:first rdf:resource="http://example.org/hr#actionConfirmEmployment"/>
+    <rdf:rest rdf:nodeID="N515960bdb6d04f089d3278229842f8e4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#resume2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#Resume"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1c861b2cf1784f41afda8897c3f45de0">
+    <rdf:first rdf:resource="http://example.org/hr#stateOnboarding"/>
+    <rdf:rest rdf:nodeID="N35e99b4deea24f1ea1aa568ac8732c1e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#sensorLMS">
+    <rdf:type rdf:resource="http://example.org/hr#LMSSensor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb011733d7f3e428ea6d07359bdb86bc2">
+    <rdf:rest rdf:nodeID="N473fa66db6514cd9a79567803dcf62e5"/>
+    <rdf:first rdf:resource="http://example.org/hr#SoftSkill"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9d8cd7e50b534967b85ec2f7afa467b3">
+    <rdf:rest rdf:nodeID="Nd0901699501142209baf59dd18c7b300"/>
+    <rdf:first rdf:resource="http://example.org/hr#attestation2026"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#planFor">
+    <rdfs:range rdf:resource="http://example.org/hr#Employee"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">план для</rdfs:label>
+    <rdfs:domain rdf:resource="http://example.org/hr#TrainingPlan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#tenureMonths">
+    <rdfs:label xml:lang="uk">стаж, місяців</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="http://example.org/hr#Employee"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5a6365dab2f94c16ac3b641998f882a4">
+    <rdf:rest rdf:nodeID="N5fde485a776b4e5abd26531efc925bb9"/>
+    <rdf:first rdf:resource="http://example.org/hr#pythonProgramming"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4db7430589b54adf9ab9b0665c05fbad">
+    <rdf:first rdf:resource="http://example.org/hr#turnover2026"/>
+    <rdf:rest rdf:nodeID="N16002b93f21a4cdb94517c3da41089bd"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7667cb4ce1874639a145ca90d3b7f5d8">
+    <rdf:rest rdf:nodeID="Naf0a63758ea2405ca95f4e3baf56a2a5"/>
+    <rdf:first rdf:resource="http://example.org/hr#ActiveState"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0fb14f00b2ff4ee297ff5c900da01f60">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N913368c0c44e4c1884b8db744bd36887"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#candidate1">
+    <ns1:candidateFor rdf:resource="http://example.org/hr#pythonDeveloperPost"/>
+    <ns1:inState rdf:resource="http://example.org/hr#stateCandidate"/>
+    <ns1:fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Дмитро Савчук</ns1:fullName>
+    <ns1:submittedResume rdf:resource="http://example.org/hr#resume1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#Candidate"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na7c20b8b776c4397b07ca5441a3df87a">
+    <rdf:rest rdf:nodeID="N22312003d6a74e4c8f1d019445ff913d"/>
+    <rdf:first rdf:resource="http://example.org/hr#StartOnboardingAction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#completedCourse">
+    <rdfs:label xml:lang="uk">завершив курс</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/hr#Course"/>
+    <rdfs:domain rdf:resource="http://example.org/hr#Employee"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#TrainedEmployee">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Співробітник, що пройшов навчання</rdfs:label>
+    <owl:equivalentClass rdf:nodeID="N378953ee6ec947c4a9664ec1915e8ff5"/>
+    <rdfs:comment xml:lang="uk">Співробітник, який завершив принаймні один курс навчання.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#eventLowProdPetro">
+    <ns1:occurredOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-10-01T00:00:00</ns1:occurredOn>
+    <ns1:concernsEmployee rdf:resource="http://example.org/hr#petro"/>
+    <rdf:type rdf:resource="http://example.org/hr#LowProductivityEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:reportedBy rdf:resource="http://example.org/hr#sensorKPI"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#positionTitle">
+    <rdfs:label xml:lang="uk">назва посади</rdfs:label>
+    <rdfs:domain rdf:resource="http://example.org/hr#Position"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7fa0031134af4939b228b8bd2f30bfc6">
+    <rdf:rest rdf:nodeID="Nd9ed6959f7c644ce9f9d34a05c9cbd89"/>
+    <rdf:first rdf:resource="http://example.org/hr#Reward"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#recruitment1">
+    <ns1:requiresDocument rdf:resource="http://example.org/hr#positionProfilePython"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#Recruitment"/>
+    <ns1:hasSubProcess rdf:resource="http://example.org/hr#onboarding1"/>
+    <ns1:hasSubProcess rdf:resource="http://example.org/hr#interview1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N558c89bf758a4b4288de7bbe91509126">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://example.org/hr#includesCourse"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="http://example.org/hr#Course"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#SituationTemplate">
+    <rdfs:label xml:lang="uk">Шаблон ситуації</rdfs:label>
+    <rdfs:comment xml:lang="uk">Формалізований опис переходу між станами за подією та умовою.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2ce970c5232f4fb0be7fb054fa245c93">
+    <owl:allValuesFrom rdf:resource="http://example.org/hr#HRDecision"/>
+    <owl:onProperty rdf:resource="http://example.org/hr#makesDecision"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6ff00f0115c04ac89269a5ff3a2c1386">
+    <rdf:first rdf:resource="http://example.org/hr#stateDismissed"/>
+    <rdf:rest rdf:nodeID="N72134fe463354bca9bbd11e046a23c28"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5fde485a776b4e5abd26531efc925bb9">
+    <rdf:first rdf:resource="http://example.org/hr#hrAnalytics"/>
+    <rdf:rest rdf:nodeID="Nc0f681da9f634917aad9a7a522f85fd3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N09476c2a8d20493382e6ddf6b116ff52">
+    <rdf:rest rdf:nodeID="N26519d04b68c4f599677dc36bab28672"/>
+    <rdf:first rdf:resource="http://example.org/hr#DecisionRule"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7a78fff5a3d54490ab2631ec5a860ecd">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://example.org/hr#Course"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N240f764ed4354605b70d7631593bb31d">
+    <rdf:rest rdf:nodeID="N14ca0af5985242fab0bcfec7aac18a98"/>
+    <rdf:first rdf:resource="http://example.org/hr#Employee"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#ProbationReviewEvent">
+    <rdfs:comment xml:lang="uk">Подія, що фіксує оцінку результатів випробувального терміну.</rdfs:comment>
+    <rdfs:label xml:lang="uk">Підсумок випробувального терміну</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc172d7cb17cc4cb699e93a021213019f">
+    <rdf:rest rdf:nodeID="Nce2facd1b8fc4b0f9eaad7a5384db132"/>
+    <rdf:first rdf:resource="http://example.org/hr#CandidateState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#hasSubProcess">
+    <rdfs:label xml:lang="uk">має підпроцес</rdfs:label>
+    <rdfs:range rdf:resource="http://example.org/hr#HRProcess"/>
+    <rdfs:domain rdf:resource="http://example.org/hr#HRProcess"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne7c8f9f662ae481f83ca059a6aa3243a">
+    <rdf:rest rdf:nodeID="Nf05173960f20404e9613cdef7c86e2e2"/>
+    <rdf:first rdf:resource="http://example.org/hr#HRDecision"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#DismissedState">
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#State"/>
+    <rdfs:label xml:lang="uk">Стан звільнення</rdfs:label>
+    <rdfs:comment xml:lang="uk">Стан особи, трудові відносини з якою припинено.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N757a6f37b3b54502bf9e180b40389089">
+    <rdf:first rdf:resource="http://example.org/hr#Promotion"/>
+    <rdf:rest rdf:nodeID="N7ff69060796d415e8c0706b8a2b52e4a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4af4386b9e6b4e0aa9a37c8c3fddacf6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="http://example.org/hr#Competence"/>
+    <owl:onProperty rdf:resource="http://example.org/hr#requiresCompetence"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#courseTitle">
+    <rdfs:domain rdf:resource="http://example.org/hr#Course"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="uk">назва курсу</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N439b6ff891344cb991d7125bed81e89d">
+    <rdf:rest rdf:nodeID="N01ea85922ef64461a082741ccd467a3a"/>
+    <rdf:first rdf:resource="http://example.org/hr#Onboarding"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#stateCandidate">
+    <rdf:type rdf:resource="http://example.org/hr#CandidateState"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne861ad56a45246308863af4d2564b830">
+    <rdf:first rdf:resource="http://example.org/hr#conflictPerson"/>
+    <rdf:rest rdf:nodeID="N74595a5ae9c04c1882765f5e1e226a01"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Reward">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Винагорода</rdfs:label>
+    <rdfs:comment xml:lang="uk">Грошова виплата або інша компенсація за виконану працю.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N22312003d6a74e4c8f1d019445ff913d">
+    <rdf:rest rdf:nodeID="Nfba2a4bd768e4b7b844cdfcadcedfbe8"/>
+    <rdf:first rdf:resource="http://example.org/hr#AssignCourseAction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5983232db7944b778eb061f7aae7ad27">
+    <rdf:rest rdf:nodeID="N34eeaafe6438411ab149d3c3869c8c7b"/>
+    <rdf:first rdf:resource="http://example.org/hr#hrManagerPost"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#OnboardingState">
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#State"/>
+    <rdfs:label xml:lang="uk">Стан адаптації</rdfs:label>
+    <rdfs:comment xml:lang="uk">Стан нового співробітника в період адаптації.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndfdba1dee1e745bfac8af9e679391a17">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N5c0b2d7ae20047859079e904eee2bc74"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1c842f20def240b6b8c9ecb190b554b0">
+    <rdf:rest rdf:nodeID="N6304ae859cd847ddb0a0c35d5ab2514e"/>
+    <rdf:first rdf:resource="http://example.org/hr#olena"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#PositionProfile">
+    <rdfs:label xml:lang="uk">Профіль посади</rdfs:label>
+    <rdfs:comment xml:lang="uk">Документ, що описує обов'язки, вимоги та компетенції посади.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Document"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N816bcd05f0a74f2894443382ee8d6c97">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="Nd776e3f2ad874160a9553df11ec55622"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N97e244c1ec1643d1a576ed8b911d2f10">
+    <rdf:rest rdf:nodeID="Na7c20b8b776c4397b07ca5441a3df87a"/>
+    <rdf:first rdf:resource="http://example.org/hr#InitiateDismissalAction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#negotiationCourse">
+    <ns1:courseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ефективні перемовини</ns1:courseTitle>
+    <ns1:raises rdf:resource="http://example.org/hr#productivityQ3"/>
+    <rdf:type rdf:resource="http://example.org/hr#Course"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:courseHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</ns1:courseHours>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc6dc3b279750481d94577d1f4824e1cb">
+    <owl:members rdf:nodeID="N8012f4779c76477587d9b516ff8a395e"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6db387e4b0614ca39e0ee6c885c0d5b6">
+    <rdf:first rdf:resource="http://example.org/hr#CloseRecordAction"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd8eada773c724557ad2bf2c97b590054">
+    <rdf:rest rdf:nodeID="Ne7c8f9f662ae481f83ca059a6aa3243a"/>
+    <rdf:first rdf:resource="http://example.org/hr#Onboarding"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na972036a64b541bf83dfce20a2299535">
+    <rdf:first rdf:resource="http://example.org/hr#ResignationRequestEvent"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Necae6eb1c6414ec9901f2843af05e7e4">
+    <rdf:first rdf:resource="http://example.org/hr#situationS4"/>
+    <rdf:rest rdf:nodeID="N1398babd31c94c67b334f06a3bd7cd67"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#dismissalProposal1">
+    <ns1:decisionAbout rdf:resource="http://example.org/hr#petro"/>
+    <ns1:lowers rdf:resource="http://example.org/hr#productivityQ3"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/hr#Dismissal"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3d18692c12e047d9bd0f236d97cc1172">
+    <rdf:first rdf:resource="http://example.org/hr#Action"/>
+    <rdf:rest rdf:nodeID="N220e781a1b774e55834acf5e387638a7"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nba04a1b44b354a9985cab9909c730cb3">
+    <rdf:first rdf:resource="http://example.org/hr#candidate2"/>
+    <rdf:rest rdf:nodeID="N3a101bc3e2ff46d7bbfca2e5fa46610d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7b9bc27c4a584e72b17330411ef263c0">
+    <rdf:rest rdf:nodeID="N9d8cd7e50b534967b85ec2f7afa467b3"/>
+    <rdf:first rdf:resource="http://example.org/hr#appraisal1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N30bb9d2ec8d24a1684a3a3155304ed39">
+    <owl:onProperty rdf:resource="http://example.org/hr#requiresDocument"/>
+    <owl:someValuesFrom rdf:resource="http://example.org/hr#PositionProfile"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#KPISensor">
+    <rdfs:label xml:lang="uk">Джерело KPI</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Sensor"/>
+    <rdfs:comment xml:lang="uk">Джерело даних, що фіксує значення KPI та продуктивності.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#InitiateDismissalAction">
+    <rdfs:comment xml:lang="uk">Дія запуску процедури звільнення.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Ініціювання звільнення</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Action"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N009d233962b1405bbabcb4efa6c6f10e">
+    <rdf:first rdf:resource="http://example.org/hr#Salary"/>
+    <rdf:rest rdf:nodeID="Ndc49c88153a74f069b13771afa5a3cce"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nda0f9cb4fac34e44831ec9536954044e">
+    <rdf:rest rdf:nodeID="Na0421cb9e98d4381a58ec327a9151f77"/>
+    <rdf:first rdf:resource="http://example.org/hr#salaryIvan"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6304ae859cd847ddb0a0c35d5ab2514e">
+    <rdf:rest rdf:nodeID="N01c5e4aa7ed444f3ac86a6b553a1674e"/>
+    <rdf:first rdf:resource="http://example.org/hr#ivan"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N95d98f0a30364df6a6cf01ffa5b4b87d">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N757a6f37b3b54502bf9e180b40389089"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf96258d409174bb498e1821d9aca1b1e">
+    <rdf:first rdf:resource="http://example.org/hr#productivityQ3"/>
+    <rdf:rest rdf:nodeID="N4db7430589b54adf9ab9b0665c05fbad"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7a979e74ae0b4388be0ac4d6048d5975">
+    <rdf:rest rdf:nodeID="Nf9d9130d16f84c9dbca8427352e664e9"/>
+    <rdf:first rdf:resource="http://example.org/hr#HireEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N66196704496c4e4983e5843538434020">
+    <rdf:first rdf:resource="http://example.org/hr#Productivity"/>
+    <rdf:rest rdf:nodeID="Nf479267b5327497d8df0143b3096d3df"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf167d4df7d3d4c5e9676dfb31468a920">
+    <rdf:first rdf:resource="http://example.org/hr#actionStartOnboarding"/>
+    <rdf:rest rdf:nodeID="N3e2f17bb77f04260b317b1dd600a0a1b"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naf0a63758ea2405ca95f4e3baf56a2a5">
+    <rdf:first rdf:resource="http://example.org/hr#UnderReviewState"/>
+    <rdf:rest rdf:nodeID="Nba8ba1daec08434785752f459596e625"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#KPI">
+    <rdfs:comment xml:lang="uk">Показник, що кількісно вимірює досягнення цілі за визначеною шкалою.</rdfs:comment>
+    <rdfs:label xml:lang="uk">KPI</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Metric"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf774fc8b06d94ab4a5e2e1fdba175fe0">
+    <rdf:first rdf:resource="http://example.org/hr#InformationSystem"/>
+    <rdf:rest rdf:nodeID="N7825f5b678b640e285983418f76da407"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N14ca0af5985242fab0bcfec7aac18a98">
+    <rdf:first rdf:nodeID="Neec3943c00464908843798b5b1e9bec4"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N24cee854fad84e0a840cf054f8bf7559">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="http://example.org/hr#Position"/>
+    <owl:onProperty rdf:resource="http://example.org/hr#occupies"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2c83948771784824935844ce402af832">
+    <rdf:first rdf:resource="http://example.org/hr#eventLowProdPetro"/>
+    <rdf:rest rdf:nodeID="Ndd214ee2b82e4601826e824e008109a2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9b3ffd960be842dd8b9ad9fff2ca841a">
+    <rdf:first rdf:resource="http://example.org/hr#HRISSensor"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N378a0f4ab5d04260938dc11349c9ac0f">
+    <rdf:rest rdf:nodeID="N7807c0db6b4947f383bb71b8e26a37fa"/>
+    <rdf:first rdf:resource="http://example.org/hr#andriy"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nba9befe0001c4c0987828d2d7af889d9">
+    <rdf:first rdf:resource="http://example.org/hr#actionCloseRecord"/>
+    <rdf:rest rdf:nodeID="N7a3eedf744bd4634963e5b95964919e8"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N960621c65cbd4b048993be6ebb056c39">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+    <owl:distinctMembers rdf:nodeID="N399c687e97124d21b4dae5fa462427f8"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndc49c88153a74f069b13771afa5a3cce">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://example.org/hr#Bonus"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naff7bb98c5924951bff0087af8e5ab13">
+    <rdf:rest rdf:nodeID="N123387b41ea64fa28e3d8ea9a68e92b0"/>
+    <rdf:first rdf:resource="http://example.org/hr#PositionProfile"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N708d1f5d2c274ddfa2b3db1a6af6f766">
+    <owl:unionOf rdf:nodeID="N420d32ccb89242d1b904fc95dc010953"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N30b38fd749404e03b982bf566b2d1d9f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N18c39f3cda5743e59af005cad7a35bd1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nac0ae95b2ec24bbfba2208d4d1b29404">
+    <rdf:first rdf:resource="http://example.org/hr#LMSSensor"/>
+    <rdf:rest rdf:nodeID="N9b3ffd960be842dd8b9ad9fff2ca841a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#HardSkill">
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Competence"/>
+    <rdfs:label xml:lang="uk">Hard skills</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="uk">Компетенція, яка є професійно-технічною та піддається вимірюванню.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3a101bc3e2ff46d7bbfca2e5fa46610d">
+    <rdf:first rdf:resource="http://example.org/hr#negotiationCourse"/>
+    <rdf:rest rdf:nodeID="N8428021645b34ac1bcf6e72352157a27"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf71043b6036e40eea3bf60da20194693">
+    <owl:members rdf:nodeID="N3aa50a1968144a3c84f93e096c555699"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nee589339dedf4447bcdf4cd8854a8d1d">
+    <rdf:rest rdf:nodeID="Ndca19d6e863d45d3a57a77f42d89c8e5"/>
+    <rdf:first rdf:resource="http://example.org/hr#Manager"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N162f5b5346d44c019d486e70fd0089f1">
+    <rdf:rest rdf:nodeID="Nc18936f5bcf342a58bd332a0c65c14c2"/>
+    <rdf:first rdf:resource="http://example.org/hr#Training"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#guard">
+    <rdfs:domain rdf:resource="http://example.org/hr#SituationTemplate"/>
+    <rdfs:label xml:lang="uk">умова (guard)</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#LowPerformer">
+    <rdfs:label xml:lang="uk">Співробітник із низькою продуктивністю</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="uk">Співробітник, продуктивність якого нижча за 5 балів.</rdfs:comment>
+    <owl:equivalentClass rdf:nodeID="N0fb14f00b2ff4ee297ff5c900da01f60"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N66152b567c9d4ee9b8384752a64757af">
+    <rdf:first rdf:resource="http://example.org/hr#sensorLMS"/>
+    <rdf:rest rdf:nodeID="N9ca17d63313d490c84f202b07e508e13"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#stateUnderReview">
+    <rdf:type rdf:resource="http://example.org/hr#UnderReviewState"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Motivation">
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#HRProcess"/>
+    <rdfs:comment xml:lang="uk">HR-процес формування стимулів до результативної праці.</rdfs:comment>
+    <rdfs:label xml:lang="uk">Мотивація</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#appraisal1">
+    <ns1:evaluatesMetric rdf:resource="http://example.org/hr#productivityQ3"/>
+    <rdf:type rdf:resource="http://example.org/hr#Appraisal"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasSubProcess rdf:resource="http://example.org/hr#attestation2026"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#turnover2026">
+    <rdf:type rdf:resource="http://example.org/hr#Turnover"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:turnoverRate rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">12.5</ns1:turnoverRate>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#Recruiter">
+    <rdfs:subClassOf rdf:resource="http://example.org/hr#Employee"/>
+    <rdfs:comment xml:lang="uk">Співробітник, що здійснює пошук і попередній відбір кандидатів.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Рекрутер</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#teamCommunication">
+    <rdf:type rdf:resource="http://example.org/hr#SoftSkill"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbc17af93694941169675b056cecd27a4">
+    <rdf:rest rdf:nodeID="N645be1c3e3db468b85ad1b1410c0d0bf"/>
+    <rdf:first rdf:resource="http://example.org/hr#Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncec46aae562440f39d54f6b67b90a086">
+    <rdf:rest rdf:nodeID="Nec9818c8fa3a4e76b84be215a3dc4002"/>
+    <rdf:first rdf:resource="http://example.org/hr#Recruitment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#trustStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N144fc59229134629a71092fa771b93d4">
+    <owl:members rdf:nodeID="N009d233962b1405bbabcb4efa6c6f10e"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7a5d177f55334b019c723578988e73fd">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="N05d45b06f84c4b5185af388683923336"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8966f22e4ece49928392e7dd7345a94d">
+    <rdf:rest rdf:nodeID="Nbb2b5cca5ed046d0a3dfe9f5e13d4446"/>
+    <rdf:first rdf:resource="http://example.org/hr#situationS2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4177ecfb3b6940d3a0505a78d187c736">
+    <rdf:rest rdf:nodeID="Nf75d89e1eb354ba6b94bffeb1b7ed0ee"/>
+    <rdf:first rdf:resource="http://example.org/hr#stateActive"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne4faa431f7624110b752a55313dc84cd">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://example.org/hr#Course"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hr#pythonProgramming">
+    <rdf:type rdf:resource="http://example.org/hr#HardSkill"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N45f6217f3f504b0db1629959e49555b0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="Nce8679754d9f4c819a0f78f1c0c21850"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Neec3943c00464908843798b5b1e9bec4">
+    <owl:someValuesFrom rdf:resource="http://example.org/hr#Manager"/>
+    <owl:onProperty rdf:resource="http://example.org/hr#directManager"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+</rdf:RDF>

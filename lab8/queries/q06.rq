@@ -1,0 +1,10 @@
+# id: q06
+# CQ: Хто має продуктивність нижче 5 і які курси вони завершили (якщо є)?
+# construct: SELECT + FILTER + OPTIONAL
+# interp: OPTIONAL зберігає співробітників без курсів (порожнє значення); вибірка — кандидати на навчання.
+PREFIX hr: <http://example.org/hr#>
+SELECT ?name ?score ?course WHERE {
+  ?e hr:fullName ?name ; hr:productivityScore ?score .
+  FILTER(?score < 5.0)
+  OPTIONAL { ?e hr:completedCourse ?c . ?c hr:courseTitle ?course }
+} ORDER BY ?score

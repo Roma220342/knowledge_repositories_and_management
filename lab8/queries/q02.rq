@@ -1,0 +1,10 @@
+# id: q02
+# CQ: Хто є безпосереднім керівником Петра Бондаря?
+# construct: SELECT + FILTER
+# interp: Знаходить співробітника за іменем і повертає ім'я керівника через directManager.
+PREFIX hr: <http://example.org/hr#>
+SELECT ?manager WHERE {
+  ?e hr:fullName ?n ; hr:directManager ?m .
+  FILTER(STR(?n) = "Петро Бондар")
+  ?m hr:fullName ?manager
+}

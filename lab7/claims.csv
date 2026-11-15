@@ -1,0 +1,60 @@
+﻿id,claim,type,source,verification_level,status,comment
+c01,Person — кореневий клас,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c02,Employee ⊑ Person,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c03,Manager ⊑ Employee,факт,чернетка LLM v3,V2,rejected,reasoner (v3b): Manager ⊑ Position суперечить диз'юнктності Person/Position; зв'язок видалено
+c04,Recruiter ⊑ Manager,факт,чернетка LLM v3,V4,rejected,CQ14: рекрутер не є різновидом керівника (OntoClean: різні ролі); батьківський клас — Employee
+c05,Candidate ⊑ Employee,факт,чернетка LLM v3,V2,rejected,reasoner (v3b): Candidate ⊑ Employee суперечить диз'юнктності Employee/Candidate → клас нездійсненний; виправлено на Candidate ⊑ Person
+c06,Position — кореневий клас,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c07,клас Role,факт,чернетка LLM v3,V3,rejected,поза межами таксономії/карти (ЛР 4–6)
+c08,клас Skill,факт,чернетка LLM v3,V3,rejected,дублює Competence
+c09,Competence ⊑ Skill,факт,чернетка LLM v3,V3,rejected,Skill дублює Competence; зайвий рівень ієрархії
+c10,SoftSkill ⊑ Competence,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c11,HardSkill ⊑ Competence,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c12,HRProcess — кореневий клас,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c13,Recruitment ⊑ HRProcess,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c14,Appraisal ⊑ HRProcess,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c15,Attestation ⊑ Appraisal,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c16,Training ⊑ HRProcess,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c17,Motivation ⊑ HRProcess,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c18,Interview ⊑ HRProcess,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c19,Onboarding ⊑ HRProcess,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c20,HRDecision — кореневий клас,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c21,Promotion ⊑ HRDecision,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c22,Dismissal ⊑ HRProcess,факт,чернетка LLM v3,V4,rejected,"CQ05: звільнення — кадрове рішення (HRDecision), а не HR-процес"
+c23,DecisionRule — кореневий клас,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c24,Metric — кореневий клас,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c25,Productivity ⊑ Metric,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c26,Turnover ⊑ Metric,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c27,KPI ⊑ Metric,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c28,Reward — кореневий клас,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c29,Salary ⊑ Metric,факт,чернетка LLM v3,V3,rejected,"OntoClean: заробітна плата — винагорода (Reward), а не показник (Metric)"
+c30,Bonus ⊑ Reward,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c31,Document — кореневий клас,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c32,Resume ⊑ Document,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c33,PositionProfile ⊑ Document,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c34,TrainingPlan ⊑ Document,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c35,Course ⊑ HRProcess,факт,чернетка LLM v3,V3,rejected,"OntoClean: курс — ресурс (endurant), а не процес (perdurant)"
+c36,InformationSystem — кореневий клас,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c37,HRIS ⊑ InformationSystem,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c38,LMS ⊑ InformationSystem,факт,чернетка LLM v3,V3,verified,збігається з таксономією ЛР 6
+c39,клас Organization,факт,чернетка LLM v3,V3,rejected,поза межами таксономії/карти (ЛР 4–6)
+c40,клас Department,факт,чернетка LLM v3,V3,rejected,поза межами таксономії/карти (ЛР 4–6)
+c41,клас Contract,факт,чернетка LLM v3,V3,rejected,поза межами таксономії/карти (ЛР 4–6)
+c42,occupies: Position → Employee,факт,чернетка LLM v3,V4,rejected,CQ11: домен і діапазон інвертовано (має бути Employee → Position)
+c43,requiresCompetence: Position → Competence,факт,чернетка LLM v3,V3,verified,збігається
+c44,hasCompetence: Person → Competence,факт,чернетка LLM v3,V3,verified,допустимо; у моїй моделі домен вужчий (Employee)
+c45,partOf (транзитивна) для HRProcess,факт,чернетка LLM v3,V3,verified,змістовно збігається з subProcessOf; перейменовано
+c46,reportsTo: транзитивна + асиметрична,факт,чернетка LLM v3,V2,rejected,HermiT: неприпустима комбінація (non-simple property в асиметричній аксіомі); асиметрію видалено
+c47,makesDecision: Manager → HRDecision,факт,чернетка LLM v3,V3,verified,збігається
+c48,evaluates: Appraisal → Competence,факт,чернетка LLM v3,V3,verified,збігається
+c49,contains: InformationSystem → Thing,факт,чернетка LLM v3,V4,rejected,CQ06: надто загальний діапазон; потрібен storesRecordOf → Employee
+c50,raises / lowers → Metric,факт,чернетка LLM v3,V4,verified,CQ03 пройдено
+c51,candidateFor: Candidate → Position,факт,чернетка LLM v3,V3,verified,збігається
+c52,includesCourse: TrainingPlan → Course,факт,чернетка LLM v3,V4,verified,CQ08 пройдено
+c53,hireDate: xsd:date,факт,чернетка LLM v3,V2,rejected,HermiT не підтримує xsd:date; замінено на xsd:dateTime
+c54,productivityScore: xsd:string,факт,чернетка LLM v3,V3,rejected,оцінка продуктивності — число (xsd:decimal)
+c55,"employeeId, fullName, salaryAmount (дані)",факт,чернетка LLM v3,V3,verified,збігаються
+c56,Position ⊑ ∃requiresCompetence.Competence,правило,чернетка LLM v3,V3,verified,коректна аксіома існування
+c57,Manager ⊑ ∀makesDecision.HRDecision,правило,чернетка LLM v3,V3,verified,коректна аксіома універсальності
+c58,Employee ⊓ Candidate ⊑ ⊥,правило,чернетка LLM v3,V3,verified,потрібна диз'юнктність; саме вона виявила помилку Candidate ⊑ Employee
+c59,Person ⊓ Position ⊑ ⊥,правило,чернетка LLM v3,V3,verified,коректна диз'юнктність; виявила хибний Manager ⊑ Position

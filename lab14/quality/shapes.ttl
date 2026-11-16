@@ -1,0 +1,9 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> . @prefix hub: <http://example.org/hub#> . @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+# SHACL-форми для RDF-вигляду сховища. УВАГА: pySHACL у середовищі недоступний — файл НЕ запускався; еквівалентні перевірки виконує quality/tests/ (test_03..test_05, test_13).
+hub:KnowledgeRecordShape a sh:NodeShape ; sh:targetClass hub:KnowledgeRecord ;
+  sh:property [ sh:path hub:text ; sh:minCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path hub:date ; sh:minCount 1 ; sh:datatype xsd:date ] ;
+  sh:property [ sh:path hub:sourceUrl ; sh:minCount 1 ; sh:pattern "^internal://hub/kb/" ] ;
+  sh:property [ sh:path hub:sensitivity ; sh:in ( "public" "internal" "confidential" "restricted" ) ] .
+hub:EmployeeShape a sh:NodeShape ; sh:targetClass hub:Employee ;
+  sh:property [ sh:path hub:occupies ; sh:maxCount 1 ; sh:message "Співробітник має лише одну поточну посаду" ] .

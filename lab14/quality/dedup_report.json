@@ -1,0 +1,25 @@
+{
+ "n_pairs": 100,
+ "dev": 50,
+ "test": 50,
+ "pos_dev": 7,
+ "pos_test": 7,
+ "threshold": 0.79,
+ "dev_prf": [
+  1.0,
+  1.0,
+  1.0
+ ],
+ "test_prf": [
+  1.0,
+  1.0,
+  1.0
+ ],
+ "test_prf_with_judge": [
+  1.0,
+  1.0,
+  1.0
+ ],
+ "per_feature_test": {},
+ "grey_zone_pairs": []
+}

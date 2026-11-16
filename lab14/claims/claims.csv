@@ -1,0 +1,10 @@
+id,claim,type,source,level,status,comment
+C01,Baseline: 9 із 11 метрик не відповідають порогам; після очищення — 1 (timeliness),факт,quality/metrics_baseline.json,V4,verified,
+C02,ER-конвеєр: P=R=1.0 на test (50 пар),факт,quality/dedup_report.json,V4,verified,синтетичні дублікати; оцінка оптимістична
+C03,Одна ознака окремо гірша за комбінацію (F1 test 0.833/0.933/0.56 vs 1.0),факт,quality/dedup_ablation.json,V4,verified,
+C04,Gate виявляє 3 навмисні дефекти,факт,quality/demo_defects_result.json,V2,verified,
+C05,Після очищення conflict_flagged 1.0→0.25,факт,results/rag_compare.json,V4,verified,"наслідок розв'язання суперечностей, не регресія"
+C06,Експертна вибірка точності n=30 розмічена незалежним експертом,гіпотеза,—,—,rejected,мітки поставив Claude за маніфестом
+C07,D19-p07 суперечить X03-p01 (2→3 дні),факт,results/rag_eval_q_after.json (T27),V3,pending,потрібне рішення власника
+C08,Рішення журналу затверджено власником,гіпотеза,quality/decision_log.csv,V3,pending,очікує затвердження студента
+C09,SHACL-форми валідні й проходять pySHACL,гіпотеза,quality/shapes.ttl,—,pending,"pySHACL недоступний, не запускалось"

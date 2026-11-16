@@ -1,0 +1,51 @@
+FF.FFF..FFFF.FF                                                          [100%]
+=================================== FAILURES ===================================
+E   AssertionError: {'andriy': {'pythonDeveloperPost', 'recruiterPost'}}
+    assert not {'andriy': {'pythonDeveloperPost', 'recruiterPost'}}
+/home/claude/lab14/quality/tests/test_graph_invariants.py:5: AssertionError: {'andriy': {'pythonDeveloperPost', 'recruiterPost'}}
+E   AssertionError: [['ivan', 'emp007', 'ivan'], ['emp007', 'ivan', 'emp007']]
+    assert not [['ivan', 'emp007', 'ivan'], ['emp007', 'ivan', 'emp007'], ['ivan', 'emp007', 'ivan'], ['ivan', 'emp007', 'ivan'], ['ivan', 'emp007', 'ivan'], ['ivan', 'emp007', 'ivan'], ...]
+/home/claude/lab14/quality/tests/test_graph_invariants.py:14: AssertionError: [['ivan', 'emp007', 'ivan'], ['emp007', 'ivan', 'emp007']]
+E   AssertionError: порушень схеми: 31: [('D01-p03', "'12.03.2025' does not match '^\\\\d{4}-\\\\d{2}-\\\\d{2}$'"), ('D01-p08', "'' does not match '^internal://hub/kb/'"), ('D02-p08', "'' does not match '^internal://hub/kb/'"), ('D03-p02', "'' does not match '^internal://hub/kb/'"), ('D04-p02', "'' does not match '^internal://hub/kb/'")]
+    assert not [('D01-p03', "'12.03.2025' does not match '^\\\\d{4}-\\\\d{2}-\\\\d{2}$'"), ('D01-p08', "'' does not match '^internal:...p02', "'' does not match '^internal://hub/kb/'"), ('D04-p09', "'' does not match '^\\\\d{4}-\\\\d{2}-\\\\d{2}$'"), ...]
+/home/claude/lab14/quality/tests/test_json_schema.py:9: AssertionError: порушень схеми: 31: [('D01-p03', "'12.03.2025' does not match '^\\\\d{4}-\\\\d{2}-\\\\d{2}$'"), ('D01-p08', "'' does not match '^internal://hub/kb/'"), ('D02-p08', "'' does not match '^internal://hub/kb/'"), ('D03-p02', "'' does not match '^internal://hub/kb/'"), ('D04-p02', "'' does not match '^internal://hub/kb/'")]
+E   assert 14 == 0
+/home/claude/lab14/quality/tests/test_sql_invariants.py:6: assert 14 == 0
+E   assert 1 == 0
+/home/claude/lab14/quality/tests/test_sql_invariants.py:7: assert 1 == 0
+E   AssertionError: ['D01-p08', 'D02-p08', 'D03-p02', 'D04-p02', 'D04-p09', 'D05-p02', ...]
+    assert not ['D01-p08', 'D02-p08', 'D03-p02', 'D04-p02', 'D04-p09', 'D05-p02', ...]
+/home/claude/lab14/quality/tests/test_store_pytest.py:4: AssertionError: ['D01-p08', 'D02-p08', 'D03-p02', 'D04-p02', 'D04-p09', 'D05-p02', ...]
+E   AssertionError: [('D01-p03', '12.03.2025'), ('D04-p09', ''), ('D05-p02', ''), ('D05-p03', '10.09.2024'), ('D08-p01', '01.12.2024'), ('D14-p03', ''), ...]
+    assert not [('D01-p03', '12.03.2025'), ('D04-p09', ''), ('D05-p02', ''), ('D05-p03', '10.09.2024'), ('D08-p01', '01.12.2024'), ('D14-p03', ''), ...]
+/home/claude/lab14/quality/tests/test_store_pytest.py:10: AssertionError: [('D01-p03', '12.03.2025'), ('D04-p09', ''), ('D05-p02', ''), ('D05-p03', '10.09.2024'), ('D08-p01', '01.12.2024'), ('D14-p03', ''), ...]
+E   AssertionError: ['D01-p08', 'D02-p08', 'D03-p02', 'D04-p02', 'D08-p01', 'D09-p07', ...]
+    assert not ['D01-p08', 'D02-p08', 'D03-p02', 'D04-p02', 'D08-p01', 'D09-p07', ...]
+/home/claude/lab14/quality/tests/test_store_pytest.py:11: AssertionError: ['D01-p08', 'D02-p08', 'D03-p02', 'D04-p02', 'D08-p01', 'D09-p07', ...]
+E   AssertionError: ['D04-p02', 'D04-p03', 'D04-p06', 'D04-p07']
+    assert not ['D04-p02', 'D04-p03', 'D04-p06', 'D04-p07']
+/home/claude/lab14/quality/tests/test_store_pytest.py:12: AssertionError: ['D04-p02', 'D04-p03', 'D04-p06', 'D04-p07']
+E   AssertionError: [['D14-p05', 'DUP-D14-p05'], ['D19-p08', 'DUP-D19-p08'], ['D07-p04', 'DUP-D07-p04'], ['D17-p09', 'DUP-D17-p09'], ['D07-p10', 'DUP-D07-p10']]
+    assert not [frozenset({'D14-p05', 'DUP-D14-p05'}), frozenset({'D19-p08', 'DUP-D19-p08'}), frozenset({'D07-p04', 'DUP-D07-p04'}), frozenset({'D17-p09', 'DUP-D17-p09'}), frozenset({'D07-p10', 'DUP-D07-p10'}), frozenset({'D08-p05', 'DUP-D08-p05'}), ...]
+/home/claude/lab14/quality/tests/test_store_pytest.py:15: AssertionError: [['D14-p05', 'DUP-D14-p05'], ['D19-p08', 'DUP-D19-p08'], ['D07-p04', 'DUP-D07-p04'], ['D17-p09', 'DUP-D17-p09'], ['D07-p10', 'DUP-D07-p10']]
+E   AssertionError: [('D05-p07', 'X02-p01'), ('D07-p03', 'X04-p01'), ('D08-p05', 'X03-p01'), ('D12-p01', 'X01-p01')]
+    assert 4 == 0
+/home/claude/lab14/quality/tests/test_store_pytest.py:17: AssertionError: [('D05-p07', 'X02-p01'), ('D07-p03', 'X04-p01'), ('D08-p05', 'X03-p01'), ('D12-p01', 'X01-p01')]
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED quality/tests/test_graph_invariants.py::test_15_no_dangling_edges
+PASSED quality/tests/test_sql_invariants.py::test_12_sql_unique_id
+PASSED quality/tests/test_store_pytest.py::test_02_unique_ids
+PASSED quality/tests/test_store_pytest.py::test_07_restricted_not_public
+FAILED quality/tests/test_graph_invariants.py::test_13_occupies_is_functional
+FAILED quality/tests/test_graph_invariants.py::test_14_manager_hierarchy_acyclic
+FAILED quality/tests/test_json_schema.py::test_01_record_json_schema - Assert...
+FAILED quality/tests/test_sql_invariants.py::test_10_sql_id_prefix_matches_doc
+FAILED quality/tests/test_sql_invariants.py::test_11_sql_no_future_dates - as...
+FAILED quality/tests/test_store_pytest.py::test_03_completeness - AssertionEr...
+FAILED quality/tests/test_store_pytest.py::test_04_valid_dates - AssertionErr...
+FAILED quality/tests/test_store_pytest.py::test_05_provenance - AssertionErro...
+FAILED quality/tests/test_store_pytest.py::test_06_terminology - AssertionErr...
+FAILED quality/tests/test_store_pytest.py::test_08_no_near_duplicates - Asser...
+FAILED quality/tests/test_store_pytest.py::test_09_no_unresolved_value_conflicts
+11 failed, 4 passed in 2.19s

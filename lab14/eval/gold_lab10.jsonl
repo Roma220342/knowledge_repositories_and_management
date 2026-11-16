@@ -1,0 +1,42 @@
+{"qid": "q01", "query": "коефіцієнт плинності формула", "type": "keyword", "relevant": ["D04-p03"], "annotator": "A"}
+{"qid": "q02", "query": "шкала оцінок продуктивності від 1 до 10", "type": "keyword", "relevant": ["D02-p03"], "annotator": "A"}
+{"qid": "q03", "query": "персональний ліміт навчання 1500 євро", "type": "keyword", "relevant": ["D07-p03", "D19-p05"], "annotator": "A"}
+{"qid": "q04", "query": "метод STAR поведінкові запитання", "type": "keyword", "relevant": ["D06-p05"], "annotator": "A"}
+{"qid": "q05", "query": "гнучке вікно прибуття 8:00 до 11:00", "type": "keyword", "relevant": ["D08-p01"], "annotator": "A"}
+{"qid": "q06", "query": "лікарняний перші п'ять днів оплачує роботодавець", "type": "keyword", "relevant": ["D12-p08"], "annotator": "A"}
+{"qid": "q07", "query": "правило 70-20-10", "type": "keyword", "relevant": ["D15-p05"], "annotator": "A"}
+{"qid": "q08", "query": "модель Кіркпатріка", "type": "keyword", "relevant": ["D07-p09"], "annotator": "A"}
+{"qid": "q09", "query": "щорічна відпустка 24 календарних дні", "type": "keyword", "relevant": ["D12-p01"], "annotator": "A"}
+{"qid": "q10", "query": "VPN під час дистанційної роботи", "type": "keyword", "relevant": ["D08-p06"], "annotator": "A"}
+{"qid": "q11", "query": "анонімні звернення", "type": "keyword", "relevant": ["D19-p10"], "annotator": "A"}
+{"qid": "q12", "query": "квартальна премія 20 відсотків окладу", "type": "keyword", "relevant": ["D13-p05"], "annotator": "A"}
+{"qid": "q13", "query": "кореляція результату тесту та продуктивності", "type": "keyword", "relevant": ["D18-p09"], "annotator": "A"}
+{"qid": "q14", "query": "оперативний і перспективний кадровий резерв", "type": "keyword", "relevant": ["D03-p02"], "annotator": "A"}
+{"qid": "q15", "query": "інструктаж з кібербезпеки обов'язкове навчання", "type": "keyword", "relevant": ["D07-p07"], "annotator": "A"}
+{"qid": "q16", "query": "прохідний бал тестування компетенцій 65", "type": "keyword", "relevant": ["D18-p02"], "annotator": "A"}
+{"qid": "q17", "query": "Скільки працівників пішло з компанії у 2025 році?", "type": "paraphrase", "relevant": ["D09-p01"], "annotator": "A"}
+{"qid": "q18", "query": "Що буде, якщо працівник три квартали має слабкі результати?", "type": "paraphrase", "relevant": ["D02-p07", "D21-p08"], "annotator": "A"}
+{"qid": "q19", "query": "Як не втратити знання, коли ключовий спеціаліст іде з компанії?", "type": "paraphrase", "relevant": ["D14-p09", "D14-p10"], "annotator": "A"}
+{"qid": "q20", "query": "Що відбувається з новачком на 30-й, 60-й і 90-й день?", "type": "paraphrase", "relevant": ["D05-p08"], "annotator": "A"}
+{"qid": "q21", "query": "Хто з керівників може бачити зарплатні відомості підлеглих?", "type": "paraphrase", "relevant": ["D11-p06"], "annotator": "A"}
+{"qid": "q22", "query": "Чи можна відправляти дані працівників у зовнішній чат-бот зі штучним інтелектом?", "type": "paraphrase", "relevant": ["D11-p07"], "annotator": "A"}
+{"qid": "q23", "query": "Скільки місяців триває випробувальний період?", "type": "paraphrase", "relevant": ["D05-p07"], "annotator": "A"}
+{"qid": "q24", "query": "У яких випадках роботодавцю заборонено звільняти працівника?", "type": "paraphrase", "relevant": ["D16-p10"], "annotator": "A"}
+{"qid": "q25", "query": "Чому люди звільнялися найчастіше за результатами вихідних бесід?", "type": "paraphrase", "relevant": ["D09-p05", "D09-p06"], "annotator": "A"}
+{"qid": "q26", "query": "Наскільки наставництво допомагає утримати працівників?", "type": "paraphrase", "relevant": ["D17-p10"], "annotator": "A"}
+{"qid": "q27", "query": "За скільки днів потрібно закрити вакансію?", "type": "paraphrase", "relevant": ["D20-p08"], "annotator": "A"}
+{"qid": "q28", "query": "Скільки днів на тиждень дозволено працювати з дому?", "type": "paraphrase", "relevant": ["D08-p05", "D19-p07"], "annotator": "A"}
+{"qid": "q29", "query": "Що потрібно мати працівнику, щоб потрапити до кадрового резерву, і хто погоджує його план розвитку?", "type": "multistep", "relevant": ["D03-p03", "D03-p05"], "annotator": "A"}
+{"qid": "q30", "query": "Як оцінка продуктивності впливає на розмір премії та на можливість підвищення?", "type": "multistep", "relevant": ["D02-p08", "D13-p05"], "annotator": "A"}
+{"qid": "q31", "query": "Який відділ має найбільшу плинність і що рекомендовано зробити для її зниження?", "type": "multistep", "relevant": ["D09-p03", "D09-p10"], "annotator": "A"}
+{"qid": "q32", "query": "Як виявляють працівників зі слабкими компетенціями і що їм призначають?", "type": "multistep", "relevant": ["D18-p07", "D18-p10", "D21-p07"], "annotator": "A"}
+{"qid": "q33", "query": "Як відбувається звільнення за низьку продуктивність від оцінки до наказу?", "type": "multistep", "relevant": ["D02-p07", "D16-p07", "D16-p08"], "annotator": "A"}
+{"qid": "q34", "query": "Як складається індивідуальний план розвитку і з якого бюджету він оплачується?", "type": "multistep", "relevant": ["D15-p02", "D15-p08"], "annotator": "A"}
+{"qid": "q35", "query": "Які дані кандидата зберігаються після співбесіди і скільки часу?", "type": "multistep", "relevant": ["D06-p10", "D11-p08"], "annotator": "A"}
+{"qid": "q36", "query": "Що потрібно для переходу на вищий рівень компетенції і як вирішують розбіжність оцінок?", "type": "multistep", "relevant": ["D01-p08", "D01-p10"], "annotator": "A"}
+{"qid": "q37", "query": "Як відгук 360 градусів використовується при формуванні резерву і плану розвитку?", "type": "multistep", "relevant": ["D10-p10", "D03-p04"], "annotator": "A"}
+{"qid": "q38", "query": "Який розмір податку на доходи фізичних осіб утримується із зарплати?", "type": "no_answer", "relevant": [], "annotator": "A"}
+{"qid": "q39", "query": "Як працює програма релокації працівників до Німеччини?", "type": "no_answer", "relevant": [], "annotator": "A"}
+{"qid": "q40", "query": "Правила користування корпоративним автомобілем", "type": "no_answer", "relevant": [], "annotator": "A"}
+{"qid": "q41", "query": "Скільки коштує абонемент у корпоративний басейн?", "type": "no_answer", "relevant": [], "annotator": "A"}
+{"qid": "q42", "query": "Структура ради директорів і порядок призначення її членів", "type": "no_answer", "relevant": [], "annotator": "A"}

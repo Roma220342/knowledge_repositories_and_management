@@ -1,0 +1,6 @@
+date,label,passed,failed
+2026-11-16,baseline,4,11
+2026-11-16,D1_bad_date,12,3
+2026-11-16,D2_near_duplicate,14,1
+2026-11-16,D3_manager_cycle,14,1
+2026-11-16,after,15,0

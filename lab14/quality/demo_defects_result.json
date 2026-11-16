@@ -1,0 +1,25 @@
+[
+ [
+  "D1_bad_date",
+  1,
+  [
+   "test_01_record_json_schema",
+   "test_11_sql_no_future_dates",
+   "test_04_valid_dates"
+  ]
+ ],
+ [
+  "D2_near_duplicate",
+  1,
+  [
+   "test_08_no_near_duplicates"
+  ]
+ ],
+ [
+  "D3_manager_cycle",
+  1,
+  [
+   "test_14_manager_hierarchy_acyclic"
+  ]
+ ]
+]

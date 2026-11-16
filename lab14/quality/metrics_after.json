@@ -1,0 +1,37 @@
+{
+ "version": "after",
+ "date": "2026-11-16",
+ "n_records": 214,
+ "thresholds": {
+  "completeness": 0.99,
+  "validity_dates": 0.99,
+  "provenance": 0.99,
+  "uniqueness_text": 0.99,
+  "uniqueness_entities": 0.95,
+  "consistency_values": 0,
+  "consistency_logical": 0,
+  "timeliness": 0.85,
+  "accuracy": 0.95,
+  "availability_graph": 1.0,
+  "terminology": 1.0
+ },
+ "metrics": {
+  "completeness": 1.0,
+  "validity_dates": 1.0,
+  "provenance": 1.0,
+  "uniqueness_text": 1.0,
+  "consistency_values": 0,
+  "consistency_logical": 0,
+  "timeliness": 0.8131,
+  "accuracy": 1.0,
+  "availability_graph": 1.0,
+  "terminology": 1.0,
+  "uniqueness_entities": 1.0
+ },
+ "details": {
+  "dups": [],
+  "conflicts": [],
+  "two_positions": [],
+  "cycles": []
+ }
+}

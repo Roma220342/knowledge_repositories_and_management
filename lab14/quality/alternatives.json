@@ -1,0 +1,129 @@
+[
+ {
+  "conflict": "C1",
+  "field": "текст політики",
+  "kept": {
+   "id": "X02-p01",
+   "text": "Випробувальний термін становить два місяці.",
+   "date": "2025-11-03",
+   "source": "internal://hub/kb/X02"
+  },
+  "alternative": {
+   "id": "D05-p07",
+   "text": "Випробувальний термін становить три місяці.",
+   "date": "2024-09-10",
+   "source": "internal://hub/kb/D05",
+   "status": "superseded",
+   "valid_to": "2025-11-02"
+  },
+  "strategy": "дата: новіша редакція чинна"
+ },
+ {
+  "conflict": "C2",
+  "field": "текст політики",
+  "kept": {
+   "id": "X04-p01",
+   "text": "Кожен працівник має право на персональний ліміт у розмірі до 2000 євро на рік.",
+   "date": "2025-11-07",
+   "source": "internal://hub/kb/X04"
+  },
+  "alternative": {
+   "id": "D07-p03",
+   "text": "Кожен працівник має право на персональний ліміт у розмірі до 1500 євро на рік.",
+   "date": "2025-01-15",
+   "source": "internal://hub/kb/D07",
+   "status": "superseded",
+   "valid_to": "2025-11-06"
+  },
+  "strategy": "дата: новіша редакція чинна"
+ },
+ {
+  "conflict": "C3",
+  "field": "текст політики",
+  "kept": {
+   "id": "X03-p01",
+   "text": "Дистанційна робота можлива до двох днів на тиждень за погодженням керівника.",
+   "date": "2025-11-05",
+   "source": "internal://hub/kb/X03"
+  },
+  "alternative": {
+   "id": "D08-p05",
+   "text": "Дистанційна робота можлива до трьох днів на тиждень за погодженням керівника.",
+   "date": "2024-12-01",
+   "source": "internal://hub/kb/D08",
+   "status": "superseded",
+   "valid_to": "2025-11-04"
+  },
+  "strategy": "консенсус/дата: новіша політика чинна"
+ },
+ {
+  "conflict": "C4",
+  "field": "тривалість відпустки",
+  "kept": {
+   "id": "X01-p01",
+   "text": "Щорічна основна відпустка становить 28 календарних днів за відпрацьований робочий рік.",
+   "valid_from": "2025-11-01"
+  },
+  "alternative": {
+   "id": "D12-p01",
+   "text": "Щорічна основна відпустка становить 24 календарних дні за відпрацьований робочий рік. Право на відпустку за перший рік в",
+   "valid_to": "2025-10-31",
+   "status": "historical"
+  },
+  "strategy": "рішення власника: часове розділення версій"
+ },
+ {
+  "conflict": "C5",
+  "field": "rels_OCCUPIES__Employee__Position.csv",
+  "alternative": {
+   "from": "andriy",
+   "to": "recruiterPost",
+   "source": "injected-defect",
+   "confidence": "1.0",
+   "validFrom": "2021-09-01"
+  },
+  "kept": "рядок із source=kb.ttl/synthetic-enrichment",
+  "status": "rejected_alternative",
+  "strategy": "довіра до джерела (знижена довіра до source=injected-defect)"
+ },
+ {
+  "conflict": "C6",
+  "field": "rels_DIRECT_MANAGER__Employee__Employee.csv",
+  "alternative": {
+   "from": "ivan",
+   "to": "emp007",
+   "source": "injected-defect",
+   "confidence": "1.0",
+   "validFrom": "2021-09-01"
+  },
+  "kept": "рядок із source=kb.ttl/synthetic-enrichment",
+  "status": "rejected_alternative",
+  "strategy": "довіра до джерела (знижена довіра до source=injected-defect)"
+ },
+ {
+  "conflict": "C6",
+  "field": "rels_DIRECT_MANAGER__Employee__Employee.csv",
+  "alternative": {
+   "from": "emp007",
+   "to": "ivan",
+   "source": "injected-defect",
+   "confidence": "1.0",
+   "validFrom": "2021-09-01"
+  },
+  "kept": "рядок із source=kb.ttl/synthetic-enrichment",
+  "status": "rejected_alternative",
+  "strategy": "довіра до джерела (знижена довіра до source=injected-defect)"
+ },
+ {
+  "conflict": "C8",
+  "field": "дистанційна робота (виявлено під час аналізу RAG)",
+  "kept": "обидві версії збережено",
+  "alternative": {
+   "id": "D19-p07",
+   "text": "Скільки днів можна працювати віддалено? До трьох днів на тиждень за погодженням з керівником. Постійний віддалений форма",
+   "date": "2026-03-04",
+   "status": "open"
+  },
+  "strategy": "рішення власника: D19-p07 (2026-03) новіший за X03-p01 (2025-11), тому за правилом «дата» чинна версія «до трьох днів»; потрібне підтвердження"
+ }
+]

@@ -1,0 +1,23 @@
+.............F.                                                          [100%]
+=================================== FAILURES ===================================
+E   AssertionError: [['D02-p01', 'D99-p01']]
+    assert not [frozenset({'D02-p01', 'D99-p01'})]
+/home/claude/lab14/quality/tests/test_store_pytest.py:15: AssertionError: [['D02-p01', 'D99-p01']]
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED quality/tests/test_graph_invariants.py::test_13_occupies_is_functional
+PASSED quality/tests/test_graph_invariants.py::test_14_manager_hierarchy_acyclic
+PASSED quality/tests/test_graph_invariants.py::test_15_no_dangling_edges
+PASSED quality/tests/test_json_schema.py::test_01_record_json_schema
+PASSED quality/tests/test_sql_invariants.py::test_10_sql_id_prefix_matches_doc
+PASSED quality/tests/test_sql_invariants.py::test_11_sql_no_future_dates
+PASSED quality/tests/test_sql_invariants.py::test_12_sql_unique_id
+PASSED quality/tests/test_store_pytest.py::test_02_unique_ids
+PASSED quality/tests/test_store_pytest.py::test_03_completeness
+PASSED quality/tests/test_store_pytest.py::test_04_valid_dates
+PASSED quality/tests/test_store_pytest.py::test_05_provenance
+PASSED quality/tests/test_store_pytest.py::test_06_terminology
+PASSED quality/tests/test_store_pytest.py::test_07_restricted_not_public
+PASSED quality/tests/test_store_pytest.py::test_09_no_unresolved_value_conflicts
+FAILED quality/tests/test_store_pytest.py::test_08_no_near_duplicates - Asser...
+1 failed, 14 passed in 2.03s

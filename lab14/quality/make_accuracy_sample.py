@@ -1,0 +1,6 @@
+"""Вибірка точності: 30 випадкових записів (seed 14). УВАГА: «експертна» мітка тут присвоєна Claude за маніфестом введених дефектів і прочитаним станом версій (дублікат / застарілий текст / точний),
+а не незалежним доменним експертом; студент має перевірити вибірку."""
+import sys, os, json, csv, random; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); from store import *
+tag = sys.argv[1]; S = load_store(sys.argv[2]); rnd = random.Random(14); sm = rnd.sample(S, 30); man = json.load(open(R + "/data/defects_manifest.json")); old = {"D05-p07", "D07-p03", "D08-p05", "D12-p01"}
+rows = [dict(id=c["id"], label="дублікат" if c["id"].startswith("DUP-") else "застарілий" if c["id"] in old and not c.get("superseded_sentence_removed") and not c.get("valid_to") else "точний", note="імпортований майже-дублікат" if c["id"].startswith("DUP-") else "є новіша редакція X0n" if c["id"] in old and not c.get("superseded_sentence_removed") and not c.get("valid_to") else "") for c in sm]
+w = csv.DictWriter(open(R + f"/quality/accuracy_sample_{tag}.csv", "w", encoding="utf-8", newline=""), fieldnames=["id", "label", "note"]); w.writeheader(); w.writerows(rows); print(sum(r["label"] == "точний" for r in rows) / 30)

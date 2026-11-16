@@ -1,0 +1,115 @@
+{
+ "baseline": {
+  "version": "baseline",
+  "date": "2026-11-16",
+  "n_records": 228,
+  "thresholds": {
+   "completeness": 0.99,
+   "validity_dates": 0.99,
+   "provenance": 0.99,
+   "uniqueness_text": 0.99,
+   "uniqueness_entities": 0.95,
+   "consistency_values": 0,
+   "consistency_logical": 0,
+   "timeliness": 0.85,
+   "accuracy": 0.95,
+   "availability_graph": 1.0,
+   "terminology": 1.0
+  },
+  "metrics": {
+   "completeness": 0.8991,
+   "validity_dates": 0.9167,
+   "provenance": 0.9035,
+   "uniqueness_text": 0.9386,
+   "consistency_values": 4,
+   "consistency_logical": 2,
+   "timeliness": 0.7456,
+   "accuracy": 0.9667,
+   "availability_graph": 1.0,
+   "terminology": 0.9825,
+   "uniqueness_entities": 0.9386
+  },
+  "details": {
+   "dups": [
+    "DUP-D02-p09",
+    "DUP-D03-p08",
+    "DUP-D07-p04",
+    "DUP-D07-p06",
+    "DUP-D07-p10",
+    "DUP-D08-p05",
+    "DUP-D14-p05",
+    "DUP-D16-p08",
+    "DUP-D17-p07",
+    "DUP-D17-p09",
+    "DUP-D18-p10",
+    "DUP-D19-p08",
+    "DUP-D19-p09",
+    "DUP-D20-p04"
+   ],
+   "conflicts": [
+    [
+     "D05-p07",
+     "X02-p01"
+    ],
+    [
+     "D07-p03",
+     "X04-p01"
+    ],
+    [
+     "D08-p05",
+     "X03-p01"
+    ],
+    [
+     "D12-p01",
+     "X01-p01"
+    ]
+   ],
+   "two_positions": [
+    "andriy"
+   ],
+   "cycles": [
+    [
+     "emp007",
+     "ivan"
+    ]
+   ]
+  }
+ },
+ "after": {
+  "version": "after",
+  "date": "2026-11-16",
+  "n_records": 214,
+  "thresholds": {
+   "completeness": 0.99,
+   "validity_dates": 0.99,
+   "provenance": 0.99,
+   "uniqueness_text": 0.99,
+   "uniqueness_entities": 0.95,
+   "consistency_values": 0,
+   "consistency_logical": 0,
+   "timeliness": 0.85,
+   "accuracy": 0.95,
+   "availability_graph": 1.0,
+   "terminology": 1.0
+  },
+  "metrics": {
+   "completeness": 1.0,
+   "validity_dates": 1.0,
+   "provenance": 1.0,
+   "uniqueness_text": 1.0,
+   "consistency_values": 0,
+   "consistency_logical": 0,
+   "timeliness": 0.8131,
+   "accuracy": 1.0,
+   "availability_graph": 1.0,
+   "terminology": 1.0,
+   "uniqueness_entities": 1.0
+  },
+  "details": {
+   "dups": [],
+   "conflicts": [],
+   "two_positions": [],
+   "cycles": []
+  }
+ }
+}

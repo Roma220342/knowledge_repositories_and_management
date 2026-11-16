@@ -1,0 +1,467 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix hub: <http://example.org/hub#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+hub:andriy rdfs:label "Андрій Мельник"@uk .
+hub:c_coach rdfs:label "Коучингові навички"@uk .
+hub:c_comm rdfs:label "Командна комунікація"@uk .
+hub:c_conf rdfs:label "Вирішення конфліктів"@uk .
+hub:c_del rdfs:label "Практикум з делегування"@uk .
+hub:c_gdpr rdfs:label "Захист даних (GDPR)"@uk .
+hub:c_jb rdfs:label "Java Basics"@uk .
+hub:c_law rdfs:label "Трудове право: оновлення"@uk .
+hub:c_neg rdfs:label "Ефективні перемовини"@uk .
+hub:c_pya rdfs:label "Python Advanced"@uk .
+hub:c_pyb rdfs:label "Python Basics"@uk .
+hub:c_sql rdfs:label "SQL для аналітиків"@uk .
+hub:coach rdfs:label "коучинг"@uk .
+hub:comm rdfs:label "командна комунікація"@uk .
+hub:conf rdfs:label "вирішення конфліктів"@uk .
+hub:deleg rdfs:label "делегування"@uk .
+hub:dep_fin rdfs:label "фінансів"@uk .
+hub:dep_hr rdfs:label "кадрів"@uk .
+hub:dep_it rdfs:label "ІТ"@uk .
+hub:dep_legal rdfs:label "юридичний"@uk .
+hub:dep_sales rdfs:label "продажів"@uk .
+hub:emp007 rdfs:label "Тарас Гнатюк"@uk .
+hub:emp008 rdfs:label "Оксана Яремчук"@uk .
+hub:emp009 rdfs:label "Богдан Федина"@uk .
+hub:emp011 rdfs:label "Юрій Кравець"@uk .
+hub:emp012 rdfs:label "Наталія Романюк"@uk .
+hub:emp013 rdfs:label "Остап Олійник"@uk .
+hub:emp014 rdfs:label "Ірина Мороз"@uk .
+hub:emp015 rdfs:label "Василь Пономаренко"@uk .
+hub:emp016 rdfs:label "Галина Бойко"@uk .
+hub:emp017 rdfs:label "Степан Левицький"@uk .
+hub:emp018 rdfs:label "Леся Савченко"@uk .
+hub:emp019 rdfs:label "Назар Кузьмич"@uk .
+hub:emp021 rdfs:label "Максим Демчук"@uk .
+hub:emp022 rdfs:label "Ольга Головатий"@uk .
+hub:emp023 rdfs:label "Роман Остапчук"@uk .
+hub:emp024 rdfs:label "Дарина Захарчук"@uk .
+hub:emp025 rdfs:label "Олег Павлюк"@uk .
+hub:emp026 rdfs:label "Мирослава Стасюк"@uk .
+hub:emp027 rdfs:label "Тетяна Семенко"@uk .
+hub:emp028 rdfs:label "Святослав Гуменюк"@uk .
+hub:emp029 rdfs:label "Зоряна Дорош"@uk .
+hub:emp030 rdfs:label "Ярослав Вовк"@uk .
+hub:gdpr rdfs:label "захист даних"@uk .
+hub:hrManagerPost rdfs:label "HR-менеджер"@uk .
+hub:hran rdfs:label "hr-аналітика"@uk .
+hub:ivan rdfs:label "Іван Шевчук"@uk .
+hub:java rdfs:label "java"@uk .
+hub:law rdfs:label "трудове право"@uk .
+hub:maria rdfs:label "Марія Гончар"@uk .
+hub:negot rdfs:label "перемовини"@uk .
+hub:olena rdfs:label "Олена Коваль"@uk .
+hub:petro rdfs:label "Петро Бондар"@uk .
+hub:python rdfs:label "python"@uk .
+hub:pythonDeveloperPost rdfs:label "Python-розробник"@uk .
+hub:recruiterPost rdfs:label "Рекрутер"@uk .
+hub:sofia rdfs:label "Софія Лисенко"@uk .
+hub:sql rdfs:label "sql"@uk .
+hub:teamLeadPost rdfs:label "Керівник команди"@uk .
+hub:emp011 hub:COMPLETED hub:c_gdpr .
+hub:stmt0 a rdf:Statement ; rdf:subject hub:emp011 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_gdpr ; prov:wasDerivedFrom "doc01" ; hub:offset 343 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp011 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt1 a rdf:Statement ; rdf:subject hub:emp011 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc01" ; hub:offset 259 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp011 hub:WORKS_IN hub:dep_legal .
+hub:stmt2 a rdf:Statement ; rdf:subject hub:emp011 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_legal ; prov:wasDerivedFrom "doc01" ; hub:offset 300 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp012 hub:COMPLETED hub:c_comm .
+hub:stmt3 a rdf:Statement ; rdf:subject hub:emp012 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_comm ; prov:wasDerivedFrom "doc01" ; hub:offset 521 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp012 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt4 a rdf:Statement ; rdf:subject hub:emp012 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc01" ; hub:offset 436 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp012 hub:WORKS_IN hub:dep_it .
+hub:stmt5 a rdf:Statement ; rdf:subject hub:emp012 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_it ; prov:wasDerivedFrom "doc01" ; hub:offset 484 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:maria hub:COMPLETED hub:c_comm .
+hub:stmt6 a rdf:Statement ; rdf:subject hub:maria ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_comm ; prov:wasDerivedFrom "doc01" ; hub:offset 99 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:maria hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt7 a rdf:Statement ; rdf:subject hub:maria ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc01" ; hub:offset 19 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:maria hub:WORKS_IN hub:dep_fin .
+hub:stmt8 a rdf:Statement ; rdf:subject hub:maria ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_fin ; prov:wasDerivedFrom "doc01" ; hub:offset 65 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp018 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt9 a rdf:Statement ; rdf:subject hub:emp018 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc02" ; hub:offset 301 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp018 hub:HAS_SKILL hub:comm .
+hub:stmt10 a rdf:Statement ; rdf:subject hub:emp018 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:comm ; prov:wasDerivedFrom "doc02" ; hub:offset 350 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp018 hub:REPORTS_TO hub:emp027 .
+hub:stmt11 a rdf:Statement ; rdf:subject hub:emp018 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:emp027 ; prov:wasDerivedFrom "doc02" ; hub:offset 455 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:emp024 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt12 a rdf:Statement ; rdf:subject hub:emp024 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc02" ; hub:offset 23 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp024 hub:HAS_SKILL hub:conf .
+hub:stmt13 a rdf:Statement ; rdf:subject hub:emp024 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:conf ; prov:wasDerivedFrom "doc02" ; hub:offset 67 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp024 hub:HAS_SKILL hub:deleg .
+hub:stmt14 a rdf:Statement ; rdf:subject hub:emp024 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:deleg ; prov:wasDerivedFrom "doc02" ; hub:offset 117 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp024 hub:REPORTS_TO hub:emp027 .
+hub:stmt15 a rdf:Statement ; rdf:subject hub:emp024 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:emp027 ; prov:wasDerivedFrom "doc02" ; hub:offset 176 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:emp025 hub:HAS_POSITION hub:recruiterPost .
+hub:stmt16 a rdf:Statement ; rdf:subject hub:emp025 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:recruiterPost ; prov:wasDerivedFrom "doc02" ; hub:offset 574 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp025 hub:HAS_SKILL hub:conf .
+hub:stmt17 a rdf:Statement ; rdf:subject hub:emp025 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:conf ; prov:wasDerivedFrom "doc02" ; hub:offset 611 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp025 hub:HAS_SKILL hub:python .
+hub:stmt18 a rdf:Statement ; rdf:subject hub:emp025 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:python ; prov:wasDerivedFrom "doc02" ; hub:offset 675 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp025 hub:REPORTS_TO hub:emp019 .
+hub:stmt19 a rdf:Statement ; rdf:subject hub:emp025 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:emp019 ; prov:wasDerivedFrom "doc02" ; hub:offset 742 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:emp013 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt20 a rdf:Statement ; rdf:subject hub:emp013 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc03" ; hub:offset 156 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp013 hub:HAS_SKILL hub:hran .
+hub:stmt21 a rdf:Statement ; rdf:subject hub:emp013 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:hran ; prov:wasDerivedFrom "doc03" ; hub:offset 202 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp016 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt22 a rdf:Statement ; rdf:subject hub:emp016 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc03" ; hub:offset 17 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp016 hub:HAS_SKILL hub:coach .
+hub:stmt23 a rdf:Statement ; rdf:subject hub:emp016 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:coach ; prov:wasDerivedFrom "doc03" ; hub:offset 65 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:hrManagerPost hub:REQUIRES_SKILL hub:hran .
+hub:stmt24 a rdf:Statement ; rdf:subject hub:hrManagerPost ; rdf:predicate hub:REQUIRES_SKILL ; rdf:object hub:hran ; prov:wasDerivedFrom "doc03" ; hub:offset 428 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:recruiterPost hub:REQUIRES_SKILL hub:coach .
+hub:stmt25 a rdf:Statement ; rdf:subject hub:recruiterPost ; rdf:predicate hub:REQUIRES_SKILL ; rdf:object hub:coach ; prov:wasDerivedFrom "doc03" ; hub:offset 484 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:sofia hub:HAS_POSITION hub:recruiterPost .
+hub:stmt26 a rdf:Statement ; rdf:subject hub:sofia ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:recruiterPost ; prov:wasDerivedFrom "doc03" ; hub:offset 296 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:sofia hub:HAS_SKILL hub:negot .
+hub:stmt27 a rdf:Statement ; rdf:subject hub:sofia ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:negot ; prov:wasDerivedFrom "doc03" ; hub:offset 337 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp007 hub:COMPLETED hub:c_conf .
+hub:stmt28 a rdf:Statement ; rdf:subject hub:emp007 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_conf ; prov:wasDerivedFrom "doc04" ; hub:offset 226 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp007 hub:COMPLETED hub:c_pya .
+hub:stmt29 a rdf:Statement ; rdf:subject hub:emp007 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_pya ; prov:wasDerivedFrom "doc04" ; hub:offset 271 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp007 hub:HAS_SKILL hub:coach .
+hub:stmt30 a rdf:Statement ; rdf:subject hub:emp007 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:coach ; prov:wasDerivedFrom "doc04" ; hub:offset 349 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp007 hub:WORKS_IN hub:dep_hr .
+hub:stmt31 a rdf:Statement ; rdf:subject hub:emp007 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_hr ; prov:wasDerivedFrom "doc04" ; hub:offset 311 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp026 hub:COMPLETED hub:c_comm .
+hub:stmt32 a rdf:Statement ; rdf:subject hub:emp026 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_comm ; prov:wasDerivedFrom "doc04" ; hub:offset 78 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp026 hub:COMPLETED hub:c_conf .
+hub:stmt33 a rdf:Statement ; rdf:subject hub:emp026 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_conf ; prov:wasDerivedFrom "doc04" ; hub:offset 22 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp026 hub:HAS_SKILL hub:java .
+hub:stmt34 a rdf:Statement ; rdf:subject hub:emp026 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:java ; prov:wasDerivedFrom "doc04" ; hub:offset 180 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp026 hub:WORKS_IN hub:dep_fin .
+hub:stmt35 a rdf:Statement ; rdf:subject hub:emp026 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_fin ; prov:wasDerivedFrom "doc04" ; hub:offset 134 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp029 hub:COMPLETED hub:c_jb .
+hub:stmt36 a rdf:Statement ; rdf:subject hub:emp029 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_jb ; prov:wasDerivedFrom "doc04" ; hub:offset 477 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp029 hub:COMPLETED hub:c_pyb .
+hub:stmt37 a rdf:Statement ; rdf:subject hub:emp029 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_pyb ; prov:wasDerivedFrom "doc04" ; hub:offset 439 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp029 hub:HAS_SKILL hub:conf .
+hub:stmt38 a rdf:Statement ; rdf:subject hub:emp029 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:conf ; prov:wasDerivedFrom "doc04" ; hub:offset 547 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp029 hub:WORKS_IN hub:dep_it .
+hub:stmt39 a rdf:Statement ; rdf:subject hub:emp029 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_it ; prov:wasDerivedFrom "doc04" ; hub:offset 513 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp007 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt40 a rdf:Statement ; rdf:subject hub:emp007 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc05" ; hub:offset 470 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp007 hub:REPORTS_TO hub:petro .
+hub:stmt41 a rdf:Statement ; rdf:subject hub:emp007 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:petro ; prov:wasDerivedFrom "doc05" ; hub:offset 515 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:emp007 hub:WORKS_IN hub:dep_hr .
+hub:stmt42 a rdf:Statement ; rdf:subject hub:emp007 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_hr ; prov:wasDerivedFrom "doc05" ; hub:offset 581 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp009 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt43 a rdf:Statement ; rdf:subject hub:emp009 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc05" ; hub:offset 219 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp009 hub:REPORTS_TO hub:emp030 .
+hub:stmt44 a rdf:Statement ; rdf:subject hub:emp009 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:emp030 ; prov:wasDerivedFrom "doc05" ; hub:offset 265 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:emp009 hub:WORKS_IN hub:dep_it .
+hub:stmt45 a rdf:Statement ; rdf:subject hub:emp009 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_it ; prov:wasDerivedFrom "doc05" ; hub:offset 332 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp025 hub:HAS_POSITION hub:recruiterPost .
+hub:stmt46 a rdf:Statement ; rdf:subject hub:emp025 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:recruiterPost ; prov:wasDerivedFrom "doc05" ; hub:offset 20 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp025 hub:REPORTS_TO hub:emp019 .
+hub:stmt47 a rdf:Statement ; rdf:subject hub:emp025 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:emp019 ; prov:wasDerivedFrom "doc05" ; hub:offset 51 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:emp025 hub:WORKS_IN hub:dep_it .
+hub:stmt48 a rdf:Statement ; rdf:subject hub:emp025 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_it ; prov:wasDerivedFrom "doc05" ; hub:offset 117 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:hrManagerPost hub:REQUIRES_SKILL hub:conf .
+hub:stmt49 a rdf:Statement ; rdf:subject hub:hrManagerPost ; rdf:predicate hub:REQUIRES_SKILL ; rdf:object hub:conf ; prov:wasDerivedFrom "doc05" ; hub:offset 770 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:recruiterPost hub:REQUIRES_SKILL hub:python .
+hub:stmt50 a rdf:Statement ; rdf:subject hub:recruiterPost ; rdf:predicate hub:REQUIRES_SKILL ; rdf:object hub:python ; prov:wasDerivedFrom "doc05" ; hub:offset 723 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:emp015 hub:COMPLETED hub:c_jb .
+hub:stmt51 a rdf:Statement ; rdf:subject hub:emp015 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_jb ; prov:wasDerivedFrom "doc06" ; hub:offset 112 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp015 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt52 a rdf:Statement ; rdf:subject hub:emp015 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc06" ; hub:offset 19 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp015 hub:WORKS_IN hub:dep_fin .
+hub:stmt53 a rdf:Statement ; rdf:subject hub:emp015 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_fin ; prov:wasDerivedFrom "doc06" ; hub:offset 73 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp022 hub:COMPLETED hub:c_jb .
+hub:stmt54 a rdf:Statement ; rdf:subject hub:emp022 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_jb ; prov:wasDerivedFrom "doc06" ; hub:offset 471 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp022 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt55 a rdf:Statement ; rdf:subject hub:emp022 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc06" ; hub:offset 380 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp022 hub:WORKS_IN hub:dep_legal .
+hub:stmt56 a rdf:Statement ; rdf:subject hub:emp022 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_legal ; prov:wasDerivedFrom "doc06" ; hub:offset 431 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:maria hub:COMPLETED hub:c_comm .
+hub:stmt57 a rdf:Statement ; rdf:subject hub:maria ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_comm ; prov:wasDerivedFrom "doc06" ; hub:offset 279 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:maria hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt58 a rdf:Statement ; rdf:subject hub:maria ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc06" ; hub:offset 198 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:maria hub:WORKS_IN hub:dep_fin .
+hub:stmt59 a rdf:Statement ; rdf:subject hub:maria ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_fin ; prov:wasDerivedFrom "doc06" ; hub:offset 243 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp022 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt60 a rdf:Statement ; rdf:subject hub:emp022 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc07" ; hub:offset 249 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp022 hub:HAS_SKILL hub:gdpr .
+hub:stmt61 a rdf:Statement ; rdf:subject hub:emp022 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:gdpr ; prov:wasDerivedFrom "doc07" ; hub:offset 341 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp022 hub:HAS_SKILL hub:hran .
+hub:stmt62 a rdf:Statement ; rdf:subject hub:emp022 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:hran ; prov:wasDerivedFrom "doc07" ; hub:offset 298 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp022 hub:REPORTS_TO hub:maria .
+hub:stmt63 a rdf:Statement ; rdf:subject hub:emp022 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:maria ; prov:wasDerivedFrom "doc07" ; hub:offset 390 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:emp030 hub:HAS_POSITION hub:recruiterPost .
+hub:stmt64 a rdf:Statement ; rdf:subject hub:emp030 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:recruiterPost ; prov:wasDerivedFrom "doc07" ; hub:offset 511 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp030 hub:HAS_SKILL hub:law .
+hub:stmt65 a rdf:Statement ; rdf:subject hub:emp030 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:law ; prov:wasDerivedFrom "doc07" ; hub:offset 580 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp030 hub:HAS_SKILL hub:sql .
+hub:stmt66 a rdf:Statement ; rdf:subject hub:emp030 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:sql ; prov:wasDerivedFrom "doc07" ; hub:offset 551 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp030 hub:REPORTS_TO hub:emp013 .
+hub:stmt67 a rdf:Statement ; rdf:subject hub:emp030 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:emp013 ; prov:wasDerivedFrom "doc07" ; hub:offset 619 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:maria hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt68 a rdf:Statement ; rdf:subject hub:maria ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc07" ; hub:offset 23 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:maria hub:HAS_SKILL hub:negot .
+hub:stmt69 a rdf:Statement ; rdf:subject hub:maria ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:negot ; prov:wasDerivedFrom "doc07" ; hub:offset 68 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:maria hub:HAS_SKILL hub:python .
+hub:stmt70 a rdf:Statement ; rdf:subject hub:maria ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:python ; prov:wasDerivedFrom "doc07" ; hub:offset 130 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:maria hub:REPORTS_TO hub:emp008 .
+hub:stmt71 a rdf:Statement ; rdf:subject hub:maria ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:emp008 ; prov:wasDerivedFrom "doc07" ; hub:offset 181 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:emp009 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt72 a rdf:Statement ; rdf:subject hub:emp009 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc08" ; hub:offset 18 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp009 hub:HAS_SKILL hub:java .
+hub:stmt73 a rdf:Statement ; rdf:subject hub:emp009 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:java ; prov:wasDerivedFrom "doc08" ; hub:offset 106 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp009 hub:HAS_SKILL hub:law .
+hub:stmt74 a rdf:Statement ; rdf:subject hub:emp009 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:law ; prov:wasDerivedFrom "doc08" ; hub:offset 65 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp030 hub:HAS_POSITION hub:recruiterPost .
+hub:stmt75 a rdf:Statement ; rdf:subject hub:emp030 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:recruiterPost ; prov:wasDerivedFrom "doc08" ; hub:offset 198 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp030 hub:HAS_SKILL hub:deleg .
+hub:stmt76 a rdf:Statement ; rdf:subject hub:emp030 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:deleg ; prov:wasDerivedFrom "doc08" ; hub:offset 273 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp030 hub:HAS_SKILL hub:sql .
+hub:stmt77 a rdf:Statement ; rdf:subject hub:emp030 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:sql ; prov:wasDerivedFrom "doc08" ; hub:offset 236 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:ivan hub:HAS_POSITION hub:teamLeadPost .
+hub:stmt78 a rdf:Statement ; rdf:subject hub:ivan ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:teamLeadPost ; prov:wasDerivedFrom "doc08" ; hub:offset 328 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:ivan hub:HAS_SKILL hub:sql .
+hub:stmt79 a rdf:Statement ; rdf:subject hub:ivan ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:sql ; prov:wasDerivedFrom "doc08" ; hub:offset 372 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:pythonDeveloperPost hub:REQUIRES_SKILL hub:negot .
+hub:stmt80 a rdf:Statement ; rdf:subject hub:pythonDeveloperPost ; rdf:predicate hub:REQUIRES_SKILL ; rdf:object hub:negot ; prov:wasDerivedFrom "doc08" ; hub:offset 556 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:teamLeadPost hub:REQUIRES_SKILL hub:java .
+hub:stmt81 a rdf:Statement ; rdf:subject hub:teamLeadPost ; rdf:predicate hub:REQUIRES_SKILL ; rdf:object hub:java ; prov:wasDerivedFrom "doc08" ; hub:offset 503 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp025 hub:COMPLETED hub:c_pya .
+hub:stmt82 a rdf:Statement ; rdf:subject hub:emp025 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_pya ; prov:wasDerivedFrom "doc09" ; hub:offset 260 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp025 hub:COMPLETED hub:c_sql .
+hub:stmt83 a rdf:Statement ; rdf:subject hub:emp025 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_sql ; prov:wasDerivedFrom "doc09" ; hub:offset 305 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp025 hub:WORKS_IN hub:dep_it .
+hub:stmt84 a rdf:Statement ; rdf:subject hub:emp025 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_it ; prov:wasDerivedFrom "doc09" ; hub:offset 353 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp030 hub:COMPLETED hub:c_coach .
+hub:stmt85 a rdf:Statement ; rdf:subject hub:emp030 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_coach ; prov:wasDerivedFrom "doc09" ; hub:offset 442 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp030 hub:WORKS_IN hub:dep_sales .
+hub:stmt86 a rdf:Statement ; rdf:subject hub:emp030 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_sales ; prov:wasDerivedFrom "doc09" ; hub:offset 532 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:maria hub:COMPLETED hub:c_comm .
+hub:stmt87 a rdf:Statement ; rdf:subject hub:maria ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_comm ; prov:wasDerivedFrom "doc09" ; hub:offset 72 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:maria hub:COMPLETED hub:c_gdpr .
+hub:stmt88 a rdf:Statement ; rdf:subject hub:maria ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_gdpr ; prov:wasDerivedFrom "doc09" ; hub:offset 21 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:maria hub:WORKS_IN hub:dep_fin .
+hub:stmt89 a rdf:Statement ; rdf:subject hub:maria ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_fin ; prov:wasDerivedFrom "doc09" ; hub:offset 124 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp022 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt90 a rdf:Statement ; rdf:subject hub:emp022 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc10" ; hub:offset 22 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp022 hub:REPORTS_TO hub:maria .
+hub:stmt91 a rdf:Statement ; rdf:subject hub:emp022 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:maria ; prov:wasDerivedFrom "doc10" ; hub:offset 70 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp022 hub:WORKS_IN hub:dep_legal .
+hub:stmt92 a rdf:Statement ; rdf:subject hub:emp022 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_legal ; prov:wasDerivedFrom "doc10" ; hub:offset 139 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp027 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt93 a rdf:Statement ; rdf:subject hub:emp027 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc10" ; hub:offset 434 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp027 hub:HAS_SKILL hub:python .
+hub:stmt94 a rdf:Statement ; rdf:subject hub:emp027 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:python ; prov:wasDerivedFrom "doc10" ; hub:offset 585 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp027 hub:REPORTS_TO hub:emp023 .
+hub:stmt95 a rdf:Statement ; rdf:subject hub:emp027 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:emp023 ; prov:wasDerivedFrom "doc10" ; hub:offset 484 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp027 hub:WORKS_IN hub:dep_it .
+hub:stmt96 a rdf:Statement ; rdf:subject hub:emp027 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_it ; prov:wasDerivedFrom "doc10" ; hub:offset 554 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp029 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt97 a rdf:Statement ; rdf:subject hub:emp029 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc10" ; hub:offset 236 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp029 hub:HAS_SKILL hub:conf .
+hub:stmt98 a rdf:Statement ; rdf:subject hub:emp029 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:conf ; prov:wasDerivedFrom "doc10" ; hub:offset 382 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp029 hub:REPORTS_TO hub:emp014 .
+hub:stmt99 a rdf:Statement ; rdf:subject hub:emp029 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:emp014 ; prov:wasDerivedFrom "doc10" ; hub:offset 281 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp029 hub:WORKS_IN hub:dep_it .
+hub:stmt100 a rdf:Statement ; rdf:subject hub:emp029 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_it ; prov:wasDerivedFrom "doc10" ; hub:offset 346 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:pythonDeveloperPost hub:REQUIRES_SKILL hub:python .
+hub:stmt101 a rdf:Statement ; rdf:subject hub:pythonDeveloperPost ; rdf:predicate hub:REQUIRES_SKILL ; rdf:object hub:python ; prov:wasDerivedFrom "doc10" ; hub:offset 691 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:recruiterPost hub:REQUIRES_SKILL hub:coach .
+hub:stmt102 a rdf:Statement ; rdf:subject hub:recruiterPost ; rdf:predicate hub:REQUIRES_SKILL ; rdf:object hub:coach ; prov:wasDerivedFrom "doc10" ; hub:offset 746 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp011 hub:COMPLETED hub:c_gdpr .
+hub:stmt103 a rdf:Statement ; rdf:subject hub:emp011 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_gdpr ; prov:wasDerivedFrom "doc11" ; hub:offset 329 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp011 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt104 a rdf:Statement ; rdf:subject hub:emp011 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc11" ; hub:offset 246 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp011 hub:WORKS_IN hub:dep_legal .
+hub:stmt105 a rdf:Statement ; rdf:subject hub:emp011 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_legal ; prov:wasDerivedFrom "doc11" ; hub:offset 286 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp015 hub:COMPLETED hub:c_jb .
+hub:stmt106 a rdf:Statement ; rdf:subject hub:emp015 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_jb ; prov:wasDerivedFrom "doc11" ; hub:offset 111 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp015 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt107 a rdf:Statement ; rdf:subject hub:emp015 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc11" ; hub:offset 20 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp015 hub:WORKS_IN hub:dep_fin .
+hub:stmt108 a rdf:Statement ; rdf:subject hub:emp015 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_fin ; prov:wasDerivedFrom "doc11" ; hub:offset 72 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp028 hub:COMPLETED hub:c_del .
+hub:stmt109 a rdf:Statement ; rdf:subject hub:emp028 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_del ; prov:wasDerivedFrom "doc11" ; hub:offset 569 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp028 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt110 a rdf:Statement ; rdf:subject hub:emp028 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc11" ; hub:offset 491 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp028 hub:WORKS_IN hub:dep_legal .
+hub:stmt111 a rdf:Statement ; rdf:subject hub:emp028 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_legal ; prov:wasDerivedFrom "doc11" ; hub:offset 531 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp013 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt112 a rdf:Statement ; rdf:subject hub:emp013 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc12" ; hub:offset 327 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp013 hub:HAS_SKILL hub:comm .
+hub:stmt113 a rdf:Statement ; rdf:subject hub:emp013 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:comm ; prov:wasDerivedFrom "doc12" ; hub:offset 373 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp013 hub:HAS_SKILL hub:hran .
+hub:stmt114 a rdf:Statement ; rdf:subject hub:emp013 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:hran ; prov:wasDerivedFrom "doc12" ; hub:offset 428 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp013 hub:REPORTS_TO hub:emp016 .
+hub:stmt115 a rdf:Statement ; rdf:subject hub:emp013 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:emp016 ; prov:wasDerivedFrom "doc12" ; hub:offset 486 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:emp019 hub:HAS_POSITION hub:teamLeadPost .
+hub:stmt116 a rdf:Statement ; rdf:subject hub:emp019 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:teamLeadPost ; prov:wasDerivedFrom "doc12" ; hub:offset 24 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp019 hub:HAS_SKILL hub:negot .
+hub:stmt117 a rdf:Statement ; rdf:subject hub:emp019 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:negot ; prov:wasDerivedFrom "doc12" ; hub:offset 71 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp019 hub:REPORTS_TO hub:emp029 .
+hub:stmt118 a rdf:Statement ; rdf:subject hub:emp019 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:emp029 ; prov:wasDerivedFrom "doc12" ; hub:offset 161 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:emp030 hub:HAS_POSITION hub:recruiterPost .
+hub:stmt119 a rdf:Statement ; rdf:subject hub:emp030 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:recruiterPost ; prov:wasDerivedFrom "doc12" ; hub:offset 657 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp030 hub:HAS_SKILL hub:law .
+hub:stmt120 a rdf:Statement ; rdf:subject hub:emp030 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:law ; prov:wasDerivedFrom "doc12" ; hub:offset 689 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp030 hub:HAS_SKILL hub:sql .
+hub:stmt121 a rdf:Statement ; rdf:subject hub:emp030 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:sql ; prov:wasDerivedFrom "doc12" ; hub:offset 739 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp030 hub:REPORTS_TO hub:emp013 .
+hub:stmt122 a rdf:Statement ; rdf:subject hub:emp030 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:emp013 ; prov:wasDerivedFrom "doc12" ; hub:offset 779 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:emp012 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt123 a rdf:Statement ; rdf:subject hub:emp012 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc13" ; hub:offset 158 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp012 hub:HAS_SKILL hub:gdpr .
+hub:stmt124 a rdf:Statement ; rdf:subject hub:emp012 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:gdpr ; prov:wasDerivedFrom "doc13" ; hub:offset 206 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp016 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt125 a rdf:Statement ; rdf:subject hub:emp016 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc13" ; hub:offset 355 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp016 hub:HAS_SKILL hub:sql .
+hub:stmt126 a rdf:Statement ; rdf:subject hub:emp016 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:sql ; prov:wasDerivedFrom "doc13" ; hub:offset 396 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp025 hub:HAS_POSITION hub:recruiterPost .
+hub:stmt127 a rdf:Statement ; rdf:subject hub:emp025 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:recruiterPost ; prov:wasDerivedFrom "doc13" ; hub:offset 18 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp025 hub:HAS_SKILL hub:hran .
+hub:stmt128 a rdf:Statement ; rdf:subject hub:emp025 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:hran ; prov:wasDerivedFrom "doc13" ; hub:offset 57 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:pythonDeveloperPost hub:REQUIRES_SKILL hub:python .
+hub:stmt129 a rdf:Statement ; rdf:subject hub:pythonDeveloperPost ; rdf:predicate hub:REQUIRES_SKILL ; rdf:object hub:python ; prov:wasDerivedFrom "doc13" ; hub:offset 527 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:recruiterPost hub:REQUIRES_SKILL hub:law .
+hub:stmt130 a rdf:Statement ; rdf:subject hub:recruiterPost ; rdf:predicate hub:REQUIRES_SKILL ; rdf:object hub:law ; prov:wasDerivedFrom "doc13" ; hub:offset 588 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:andriy hub:COMPLETED hub:c_del .
+hub:stmt131 a rdf:Statement ; rdf:subject hub:andriy ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_del ; prov:wasDerivedFrom "doc14" ; hub:offset 23 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:andriy hub:COMPLETED hub:c_jb .
+hub:stmt132 a rdf:Statement ; rdf:subject hub:andriy ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_jb ; prov:wasDerivedFrom "doc14" ; hub:offset 72 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:andriy hub:HAS_SKILL hub:hran .
+hub:stmt133 a rdf:Statement ; rdf:subject hub:andriy ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:hran ; prov:wasDerivedFrom "doc14" ; hub:offset 160 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:andriy hub:WORKS_IN hub:dep_fin .
+hub:stmt134 a rdf:Statement ; rdf:subject hub:andriy ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_fin ; prov:wasDerivedFrom "doc14" ; hub:offset 116 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp019 hub:COMPLETED hub:c_law .
+hub:stmt135 a rdf:Statement ; rdf:subject hub:emp019 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_law ; prov:wasDerivedFrom "doc14" ; hub:offset 519 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp019 hub:WORKS_IN hub:dep_fin .
+hub:stmt136 a rdf:Statement ; rdf:subject hub:emp019 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_fin ; prov:wasDerivedFrom "doc14" ; hub:offset 631 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:sofia hub:COMPLETED hub:c_neg .
+hub:stmt137 a rdf:Statement ; rdf:subject hub:sofia ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_neg ; prov:wasDerivedFrom "doc14" ; hub:offset 259 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:sofia hub:COMPLETED hub:c_pya .
+hub:stmt138 a rdf:Statement ; rdf:subject hub:sofia ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_pya ; prov:wasDerivedFrom "doc14" ; hub:offset 312 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:sofia hub:HAS_SKILL hub:hran .
+hub:stmt139 a rdf:Statement ; rdf:subject hub:sofia ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:hran ; prov:wasDerivedFrom "doc14" ; hub:offset 404 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:sofia hub:WORKS_IN hub:dep_legal .
+hub:stmt140 a rdf:Statement ; rdf:subject hub:sofia ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_legal ; prov:wasDerivedFrom "doc14" ; hub:offset 360 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp015 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt141 a rdf:Statement ; rdf:subject hub:emp015 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc15" ; hub:offset 234 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp015 hub:REPORTS_TO hub:emp022 .
+hub:stmt142 a rdf:Statement ; rdf:subject hub:emp015 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:emp022 ; prov:wasDerivedFrom "doc15" ; hub:offset 288 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:emp015 hub:WORKS_IN hub:dep_fin .
+hub:stmt143 a rdf:Statement ; rdf:subject hub:emp015 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_fin ; prov:wasDerivedFrom "doc15" ; hub:offset 363 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp019 hub:HAS_POSITION hub:teamLeadPost .
+hub:stmt144 a rdf:Statement ; rdf:subject hub:emp019 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:teamLeadPost ; prov:wasDerivedFrom "doc15" ; hub:offset 21 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp019 hub:REPORTS_TO hub:emp029 .
+hub:stmt145 a rdf:Statement ; rdf:subject hub:emp019 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:emp029 ; prov:wasDerivedFrom "doc15" ; hub:offset 70 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:emp019 hub:WORKS_IN hub:dep_fin .
+hub:stmt146 a rdf:Statement ; rdf:subject hub:emp019 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_fin ; prov:wasDerivedFrom "doc15" ; hub:offset 137 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp026 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt147 a rdf:Statement ; rdf:subject hub:emp026 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc15" ; hub:offset 458 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp026 hub:REPORTS_TO hub:emp017 .
+hub:stmt148 a rdf:Statement ; rdf:subject hub:emp026 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:emp017 ; prov:wasDerivedFrom "doc15" ; hub:offset 507 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:emp026 hub:WORKS_IN hub:dep_fin .
+hub:stmt149 a rdf:Statement ; rdf:subject hub:emp026 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_fin ; prov:wasDerivedFrom "doc15" ; hub:offset 581 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:recruiterPost hub:REQUIRES_SKILL hub:law .
+hub:stmt150 a rdf:Statement ; rdf:subject hub:recruiterPost ; rdf:predicate hub:REQUIRES_SKILL ; rdf:object hub:law ; prov:wasDerivedFrom "doc15" ; hub:offset 782 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:teamLeadPost hub:REQUIRES_SKILL hub:hran .
+hub:stmt151 a rdf:Statement ; rdf:subject hub:teamLeadPost ; rdf:predicate hub:REQUIRES_SKILL ; rdf:object hub:hran ; prov:wasDerivedFrom "doc15" ; hub:offset 721 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:emp008 hub:COMPLETED hub:c_del .
+hub:stmt152 a rdf:Statement ; rdf:subject hub:emp008 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_del ; prov:wasDerivedFrom "doc16" ; hub:offset 534 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp008 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt153 a rdf:Statement ; rdf:subject hub:emp008 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc16" ; hub:offset 447 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp008 hub:WORKS_IN hub:dep_hr .
+hub:stmt154 a rdf:Statement ; rdf:subject hub:emp008 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_hr ; prov:wasDerivedFrom "doc16" ; hub:offset 494 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp021 hub:COMPLETED hub:c_law .
+hub:stmt155 a rdf:Statement ; rdf:subject hub:emp021 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_law ; prov:wasDerivedFrom "doc16" ; hub:offset 108 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp021 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt156 a rdf:Statement ; rdf:subject hub:emp021 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc16" ; hub:offset 20 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp021 hub:WORKS_IN hub:dep_legal .
+hub:stmt157 a rdf:Statement ; rdf:subject hub:emp021 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_legal ; prov:wasDerivedFrom "doc16" ; hub:offset 66 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp023 hub:COMPLETED hub:c_pya .
+hub:stmt158 a rdf:Statement ; rdf:subject hub:emp023 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_pya ; prov:wasDerivedFrom "doc16" ; hub:offset 295 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp023 hub:HAS_POSITION hub:teamLeadPost .
+hub:stmt159 a rdf:Statement ; rdf:subject hub:emp023 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:teamLeadPost ; prov:wasDerivedFrom "doc16" ; hub:offset 208 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp023 hub:WORKS_IN hub:dep_legal .
+hub:stmt160 a rdf:Statement ; rdf:subject hub:emp023 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_legal ; prov:wasDerivedFrom "doc16" ; hub:offset 252 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp011 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt161 a rdf:Statement ; rdf:subject hub:emp011 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc17" ; hub:offset 24 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp011 hub:HAS_SKILL hub:negot .
+hub:stmt162 a rdf:Statement ; rdf:subject hub:emp011 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:negot ; prov:wasDerivedFrom "doc17" ; hub:offset 65 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp011 hub:REPORTS_TO hub:emp017 .
+hub:stmt163 a rdf:Statement ; rdf:subject hub:emp011 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:emp017 ; prov:wasDerivedFrom "doc17" ; hub:offset 160 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:emp017 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt164 a rdf:Statement ; rdf:subject hub:emp017 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc17" ; hub:offset 338 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp017 hub:HAS_SKILL hub:comm .
+hub:stmt165 a rdf:Statement ; rdf:subject hub:emp017 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:comm ; prov:wasDerivedFrom "doc17" ; hub:offset 388 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp017 hub:HAS_SKILL hub:negot .
+hub:stmt166 a rdf:Statement ; rdf:subject hub:emp017 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:negot ; prov:wasDerivedFrom "doc17" ; hub:offset 457 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp017 hub:REPORTS_TO hub:petro .
+hub:stmt167 a rdf:Statement ; rdf:subject hub:emp017 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:petro ; prov:wasDerivedFrom "doc17" ; hub:offset 512 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:emp027 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt168 a rdf:Statement ; rdf:subject hub:emp027 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc17" ; hub:offset 680 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:emp027 hub:HAS_SKILL hub:coach .
+hub:stmt169 a rdf:Statement ; rdf:subject hub:emp027 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:coach ; prov:wasDerivedFrom "doc17" ; hub:offset 727 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp027 hub:HAS_SKILL hub:gdpr .
+hub:stmt170 a rdf:Statement ; rdf:subject hub:emp027 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:gdpr ; prov:wasDerivedFrom "doc17" ; hub:offset 763 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp027 hub:REPORTS_TO hub:emp023 .
+hub:stmt171 a rdf:Statement ; rdf:subject hub:emp027 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:emp023 ; prov:wasDerivedFrom "doc17" ; hub:offset 811 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.8 .
+hub:emp008 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt172 a rdf:Statement ; rdf:subject hub:emp008 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc18" ; hub:offset 19 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp008 hub:HAS_SKILL hub:python .
+hub:stmt173 a rdf:Statement ; rdf:subject hub:emp008 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:python ; prov:wasDerivedFrom "doc18" ; hub:offset 66 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp026 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt174 a rdf:Statement ; rdf:subject hub:emp026 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc18" ; hub:offset 333 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp026 hub:HAS_SKILL hub:coach .
+hub:stmt175 a rdf:Statement ; rdf:subject hub:emp026 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:coach ; prov:wasDerivedFrom "doc18" ; hub:offset 383 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:hrManagerPost hub:REQUIRES_SKILL hub:negot .
+hub:stmt176 a rdf:Statement ; rdf:subject hub:hrManagerPost ; rdf:predicate hub:REQUIRES_SKILL ; rdf:object hub:negot ; prov:wasDerivedFrom "doc18" ; hub:offset 523 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:petro hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt177 a rdf:Statement ; rdf:subject hub:petro ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc18" ; hub:offset 159 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:petro hub:HAS_SKILL hub:comm .
+hub:stmt178 a rdf:Statement ; rdf:subject hub:petro ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:comm ; prov:wasDerivedFrom "doc18" ; hub:offset 204 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:petro hub:HAS_SKILL hub:conf .
+hub:stmt179 a rdf:Statement ; rdf:subject hub:petro ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:conf ; prov:wasDerivedFrom "doc18" ; hub:offset 269 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:pythonDeveloperPost hub:REQUIRES_SKILL hub:gdpr .
+hub:stmt180 a rdf:Statement ; rdf:subject hub:pythonDeveloperPost ; rdf:predicate hub:REQUIRES_SKILL ; rdf:object hub:gdpr ; prov:wasDerivedFrom "doc18" ; hub:offset 577 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp015 hub:COMPLETED hub:c_coach .
+hub:stmt181 a rdf:Statement ; rdf:subject hub:emp015 ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_coach ; prov:wasDerivedFrom "doc19" ; hub:offset 448 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:emp015 hub:WORKS_IN hub:dep_fin .
+hub:stmt182 a rdf:Statement ; rdf:subject hub:emp015 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_fin ; prov:wasDerivedFrom "doc19" ; hub:offset 551 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:olena hub:COMPLETED hub:c_del .
+hub:stmt183 a rdf:Statement ; rdf:subject hub:olena ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_del ; prov:wasDerivedFrom "doc19" ; hub:offset 22 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:olena hub:COMPLETED hub:c_sql .
+hub:stmt184 a rdf:Statement ; rdf:subject hub:olena ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_sql ; prov:wasDerivedFrom "doc19" ; hub:offset 71 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:olena hub:WORKS_IN hub:dep_it .
+hub:stmt185 a rdf:Statement ; rdf:subject hub:olena ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_it ; prov:wasDerivedFrom "doc19" ; hub:offset 121 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:sofia hub:COMPLETED hub:c_neg .
+hub:stmt186 a rdf:Statement ; rdf:subject hub:sofia ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_neg ; prov:wasDerivedFrom "doc19" ; hub:offset 295 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:sofia hub:COMPLETED hub:c_pya .
+hub:stmt187 a rdf:Statement ; rdf:subject hub:sofia ; rdf:predicate hub:COMPLETED ; rdf:object hub:c_pya ; prov:wasDerivedFrom "doc19" ; hub:offset 247 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.85 .
+hub:sofia hub:WORKS_IN hub:dep_legal .
+hub:stmt188 a rdf:Statement ; rdf:subject hub:sofia ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_legal ; prov:wasDerivedFrom "doc19" ; hub:offset 348 ; prov:wasGeneratedBy "regex+gazetteer/v1" ; hub:confidence 0.9 .
+hub:andriy hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt189 a rdf:Statement ; rdf:subject hub:andriy ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc20" ; hub:offset 472 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:andriy hub:REPORTS_TO hub:petro .
+hub:stmt190 a rdf:Statement ; rdf:subject hub:andriy ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:petro ; prov:wasDerivedFrom "doc20" ; hub:offset 515 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:andriy hub:WORKS_IN hub:dep_fin .
+hub:stmt191 a rdf:Statement ; rdf:subject hub:andriy ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_fin ; prov:wasDerivedFrom "doc20" ; hub:offset 583 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp009 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt192 a rdf:Statement ; rdf:subject hub:emp009 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc20" ; hub:offset 275 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp009 hub:HAS_SKILL hub:law .
+hub:stmt193 a rdf:Statement ; rdf:subject hub:emp009 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:law ; prov:wasDerivedFrom "doc20" ; hub:offset 428 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp009 hub:REPORTS_TO hub:emp030 .
+hub:stmt194 a rdf:Statement ; rdf:subject hub:emp009 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:emp030 ; prov:wasDerivedFrom "doc20" ; hub:offset 324 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp009 hub:WORKS_IN hub:dep_it .
+hub:stmt195 a rdf:Statement ; rdf:subject hub:emp009 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_it ; prov:wasDerivedFrom "doc20" ; hub:offset 391 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp011 hub:HAS_POSITION hub:pythonDeveloperPost .
+hub:stmt196 a rdf:Statement ; rdf:subject hub:emp011 ; rdf:predicate hub:HAS_POSITION ; rdf:object hub:pythonDeveloperPost ; prov:wasDerivedFrom "doc20" ; hub:offset 22 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp011 hub:HAS_SKILL hub:coach .
+hub:stmt197 a rdf:Statement ; rdf:subject hub:emp011 ; rdf:predicate hub:HAS_SKILL ; rdf:object hub:coach ; prov:wasDerivedFrom "doc20" ; hub:offset 175 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp011 hub:REPORTS_TO hub:emp017 .
+hub:stmt198 a rdf:Statement ; rdf:subject hub:emp011 ; rdf:predicate hub:REPORTS_TO ; rdf:object hub:emp017 ; prov:wasDerivedFrom "doc20" ; hub:offset 67 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:emp011 hub:WORKS_IN hub:dep_legal .
+hub:stmt199 a rdf:Statement ; rdf:subject hub:emp011 ; rdf:predicate hub:WORKS_IN ; rdf:object hub:dep_legal ; prov:wasDerivedFrom "doc20" ; hub:offset 137 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:hrManagerPost hub:REQUIRES_SKILL hub:deleg .
+hub:stmt200 a rdf:Statement ; rdf:subject hub:hrManagerPost ; rdf:predicate hub:REQUIRES_SKILL ; rdf:object hub:deleg ; prov:wasDerivedFrom "doc20" ; hub:offset 688 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .
+hub:recruiterPost hub:REQUIRES_SKILL hub:deleg .
+hub:stmt201 a rdf:Statement ; rdf:subject hub:recruiterPost ; rdf:predicate hub:REQUIRES_SKILL ; rdf:object hub:deleg ; prov:wasDerivedFrom "doc20" ; hub:offset 743 ; prov:wasGeneratedBy "claude-sonnet-5-5/p1" ; hub:confidence 0 .

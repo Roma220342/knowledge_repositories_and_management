@@ -1,0 +1,95 @@
+{
+ "entities": 59,
+ "triples": 202,
+ "transactions": 27,
+ "rules_tested": 26,
+ "proof": [
+  [
+   "olena",
+   "COMPLETED",
+   "c_del",
+   "doc19",
+   22,
+   "regex+gazetteer",
+   "v1",
+   0.85
+  ],
+  [
+   "olena",
+   "COMPLETED",
+   "c_sql",
+   "doc19",
+   71,
+   "regex+gazetteer",
+   "v1",
+   0.85
+  ],
+  [
+   "olena",
+   "WORKS_IN",
+   "dep_it",
+   "doc19",
+   121,
+   "regex+gazetteer",
+   "v1",
+   0.9
+  ]
+ ],
+ "top": [
+  {
+   "rule": "HAS_POSITION:pythonDeveloperPost → HAS_SKILL:coach",
+   "support": 0.185,
+   "confidence": 0.25,
+   "lift": 1.35,
+   "n": 5,
+   "p_perm": 0.198,
+   "sup_half1": 0.214,
+   "sup_half2": 0.154,
+   "decision": "відхилити"
+  },
+  {
+   "rule": "HAS_SKILL:coach → HAS_POSITION:pythonDeveloperPost",
+   "support": 0.185,
+   "confidence": 1.0,
+   "lift": 1.35,
+   "n": 5,
+   "p_perm": 0.208,
+   "sup_half1": 0.214,
+   "sup_half2": 0.154,
+   "decision": "відхилити"
+  },
+  {
+   "rule": "COMPLETED:c_jb → HAS_POSITION:pythonDeveloperPost",
+   "support": 0.148,
+   "confidence": 1.0,
+   "lift": 1.35,
+   "n": 4,
+   "p_perm": 0.262,
+   "sup_half1": 0.071,
+   "sup_half2": 0.231,
+   "decision": "відхилити"
+  },
+  {
+   "rule": "HAS_POSITION:pythonDeveloperPost → COMPLETED:c_jb",
+   "support": 0.148,
+   "confidence": 0.2,
+   "lift": 1.35,
+   "n": 4,
+   "p_perm": 0.281,
+   "sup_half1": 0.071,
+   "sup_half2": 0.231,
+   "decision": "відхилити"
+  },
+  {
+   "rule": "HAS_POSITION:pythonDeveloperPost → HAS_SKILL:comm",
+   "support": 0.148,
+   "confidence": 0.2,
+   "lift": 1.35,
+   "n": 4,
+   "p_perm": 0.27,
+   "sup_half1": 0.214,
+   "sup_half2": 0.077,
+   "decision": "відхилити"
+  }
+ ]
+}

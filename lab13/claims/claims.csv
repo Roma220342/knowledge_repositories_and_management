@@ -1,0 +1,9 @@
+id,claim,type,source,level,status,comment
+C01,Правила на dev: F1 0.918 після налаштування (v0 0.796),факт,results/pred_rules_dev_v*.jsonl,V4,verified,обчислено src/evaluate.py
+C02,Правила на test: P 0.964 R 0.791 F1 0.869,факт,results/eval_test.json,V4,verified,
+C03,LLM-метод на test: P=R=F1=1.0,факт,results/eval_test.json,V4,verified,висновок необ'єктивний: див. застереження
+C04,Помилки правил — переважно кореферентність (12 із 16),факт,results/pred_rules_test_v1.jsonl,V4,verified,розбір у звіті
+C05,Жоден із топ-5 патернів не пройшов перестановковий тест,факт,results/patterns.json,V4,verified,"дані синтетичні, закономірності відсутні за конструкцією"
+C06,LLM-вартість ≈0.008 USD/док.,гіпотеза,"оцінка токенів, припущений тариф",V1,pending,не вимірювано
+C07,κ ≥ 0.6 для двох розмітників,гіпотеза,data/annot2_template.csv,—,pending,розмітник 2 не заповнено
+C08,spaCy перевершить regex на реальних текстах,гіпотеза,—,—,rejected,"не перевірялося: spaCy недоступний, твердження не приймається"

@@ -1,0 +1,1 @@
+{"date": "2026-11-16", "model": "claude-sonnet-5-5", "temperature": null, "seed": null, "prompt_version": "p1", "action": "витяг тверджень для 6 test-документів (сирі виходи в raw_test.jsonl)", "human_decision": "виходи пройшли валідацію (словник+evidence); незалежну перевірку студент має виконати"}

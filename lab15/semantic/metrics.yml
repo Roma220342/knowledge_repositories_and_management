@@ -1,0 +1,109 @@
+# Семантичний шар «Навчання та розвиток компетенцій». Один опис метрики -> один SQL незалежно від способу запиту.
+version: 1.0
+reviewed_on: "2026-11-15"
+owner_default: "L&D-аналітик (Дячук Роман)"
+dimensions:   # ім'я -> (вираз, потрібні з'єднання)
+  year:        {expr: "d.year", joins: [date]}
+  quarter:     {expr: "d.year_quarter", joins: [date]}
+  month:       {expr: "d.year_month", joins: [date]}
+  class:       {expr: "c.class_label", joins: [competence], note: "таксономія, рівень 1 (IRI у class_iri)"}
+  subclass:    {expr: "c.subclass_label", joins: [competence], note: "таксономія, рівень 2"}
+  competence:  {expr: "c.competence_label", joins: [competence], note: "таксономія, рівень 3 (лист)"}
+  position:    {expr: "p.position_name", joins: [employee, position], note: "SCD2: посада на момент події"}
+  employee:    {expr: "e.employee_name", joins: [employee]}
+  course:      {expr: "co.course_name", joins: [course]}
+  provider:    {expr: "co.provider_type", joins: [course]}
+metrics:
+  - name: training_hours
+    title: "Години навчання"
+    definition: "Сумарна кількість академічних годин навчання, проведених співробітниками."
+    formula: "SUM(hours)"
+    expr: "SUM(f.hours)"
+    unit: "год"
+    additivity: "адитивна"
+    owner: "L&D-аналітик"
+    sources: ["fact_training.hours"]
+    constraints: "Включає незавершені курси; частково відпрацьовані сесії мають 0.5 від номінальних годин."
+    status: active
+    reviewed_on: "2026-11-15"
+    synonyms: ["години", "години навчання", "навчальні години", "годин"]
+  - name: training_cost
+    title: "Вартість навчання"
+    definition: "Сумарні прямі витрати на навчання (оплата курсів, внутрішні ставки)."
+    formula: "SUM(cost_eur)"
+    expr: "SUM(f.cost_eur)"
+    unit: "EUR"
+    additivity: "адитивна"
+    owner: "Фінанси / L&D"
+    sources: ["fact_training.cost_eur"]
+    constraints: "Без непрямих витрат (час працівника, відпустка)."
+    status: active
+    reviewed_on: "2026-11-15"
+    synonyms: ["вартість", "витрати", "кошти", "бюджет"]
+  - name: cost_per_hour
+    title: "Вартість години навчання"
+    definition: "Середня вартість однієї години: сума витрат, поділена на суму годин (співвідношення сум, не середнє середніх)."
+    formula: "SUM(cost_eur) / SUM(hours)"
+    expr: "SUM(f.cost_eur) / SUM(f.hours)"
+    unit: "EUR/год"
+    additivity: "неадитивна (відношення)"
+    owner: "L&D-аналітик"
+    sources: ["fact_training.cost_eur", "fact_training.hours"]
+    constraints: "Агрегувати лише як відношення сум на потрібному рівні деталізації."
+    status: active
+    reviewed_on: "2026-11-15"
+    synonyms: ["вартість години", "ціна години", "вартість за годину"]
+  - name: completion_rate
+    title: "Частка завершених курсів"
+    definition: "Частка участей, що завершилися успішно."
+    formula: "SUM(completed) / COUNT(*)"
+    expr: "1.0 * SUM(f.completed) / COUNT(*)"
+    unit: "частка 0..1"
+    additivity: "неадитивна (відношення)"
+    owner: "L&D-аналітик"
+    sources: ["fact_training.completed"]
+    constraints: "Знаменник — усі записи зерна, включно з відмінами."
+    status: active
+    reviewed_on: "2026-11-15"
+    synonyms: ["завершення", "частка завершених", "відсоток завершення"]
+  - name: avg_score_gain
+    title: "Середній приріст оцінки"
+    definition: "Середня різниця оцінок після і до курсу для завершених курсів."
+    formula: "AVG(score_after - score_before) WHERE completed = 1"
+    expr: "AVG(CASE WHEN f.completed = 1 THEN f.score_after - f.score_before END)"
+    unit: "бали (0..10)"
+    additivity: "неадитивна (середнє)"
+    owner: "HR-аналітика"
+    sources: ["fact_training.score_before", "fact_training.score_after"]
+    constraints: "Лише завершені курси; оцінки — внутрішні тести, не порівнювати між компетенціями без нормалізації."
+    status: active
+    reviewed_on: "2026-11-15"
+    synonyms: ["приріст оцінки", "приріст", "ефективність навчання"]
+  - name: active_learners
+    joins: [employee]
+    title: "Кількість співробітників, що навчались"
+    definition: "Кількість різних співробітників (за employee_id, незалежно від версій SCD2), що мали навчальні події."
+    formula: "COUNT(DISTINCT employee_id)"
+    expr: "COUNT(DISTINCT e.employee_id)"
+    unit: "осіб"
+    additivity: "неадитивна (distinct)"
+    owner: "HR-аналітика"
+    sources: ["dim_employee.employee_id"]
+    constraints: "Не можна сумувати по групах: людина може входити до кількох груп."
+    status: active
+    reviewed_on: "2026-11-15"
+    synonyms: ["учасники", "співробітники", "кількість співробітників", "люди", "співробітників навчалось", "навчалось"]
+  - name: hours_per_learner
+    joins: [employee]
+    title: "Годин на одного учасника"
+    definition: "Години навчання, поділені на кількість різних учасників."
+    formula: "SUM(hours) / COUNT(DISTINCT employee_id)"
+    expr: "SUM(f.hours) / COUNT(DISTINCT e.employee_id)"
+    unit: "год/особу"
+    additivity: "неадитивна (відношення)"
+    owner: "HR-аналітика"
+    sources: ["fact_training.hours", "dim_employee.employee_id"]
+    constraints: "Для періодів коротших за квартал значення нестабільне."
+    status: draft
+    reviewed_on: "2026-11-15"
+    synonyms: ["годин на людину", "годин на співробітника"]

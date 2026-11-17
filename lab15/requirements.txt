@@ -1,0 +1,6 @@
+mcp>=2.0
+pytest
+jsonschema
+numpy
+scikit-learn
+# langgraph не використано (недоступний)

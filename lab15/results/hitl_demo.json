@@ -1,0 +1,74 @@
+{
+ "scenarios": [
+  {
+   "scenario": "H1 низький ризик (авто)",
+   "id": "P-098040",
+   "status": "applied",
+   "risk": "low",
+   "reasons": [
+    "нове знання з публічного/внутрішнього джерела, без конфліктів"
+   ]
+  },
+  {
+   "scenario": "H2 середній ризик (потрібне схвалення)",
+   "id": "P-a9f8fa",
+   "status": "pending_approval",
+   "risk": "medium",
+   "reasons": [
+    "змінює існуючу посаду (функціональне відношення)"
+   ],
+   "after_human": "applied"
+  },
+  {
+   "scenario": "H2b середній ризик (рецензент відхиляє)",
+   "id": "P-16b1de",
+   "status": "pending_approval",
+   "risk": "medium",
+   "reasons": [
+    "змінює існуючу посаду (функціональне відношення)"
+   ],
+   "after_human": "rejected_by_human"
+  },
+  {
+   "scenario": "H3 високий ризик (автовідмова: цикл підпорядкування)",
+   "id": "P-5bc865",
+   "status": "rejected",
+   "stage": "risk",
+   "risk": "high",
+   "reasons": [
+    "зміна ієрархії підпорядкування",
+    "створює цикл"
+   ]
+  },
+  {
+   "scenario": "H4 валідація: немає джерела",
+   "id": "P-ce7876",
+   "status": "rejected",
+   "stage": "validation",
+   "errors": [
+    "відсутнє джерело (provenance обов'язковий)"
+   ]
+  },
+  {
+   "scenario": "H5 заборонена дія delete",
+   "id": "P-3a1d2b",
+   "status": "rejected",
+   "stage": "validation",
+   "errors": [
+    "дозволена лише дія add (видалення/зміна заборонені)"
+   ]
+  }
+ ],
+ "metrics": {
+  "proposals": 6,
+  "auto_applied": 1,
+  "queued": 2,
+  "human_approved": 1,
+  "human_rejected": 1,
+  "rejected_validation": 2,
+  "rejected_high_risk": 1,
+  "median_approval_seconds": 1.2,
+  "audit_events": 18,
+  "approved_share_of_queued": 0.5
+ }
+}

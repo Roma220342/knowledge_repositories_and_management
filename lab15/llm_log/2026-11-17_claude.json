@@ -1,0 +1,1 @@
+{"date": "2026-11-17", "model": "claude-sonnet-5-5", "temperature": null, "seed": null, "prompt_version": "n/a (діалог)", "actions": ["код агента/MCP-сервера", "сценарії та атаки (роль red team)", "аналіз невдач"], "human_decision": "pending (студент)"}
